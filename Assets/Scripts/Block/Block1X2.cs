@@ -2,18 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block1X1 : BaseBlock
+public class Block1X2 : BaseBlock
 {
-    public override bool CheckCanSpawnAt(GridNode node, GridNode[,] grid,out List<GridNode> listNode)
+    public override bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode)
     {
         listNode = new List<GridNode>();
-        GridNode nodeCheck = grid[node.row, node.col];
-        if (!nodeCheck.isContainObject)
+        for (int i = 0; i < 2; i++)
         {
-            listNode.Add(node);
-            return true;
+            if (node.row - i >= 0)
+            {
+                GridNode nodeCheck = gameGrid[node.row - i, node.col];
+                if (!nodeCheck.isContainObject)
+                {
+                    listNode.Add(nodeCheck);
+                }
+            }
         }
-        return false;
+        if (listNode.Count < 2)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public override void ReUpdateGrid()
@@ -31,6 +41,5 @@ public class Block1X1 : BaseBlock
         
         this.ResetGridContain();
         gridContains = newGrid;
-        
     }
 }

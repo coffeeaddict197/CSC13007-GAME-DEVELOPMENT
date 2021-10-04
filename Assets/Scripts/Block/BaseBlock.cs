@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public abstract class BaseBlock : MonoBehaviour
+public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
 {
     [Header("Block data")] 
     [SerializeField] protected BlockData blockData;
@@ -26,23 +28,31 @@ public abstract class BaseBlock : MonoBehaviour
     /// Setup grid contain block
     /// </summary>
     /// <param name="gridContains"></param>
-    public void SetPosition(List<GridNode> gridContains)
+    public void InitPosition(List<GridNode> gridContains)
     {
         this.gridContains = gridContains;
         foreach (var node in this.gridContains)
         {
             node.isContainObject = true;
         }
-        
         //Set position
         Vector2 pos = GetAveragePoint(gridContains);
         rect.anchoredPosition = pos;
+        
+    }
+
+    protected void UpdatePosition()
+    {
+        ReUpdateGrid();
+        UpdateGridCointain();
+        Vector2 newPos = GetAveragePoint(gridContains);
+        rect.DOAnchorPos(newPos, 0.5f);
     }
     
     /// <summary>
     /// Reset grid of block
     /// </summary>
-    public void ResetGrid()
+    public void ResetGridContain()
     {
         foreach (var node in gridContains)
         {
@@ -51,10 +61,18 @@ public abstract class BaseBlock : MonoBehaviour
         gridContains.Clear();
     }
 
+    public void UpdateGridCointain()
+    {
+        foreach (var node in gridContains)
+        {
+            node.isContainObject = true;
+        }
+    }
+
     /// <summary>
     /// Return number of step under blank
     /// </summary>
-    private int CheckUnderBlank()
+    protected int GetDownStep()
     {
         GridNode nodeStart = gridContains[0];
         GameGrid gameGrid = GameGrid.Instance;
@@ -99,4 +117,9 @@ public abstract class BaseBlock : MonoBehaviour
 
     public abstract bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode);
     public abstract void ReUpdateGrid();
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("1");
+        UpdatePosition();
+    }
 }

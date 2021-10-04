@@ -32,7 +32,6 @@ public class Block : MonoBehaviour, IPointerClickHandler
     {
         CheckUnderIsBlank();
         reupdateBlock.ReUpdate2X2(this,gridContain[0],_moveDown);
-        //rectTrans.DOAnchorPosY(rectTrans.anchoredPosition.y - _moveDown * 240,_moveDown/5f).SetEase(Ease.Linear);
     }
 
 
