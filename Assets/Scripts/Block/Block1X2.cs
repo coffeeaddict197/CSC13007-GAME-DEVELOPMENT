@@ -26,20 +26,4 @@ public class Block1X2 : BaseBlock
         return true;
     }
 
-    public override void ReUpdateGrid()
-    {
-        //Setup
-        int downStep = GetDownStep();
-        GameGrid gameGrid = GameGrid.Instance;
-
-        
-        GridNode oldStartNode = gridContains[0];
-        GridNode newStartNode = gameGrid.grid[oldStartNode.row + downStep , oldStartNode.col];
-        List<GridNode> newGrid = new List<GridNode>();
-
-        CheckCanSpawnAt(newStartNode, gameGrid.grid, out newGrid);
-        
-        this.ResetGridContain();
-        gridContains = newGrid;
-    }
 }

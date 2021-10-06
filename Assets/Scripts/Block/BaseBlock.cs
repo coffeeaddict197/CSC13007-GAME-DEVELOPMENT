@@ -5,17 +5,27 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
+public abstract class BaseBlock : MonoBehaviour
 {
     [Header("Block data")] 
     [SerializeField] protected BlockData blockData;
     
     [Header("Block config")] 
+    public RectTransform rect;
     [SerializeField] protected List<GridNode> gridContains;
-    [SerializeField] protected RectTransform rect;
     [SerializeField] protected int width;
+
     
-    #if UNITY_EDITOR
+    /// <summary>
+    /// Node define first point to draw block
+    /// </summary>
+    public GridNode FirstNode
+    {
+        get => gridContains[0];
+    }
+    
+
+#if UNITY_EDITOR
 
     private void OnValidate()
     {
@@ -23,6 +33,7 @@ public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
     }
 
 #endif
+
     
     /// <summary>
     /// Setup grid contain block
@@ -36,17 +47,37 @@ public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
             node.isContainObject = true;
         }
         //Set position
-        Vector2 pos = GetAveragePoint(gridContains);
+        Vector2 pos = GetPosition();
         rect.anchoredPosition = pos;
+    }
+
+    public void BlockFalling()
+    {
+        if(Falling())
+        {
+            Vector2 newPos = GetPosition();
+            rect.DOAnchorPos(newPos, 0.5f);
+        }
+    }
+
+    public void UpdatePosition(GridNode newFirstNode)
+    {
+        List<GridNode> newGrid = new List<GridNode>();
+        bool canSpawn = CheckCanSpawnAt(newFirstNode, GameGrid.Instance.grid, out newGrid);
+        if (canSpawn)
+        {
+            this.InitPosition(newGrid);
+        }
+        else
+        {
+            this.InitPosition(this.gridContains);
+        }
         
     }
 
-    protected void UpdatePosition()
+    public Vector2 GetPosition()
     {
-        ReUpdateGrid();
-        UpdateGridCointain();
-        Vector2 newPos = GetAveragePoint(gridContains);
-        rect.DOAnchorPos(newPos, 0.5f);
+        return Ultility.GetAveragePoint(gridContains);
     }
     
     /// <summary>
@@ -58,10 +89,9 @@ public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
         {
             node.isContainObject = false;
         }
-        gridContains.Clear();
     }
 
-    public void UpdateGridCointain()
+    void UpdateGridCointain()
     {
         foreach (var node in gridContains)
         {
@@ -101,25 +131,23 @@ public abstract class BaseBlock : MonoBehaviour, IPointerClickHandler
         }
         return blankBlock / width;
     }
-    
-    Vector2 GetAveragePoint(List<GridNode> listNode)
+    bool Falling()
     {
-        Vector2 anchorPoint = Vector2.zero;
-        foreach (var node in listNode)
-        {
-            anchorPoint.x += node.rect.anchoredPosition.x;
-            anchorPoint.y += node.rect.anchoredPosition.y;
-        }
-        anchorPoint /= listNode.Count;
-        return anchorPoint;
+        //Setup
+        int downStep = GetDownStep();
+        if (downStep <= 0)
+            return false;
+        
+        GridNode oldStartNode = gridContains[0];
+        GridNode newStartNode = GameGrid.Instance.grid[oldStartNode.row + downStep , oldStartNode.col];
+        List<GridNode> newGrid = new List<GridNode>();
+        this.ResetGridContain();
+        CheckCanSpawnAt(newStartNode, GameGrid.Instance.grid, out newGrid);
+        gridContains = newGrid;
+        UpdateGridCointain();
+        return true;
     }
-
 
     public abstract bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode);
-    public abstract void ReUpdateGrid();
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("1");
-        UpdatePosition();
-    }
+    
 }

@@ -16,21 +16,27 @@ public class Block1X1 : BaseBlock
         return false;
     }
 
-    public override void ReUpdateGrid()
-    {
-        //Setup
-        int downStep = GetDownStep();
-        GameGrid gameGrid = GameGrid.Instance;
-
-        
-        GridNode oldStartNode = gridContains[0];
-        GridNode newStartNode = gameGrid.grid[oldStartNode.row + downStep , oldStartNode.col];
-        List<GridNode> newGrid = new List<GridNode>();
-
-        CheckCanSpawnAt(newStartNode, gameGrid.grid, out newGrid);
-        
-        this.ResetGridContain();
-        gridContains = newGrid;
-        
-    }
+    // public override bool ReUpdateGrid()
+    // {
+    //     //Setup
+    //     int downStep = GetDownStep();
+    //
+    //     if (downStep <= 0)
+    //         return false;
+    //     
+    //     GameGrid gameGrid = GameGrid.Instance;
+    //
+    //     
+    //     GridNode oldStartNode = gridContains[0];
+    //     GridNode newStartNode = gameGrid.grid[oldStartNode.row + downStep , oldStartNode.col];
+    //     List<GridNode> newGrid = new List<GridNode>();
+    //
+    //     CheckCanSpawnAt(newStartNode, gameGrid.grid, out newGrid);
+    //     
+    //     this.ResetGridContain();
+    //     gridContains = newGrid;
+    //
+    //     return true;
+    //
+    // }
 }

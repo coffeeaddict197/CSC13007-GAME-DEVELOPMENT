@@ -3320,6 +3320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridLayout: {fileID: 1262315402}
   listGrid: []
+  canvasContainGrid: {fileID: 472340232}
   gameGrid: {fileID: 1003817109}
   rootPosition: {fileID: 1417796941286904386, guid: bff577ac087e8a141810f1099a79995c, type: 3}
 --- !u!222 &1426054061

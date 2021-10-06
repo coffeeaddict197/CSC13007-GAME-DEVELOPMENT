@@ -12,6 +12,7 @@ public class GameGrid : MonoSingleton<GameGrid>
     public RectTransform gridLayout;
     public GridNode[,] grid;
     public List<GridNode> listGrid; //ShowInspector
+    public Canvas canvasContainGrid;
     //public SpawnStrategy spawner;
 
     public const int MAX_COL = 8;
@@ -170,12 +171,10 @@ public class GameGrid : MonoSingleton<GameGrid>
         }
     }
 
-    void DrawLine(List<GridNode> nodes)
+    public GridNode MinNodeDistance(Vector2 anchorPos)
     {
-        for (int i = 0; i < nodes.Count - 1; i++)
-        {
-            Debug.DrawLine(nodes[i].rect.transform.position, nodes[i + 1].rect.transform.position, Color.red, 100f);
-        }
+        return listGrid.OrderBy(x => Vector2.Distance(x.rect.anchoredPosition, anchorPos)).FirstOrDefault();
     }
+    
 
 }

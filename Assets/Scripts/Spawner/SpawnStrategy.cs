@@ -15,13 +15,19 @@ public class SpawnStrategy : MonoBehaviour
 
     private void Start()
     {
-        BaseBlock block = listBlock[1];
         List<GridNode> listNode;
-        if (block.CheckCanSpawnAt(game.grid[1, 0], game.grid, out listNode))
+        if (listBlock[1].CheckCanSpawnAt(game.grid[1, 0], game.grid, out listNode))
         {
-            BaseBlock newBlock = Instantiate(block, game.transform);
+            BaseBlock newBlock = Instantiate(listBlock[1], game.transform);
             newBlock.InitPosition(listNode);
         }
+        
+        if (listBlock[0].CheckCanSpawnAt(game.grid[1, 4], game.grid, out listNode))
+        {
+            BaseBlock newBlock = Instantiate(listBlock[0], game.transform);
+            newBlock.InitPosition(listNode);
+        }
+        
     }
 
     // public Block _1x1;
