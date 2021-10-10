@@ -35,6 +35,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         block.BlockFalling();
+        block.blockItem.ItemOnClick();
     }
     
     
@@ -81,9 +82,11 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
 
     IEnumerator OnBlockFalling()
     {
-        onBlockChange?.Invoke();
-        yield return new WaitForSeconds(0.1f);
-        onBlockChange?.Invoke();
+        for (int i = 0; i <= 3; i++)
+        {
+            onBlockChange?.Invoke();
+            yield return new WaitForSeconds(0.1f);
+        }
 
     }
 

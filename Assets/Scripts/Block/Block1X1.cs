@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Block1X1 : BaseBlock
 {
+    protected override void Awake()
+    {
+        base.Awake();
+        blockItem.InitItem(blockData.blockType,"Burger");
+    }
+
     public override bool CheckCanSpawnAt(GridNode node, GridNode[,] grid,out List<GridNode> listNode)
     {
         listNode = new List<GridNode>();
@@ -15,28 +21,4 @@ public class Block1X1 : BaseBlock
         }
         return false;
     }
-
-    // public override bool ReUpdateGrid()
-    // {
-    //     //Setup
-    //     int downStep = GetDownStep();
-    //
-    //     if (downStep <= 0)
-    //         return false;
-    //     
-    //     GameGrid gameGrid = GameGrid.Instance;
-    //
-    //     
-    //     GridNode oldStartNode = gridContains[0];
-    //     GridNode newStartNode = gameGrid.grid[oldStartNode.row + downStep , oldStartNode.col];
-    //     List<GridNode> newGrid = new List<GridNode>();
-    //
-    //     CheckCanSpawnAt(newStartNode, gameGrid.grid, out newGrid);
-    //     
-    //     this.ResetGridContain();
-    //     gridContains = newGrid;
-    //
-    //     return true;
-    //
-    // }
 }

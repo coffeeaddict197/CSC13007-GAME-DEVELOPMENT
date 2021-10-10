@@ -22,8 +22,6 @@ public class Block1X2 : BaseBlock
         {
             return false;
         }
-
         return true;
     }
-
 }

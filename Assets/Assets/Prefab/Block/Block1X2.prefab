@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockData:
+    blockType: 0
+    blockImage: {fileID: 2103885724497565969}
     _blockLevel: 0
   rect: {fileID: 2103885724497565970}
   gridContains: []
@@ -107,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 2103885724497565966}
+  image: {fileID: 2103885724497565969}

@@ -46,131 +46,134 @@ public class GameGrid : MonoSingleton<GameGrid>
             listGrid.Add(grid[row,col]);
         }
     }
+    //
+    //
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.A))
+    //     {
+    //         SpawnRandomBlockAt(grid[1, 0]);
+    //
+    //     }
+    // }
+    //
+    // void SpawnRandomBlockAt(GridNode startNode)
+    // {
+    //     Dictionary<BlockType, List<GridNode>> blockCanSpawn = new Dictionary<BlockType, List<GridNode>>();
+    //     if (startNode != null && !startNode.isContainObject)
+    //     {
+    //         List<GridNode> gridNode = null;
+    //         gridNode = CheckHorizontal(startNode, 2);
+    //         if (gridNode.Count >= 2)
+    //         {
+    //             blockCanSpawn.Add(BlockType.Block_2x1,CheckHorizontal(startNode, 2));
+    //         }
+    //
+    //         gridNode = CheckHorizontal(startNode,1);
+    //         if (gridNode.Count >= 1)
+    //         {
+    //             blockCanSpawn.Add(BlockType.Block_1x1,CheckHorizontal(startNode,1));
+    //         }
+    //
+    //         gridNode = CheckVerticle(startNode, 2);
+    //         if (gridNode.Count >= 2)
+    //         {
+    //             blockCanSpawn.Add(BlockType.Block_1x2,CheckVerticle(startNode, 2));
+    //         }
+    //
+    //         gridNode = CheckVerticle(startNode, 3);
+    //         if (gridNode.Count >= 3)
+    //         {
+    //             blockCanSpawn.Add(BlockType.Block_1x3,CheckVerticle(startNode, 3));
+    //         }
+    //
+    //         gridNode = CheckSquare(startNode);
+    //         if (gridNode.Count >= 4)
+    //         {
+    //             blockCanSpawn.Add(BlockType.Block_2x2,CheckSquare(startNode));
+    //         }
+    //     }
+    //
+    //     if (blockCanSpawn.Count > 0)
+    //     {
+    //         // int rd = UnityEngine.Random.Range(0, blockCanSpawn.Count);
+    //         // var typeSpawn = blockCanSpawn.ElementAt(rd).Key;
+    //         // Block newSpawn = spawner.SpawnAt(typeSpawn, (blockCanSpawn[typeSpawn]));
+    //         //Block newSpawn = spawner.SpawnAt(BlockType.Block_2x2, (blockCanSpawn[BlockType.Block_2x2]));
+    //     }
+    // }
+    //
+    //
+    // List<GridNode> CheckVerticle(GridNode node, int step)
+    // {
+    //     List<GridNode> res = new List<GridNode>();
+    //     for (int i = 0; i < step; i++)
+    //     {
+    //         if (node.row - i >= 0)
+    //         {
+    //             GridNode nodeCheck = grid[node.row - i, node.col];
+    //             CheckAndAdd(ref res, nodeCheck);
+    //         }
+    //     }
+    //     return res;
+    // }
+    //
+    // List<GridNode> CheckHorizontal(GridNode node, int step)
+    // {
+    //     List<GridNode> res = new List<GridNode>();
+    //     for (int i = 0; i < step; i++)
+    //     {
+    //         if (node.col + i < MAX_COL)
+    //         {
+    //             GridNode nodeCheck = grid[node.row, node.col + i];
+    //             CheckAndAdd(ref res, nodeCheck);
+    //         }
+    //     }
+    //     return res;
+    // }
+    //
+    // List<GridNode> CheckSquare(GridNode node)
+    // {
+    //     List<GridNode> res = new List<GridNode>();
+    //     CheckAndAdd(ref res, node);
+    //     if (node.row - 1 >= 0)
+    //     {
+    //         GridNode nodeCheck = grid[node.row - 1, node.col];
+    //         CheckAndAdd(ref res, nodeCheck);
+    //     }
+    //
+    //     if (node.row - 1 >= 0 && node.col + 1 < MAX_COL)
+    //     {
+    //         GridNode nodeCheck = grid[node.row - 1, node.col + 1];
+    //         CheckAndAdd(ref res, nodeCheck);
+    //     }
+    //
+    //     if (node.col + 1 < MAX_COL)
+    //     {
+    //         GridNode nodeCheck = grid[node.row, node.col + 1];
+    //         CheckAndAdd(ref res, nodeCheck);
+    //     }
+    //
+    //     if (res.Count >= 4)
+    //     {
+    //         return res;
+    //     }
+    //
+    //     return new List<GridNode>();
+    // }
+    //
+    //
+    // public void CheckAndAdd(ref List<GridNode> res, GridNode node)
+    // {
+    //     if (!node.isContainObject)
+    //     {
+    //         res.Add(node);
+    //     }
+    // }
+    //
     
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SpawnRandomBlockAt(grid[1, 0]);
-
-        }
-    }
-
-    void SpawnRandomBlockAt(GridNode startNode)
-    {
-        Dictionary<BlockType, List<GridNode>> blockCanSpawn = new Dictionary<BlockType, List<GridNode>>();
-        if (startNode != null && !startNode.isContainObject)
-        {
-            List<GridNode> gridNode = null;
-            gridNode = CheckHorizontal(startNode, 2);
-            if (gridNode.Count >= 2)
-            {
-                blockCanSpawn.Add(BlockType.Block_2x1,CheckHorizontal(startNode, 2));
-            }
-
-            gridNode = CheckHorizontal(startNode,1);
-            if (gridNode.Count >= 1)
-            {
-                blockCanSpawn.Add(BlockType.Block_1x1,CheckHorizontal(startNode,1));
-            }
-
-            gridNode = CheckVerticle(startNode, 2);
-            if (gridNode.Count >= 2)
-            {
-                blockCanSpawn.Add(BlockType.Block_1x2,CheckVerticle(startNode, 2));
-            }
-
-            gridNode = CheckVerticle(startNode, 3);
-            if (gridNode.Count >= 3)
-            {
-                blockCanSpawn.Add(BlockType.Block_1x3,CheckVerticle(startNode, 3));
-            }
-
-            gridNode = CheckSquare(startNode);
-            if (gridNode.Count >= 4)
-            {
-                blockCanSpawn.Add(BlockType.Block_2x2,CheckSquare(startNode));
-            }
-        }
-
-        if (blockCanSpawn.Count > 0)
-        {
-            // int rd = UnityEngine.Random.Range(0, blockCanSpawn.Count);
-            // var typeSpawn = blockCanSpawn.ElementAt(rd).Key;
-            // Block newSpawn = spawner.SpawnAt(typeSpawn, (blockCanSpawn[typeSpawn]));
-            //Block newSpawn = spawner.SpawnAt(BlockType.Block_2x2, (blockCanSpawn[BlockType.Block_2x2]));
-        }
-    }
-
     
-    List<GridNode> CheckVerticle(GridNode node, int step)
-    {
-        List<GridNode> res = new List<GridNode>();
-        for (int i = 0; i < step; i++)
-        {
-            if (node.row - i >= 0)
-            {
-                GridNode nodeCheck = grid[node.row - i, node.col];
-                CheckAndAdd(ref res, nodeCheck);
-            }
-        }
-        return res;
-    }
-
-    List<GridNode> CheckHorizontal(GridNode node, int step)
-    {
-        List<GridNode> res = new List<GridNode>();
-        for (int i = 0; i < step; i++)
-        {
-            if (node.col + i < MAX_COL)
-            {
-                GridNode nodeCheck = grid[node.row, node.col + i];
-                CheckAndAdd(ref res, nodeCheck);
-            }
-        }
-        return res;
-    }
-
-    List<GridNode> CheckSquare(GridNode node)
-    {
-        List<GridNode> res = new List<GridNode>();
-        CheckAndAdd(ref res, node);
-        if (node.row - 1 >= 0)
-        {
-            GridNode nodeCheck = grid[node.row - 1, node.col];
-            CheckAndAdd(ref res, nodeCheck);
-        }
-
-        if (node.row - 1 >= 0 && node.col + 1 < MAX_COL)
-        {
-            GridNode nodeCheck = grid[node.row - 1, node.col + 1];
-            CheckAndAdd(ref res, nodeCheck);
-        }
-
-        if (node.col + 1 < MAX_COL)
-        {
-            GridNode nodeCheck = grid[node.row, node.col + 1];
-            CheckAndAdd(ref res, nodeCheck);
-        }
-
-        if (res.Count >= 4)
-        {
-            return res;
-        }
-
-        return new List<GridNode>();
-    }
-
-
-    public void CheckAndAdd(ref List<GridNode> res, GridNode node)
-    {
-        if (!node.isContainObject)
-        {
-            res.Add(node);
-        }
-    }
-
+    
     public GridNode MinNodeDistance(Vector2 anchorPos)
     {
         return listGrid.OrderBy(x => Vector2.Distance(x.rect.anchoredPosition, anchorPos)).FirstOrDefault();

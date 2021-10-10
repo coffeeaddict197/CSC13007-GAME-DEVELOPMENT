@@ -4,11 +4,21 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
+public enum BlockType
+{
+    Block_1x1,
+    Block_1x2,
+    Block_2x1,
+    Block_1x3,
+    Block_2x2
+}
 public abstract class BaseBlock : MonoBehaviour
 {
     [Header("Block data")] 
-    [SerializeField] protected BlockData blockData;
+    public BlockData blockData;
+    public BlockItem blockItem;
     
     [Header("Block config")] 
     public RectTransform rect;
@@ -23,7 +33,13 @@ public abstract class BaseBlock : MonoBehaviour
     {
         get => gridContains[0];
     }
-    
+
+    protected virtual void Awake()
+    {
+        blockData.InitData();
+        blockItem.InitItem(blockData.blockType,"");
+    }
+
 
 #if UNITY_EDITOR
 
@@ -36,7 +52,7 @@ public abstract class BaseBlock : MonoBehaviour
 
     
     /// <summary>
-    /// Setup grid contain block
+    /// Setup grid contain block when spawn
     /// </summary>
     /// <param name="gridContains"></param>
     public void InitPosition(List<GridNode> gridContains)
@@ -51,6 +67,9 @@ public abstract class BaseBlock : MonoBehaviour
         rect.anchoredPosition = pos;
     }
 
+    /// <summary>
+    /// Falling action if can fall
+    /// </summary>
     public void BlockFalling()
     {
         if(Falling())
@@ -59,7 +78,11 @@ public abstract class BaseBlock : MonoBehaviour
             rect.DOAnchorPos(newPos, 0.5f);
         }
     }
-
+    
+    /// <summary>
+    /// End drag handler
+    /// </summary>
+    /// <param name="newFirstNode"></param>
     public void UpdatePosition(GridNode newFirstNode)
     {
         List<GridNode> newGrid = new List<GridNode>();
@@ -90,7 +113,7 @@ public abstract class BaseBlock : MonoBehaviour
             node.isContainObject = false;
         }
     }
-
+    
     void UpdateGridCointain()
     {
         foreach (var node in gridContains)
@@ -131,6 +154,11 @@ public abstract class BaseBlock : MonoBehaviour
         }
         return blankBlock / width;
     }
+    
+    /// <summary>
+    /// Check can falling
+    /// </summary>
+    /// <returns></returns>
     bool Falling()
     {
         //Setup
