@@ -7,7 +7,7 @@ public class Block1X1 : BaseBlock
     protected override void Awake()
     {
         base.Awake();
-        blockItem.InitItem(blockData.blockType,"Burger");
+        blockItem.InitItem(blockData.blockType);
     }
 
     public override bool CheckCanSpawnAt(GridNode node, GridNode[,] grid,out List<GridNode> listNode)

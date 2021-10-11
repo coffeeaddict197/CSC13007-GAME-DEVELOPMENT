@@ -10,29 +10,32 @@ public class BlockData
     public BlockType blockType;
     [SerializeField] private Image blockImage;
     [SerializeField] private int _blockLevel;
-    private Action onChangeLevel;
+    private Action<int> onChangeLevel;
 
-    public void InitData(Action callBackChangeLevel = null)
+    public void InitData(Action<int> callBackChangeLevel = null)
     {
+        onChangeLevel += OnChangeLevel;
         onChangeLevel += callBackChangeLevel;
         BlockLevel = 1;
     }
+    
 
     public int BlockLevel
     {
         get => _blockLevel;
         set
         {
-            if (value >= _blockLevel)
-            {
-                onChangeLevel?.Invoke();
-            }
+           onChangeLevel?.Invoke(value);
         }
     }
 
-    public void OnChangeLevel()
+    public void OnChangeLevel(int level)
     {
-        BlockBackgroundConfig bg = GameAssetsConfigs.Instance.blockBgConfigs.GetConfig(blockType, _blockLevel);
-        blockImage.sprite = bg.spr;
+        if (level >= _blockLevel)
+        {
+            BlockBackgroundConfig bg = GameAssetsConfigs.Instance.blockBgConfigs.GetConfig(blockType, level);
+            blockImage.sprite = bg.spr;
+            _blockLevel = level;
+        }
     }
 }

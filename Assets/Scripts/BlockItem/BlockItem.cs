@@ -5,19 +5,18 @@ using UnityEngine.UI;
 public class BlockItem : MonoBehaviour
 {
     [Header("Configs")] 
-    private ItemConfigs _configs;
+    public ItemAssets config;
+    
     [Header("UI")] 
     [SerializeField] private Image itemImg;
 
-    public void InitItem(BlockType blockType,string itemName)
+    public void InitItem(BlockType blockType,string itemName = "")
     {
-        // var itemAsset = ItemAssetConfigs.Instance.GetAsset(blockType,itemName)
-        // _configs = ItemAssetConfigs.Instance.GetAsset(blockType, itemName, 1);
-        // if(_configs!=null)
-        // {
-        //     itemImg.sprite = _configs.spr;
-        //     itemType = _configs.
-        // }
+        config = ItemAssetConfigs.Instance.GetAsset(blockType);
+        if(config!=null)
+        {
+            itemImg.sprite = config.GetItemConfigByLevel(1).spr;
+        }
     }
 
     public virtual void ItemOnClick()

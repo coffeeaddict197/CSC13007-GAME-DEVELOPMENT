@@ -8,7 +8,7 @@ public class Block1x3 : BaseBlock
     protected override void Awake()
     {
         base.Awake();
-        blockItem.InitItem(blockData.blockType,"Sword");
+        blockItem.InitItem(blockData.blockType);
     }
 
     public override bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode)

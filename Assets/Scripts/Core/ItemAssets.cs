@@ -9,6 +9,11 @@ public class ItemAssets : ScriptableObject
     public ItemType itemType;
     public string itemName;
     public List<ItemConfigs> listItem;
+
+    public ItemConfigs GetItemConfigByLevel(int level)
+    {
+        return listItem.Find(x => x.level == level);
+    }
 }
 [System.Serializable]
 public class ItemAssetConfigs
@@ -19,19 +24,13 @@ public class ItemAssetConfigs
     {
         get => GameAssetsConfigs.Instance.itemsConfig;
     }
-
-    public ItemConfigs GetAssetConfig(BlockType blockType, string itemName, int level)
-    {
-        ItemAssets assets = GetAsset(blockType,itemName);
-        if (assets != null)
-        {
-            return assets.listItem.Find(x => x.level == level);
-        }
-        return null;
-    }
     
-    public ItemAssets GetAsset(BlockType blockType, string itemName)
+    public ItemAssets GetAsset(BlockType blockType, string itemName="")
     {
+        if (itemName.Equals(""))
+        {
+            return listAssets.Find(x => x.typeContain == blockType);
+        }
         return listAssets.Find(x => x.itemName == itemName && x.typeContain == blockType);
     }
     
