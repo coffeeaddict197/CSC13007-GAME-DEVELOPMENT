@@ -36,7 +36,7 @@ public abstract class BaseBlock : MonoBehaviour
 
     protected virtual void Awake()
     {
-        blockData.InitData();
+        blockData.InitData(blockItem.OnChangeLevel);
         blockItem.InitItem(blockData.blockType,"");
     }
 

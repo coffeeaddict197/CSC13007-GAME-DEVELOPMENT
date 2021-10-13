@@ -19,19 +19,17 @@ public class BlockItem : MonoBehaviour
         }
     }
 
-    public virtual void ItemOnClick()
+    public void OnChangeLevel(int level)
     {
-        
+        //Ignore first game not init config yet
+        if (config != null )
+        {
+            itemImg.sprite = config.GetItemConfigByLevel(level).spr;
+        }
     }
 }
 
 
 
-public enum ItemType
-{
-    Weapon,
-    Helmet,
-    Shield,
-    Poison
-}
+
 

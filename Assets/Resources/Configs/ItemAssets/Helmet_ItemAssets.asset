@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baac343a89c0ecb4987488c16648a4ab, type: 3}
+  m_Name: Helmet_ItemAssets
+  m_EditorClassIdentifier: 
+  typeContain: 4
+  itemType: 1
+  itemName: Helmet
+  listItem:
+  - level: 1
+    spr: {fileID: 21300000, guid: e422a288b5d3686459e1393a5cd25a31, type: 3}
+  - level: 2
+    spr: {fileID: 21300000, guid: b2f804a2d35b0c54bb786129412a26a8, type: 3}
+  - level: 3
+    spr: {fileID: 21300000, guid: d186599f5099fcb48b24651a1c4b675a, type: 3}
+  - level: 4
+    spr: {fileID: 21300000, guid: e9544b2b8ac719d4dbc2f2d63dc621b1, type: 3}
+  skillAssets: {fileID: 0}

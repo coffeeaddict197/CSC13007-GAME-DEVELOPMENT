@@ -62,19 +62,21 @@ MonoBehaviour:
     - level: 4
       type: 2
       spr: {fileID: 21300000, guid: 7e2ebf917e197e648bfbf1574b458145, type: 3}
-    - level: 3
+    - level: 1
       type: 4
       spr: {fileID: 21300000, guid: 9cf7e599aa801294daf9510819f59c66, type: 3}
-    - level: 3
+    - level: 2
       type: 4
       spr: {fileID: 21300000, guid: 6e3b33fa10b6c3e478d99678c69e4aa9, type: 3}
     - level: 3
       type: 4
       spr: {fileID: 21300000, guid: 5dc6419f634a200429eca4ef2f371ec4, type: 3}
-    - level: 3
+    - level: 4
       type: 4
       spr: {fileID: 21300000, guid: 7f6f481d3f0610d4393ec02324d88dba, type: 3}
   itemsConfig:
     listAssets:
     - {fileID: 11400000, guid: 61b69f9dc9b6c434eb06391c6bc7356c, type: 2}
     - {fileID: 11400000, guid: 072cd5fde1445cb439f7ba2a5155d09f, type: 2}
+    - {fileID: 11400000, guid: 9ae9c51f0943e8d45a1a393ebc095ed2, type: 2}
+    - {fileID: 11400000, guid: 69a761d78e474ad4a8e05abd6c947257, type: 2}

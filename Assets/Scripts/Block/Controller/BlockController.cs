@@ -35,7 +35,6 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         block.BlockFalling();
-        block.blockItem.ItemOnClick();
     }
     
     
@@ -43,12 +42,12 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     {
         block.ResetGridContain();
         this.SetSibling();
+        image.raycastTarget = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         block.rect.anchoredPosition += eventData.delta / GameGrid.Instance.canvasContainGrid.scaleFactor;
-        image.raycastTarget = false;
     }
     
     public void OnEndDrag(PointerEventData eventData)
@@ -56,15 +55,29 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
         Vector2 relativePos = block.FirstNode.rect.anchoredPosition - block.GetPosition();
         Vector2 posOfFirstNode = block.rect.anchoredPosition + relativePos;
         var gridNode = GameGrid.Instance.MinNodeDistance(posOfFirstNode);
-        image.raycastTarget = true;
         block.UpdatePosition(gridNode);
         StartCoroutine(OnBlockFalling());
+        
+        image.raycastTarget = true;
+
     }
     
     
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(this.transform.name);
+        if (eventData.pointerDrag != null)
+        {
+            BaseBlock dragObject = eventData.pointerDrag.GetComponent<BaseBlock>();
+            
+            if (dragObject == block) return;
+            
+            if (dragObject.blockItem.config.itemName == block.blockItem.config.itemName)
+            {
+                Debug.Log(dragObject.transform.name + " And " + this.transform.name);
+                block.blockData.BlockLevel++;
+                Destroy(dragObject.gameObject);
+            }
+        }
     }
 
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 [CreateAssetMenu(menuName = "Configs/ItemAssets", fileName = "ItemAssets")]
 public class ItemAssets : ScriptableObject
@@ -9,12 +11,22 @@ public class ItemAssets : ScriptableObject
     public ItemType itemType;
     public string itemName;
     public List<ItemConfigs> listItem;
-
+    public ItemSkillAssets skillAssets;
     public ItemConfigs GetItemConfigByLevel(int level)
     {
         return listItem.Find(x => x.level == level);
     }
+
+    public virtual void ItemHandler()
+    {
+        
+    }
 }
+
+
+
+
+
 [System.Serializable]
 public class ItemAssetConfigs
 {
@@ -29,7 +41,8 @@ public class ItemAssetConfigs
     {
         if (itemName.Equals(""))
         {
-            return listAssets.Find(x => x.typeContain == blockType);
+            var listMatching = listAssets.FindAll(x => x.typeContain == blockType);
+            return listMatching[UnityEngine.Random.Range(0,listMatching.Count)];
         }
         return listAssets.Find(x => x.itemName == itemName && x.typeContain == blockType);
     }
@@ -43,3 +56,10 @@ public class ItemConfigs
     public Sprite spr;
 }
 
+public enum ItemType
+{
+    Weapon,
+    Helmet,
+    Shield,
+    Poison
+}
