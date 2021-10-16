@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = System.Random;
 
 
 public class SpawnStrategy : MonoBehaviour
@@ -15,61 +17,43 @@ public class SpawnStrategy : MonoBehaviour
 
     private void Start()
     {
-        List<GridNode> listNode;
-        if (listBlock[0].CheckCanSpawnAt(game.grid[1, 0], game.grid, out listNode))
-        {
-            BaseBlock newBlock = Instantiate(listBlock[0], game.transform);
-            newBlock.InitPosition(listNode);
-        }
-        
-        if (listBlock[4].CheckCanSpawnAt(game.grid[2, 4], game.grid, out listNode))
-        {
-            BaseBlock newBlock = Instantiate(listBlock[4], game.transform);
-            newBlock.InitPosition(listNode);
-        }
-        
-        if (listBlock[4].CheckCanSpawnAt(game.grid[4, 1], game.grid, out listNode))
-        {
-            BaseBlock newBlock = Instantiate(listBlock[4], game.transform);
-            newBlock.InitPosition(listNode);
-        }
-        
+        StartCoroutine(StartSpawn());
+
     }
 
-    // public Block _1x1;
-    // public Block _1x3;
-    // public Block _2x1;
-    // public Block _2x2;
-    // public Block _1x2;
-    //
-    // public Block SpawnAt(BlockType type, List<GridNode> listNode)
-    // {
-    //     switch (type)
-    //     {
-    //         case BlockType.Block_1x2:
-    //             return Spawn(_1x2, listNode);
-    //         case BlockType.Block_1x3:
-    //             return Spawn(_1x3, listNode);
-    //         case BlockType.Block_2x1:
-    //             return Spawn(_2x1, listNode);
-    //         case BlockType.Block_2x2:
-    //             return Spawn(_2x2, listNode);
-    //         case BlockType.Block_1x1:
-    //             return Spawn(_1x1, listNode);
-    //     }
-    //
-    //     return null;
-    // }
-    //
-    // Block Spawn(Block block, List<GridNode> listNode)
-    // {
-    //     Block newBlock = Instantiate(block, this.transform);
-    //     newBlock.rectTrans.anchoredPosition = GetAveragePoint(listNode);
-    //     newBlock.gridContain = listNode;
-    //     newBlock.SetContainPlace();
-    //     return newBlock;
-    // }
-    //
-    //
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine(StartSpawn());
+
+        }
+    }
+
+    IEnumerator StartSpawn()
+    {
+        int numberOfSpawn = 4;
+        for (int i = 0; i < numberOfSpawn; i++)
+        {
+            List<GridNode> listNode;
+            BaseBlock blockSpawn = listBlock[UnityEngine.Random.Range(0, listBlock.Count)];
+            if (blockSpawn.CheckCanSpawnAt(game.grid[blockSpawn.heigh-1, UnityEngine.Random.Range(0, GameGrid.MAX_COL-blockSpawn.width)], game.grid, out listNode))
+            {
+                BaseBlock newBlock = Instantiate(blockSpawn, game.transform);
+                Vector2 pos = newBlock.InitPosition(listNode);
+
+                newBlock.rect.anchoredPosition = new Vector2(newBlock.rect.anchoredPosition.x, 2500);
+                newBlock.rect.DOAnchorPosY(pos.y, 0.5f);
+                
+                newBlock.BlockFalling();
+
+                yield return new WaitForSeconds(0.1f);
+            }
+
+
+        }
+    }
+    
+    
 
 }

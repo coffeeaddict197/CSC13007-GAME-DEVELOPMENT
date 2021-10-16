@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 3652685722240304539}
   - component: {fileID: 2880027592752660240}
   - component: {fileID: 3652685722240304541}
+  - component: {fileID: -4148481465896134996}
   m_Layer: 5
   m_Name: Block2X2
   m_TagString: Untagged
@@ -180,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59971319c71eb474aa782f5dc6dee86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGrp: {fileID: -4148481465896134996}
   block: {fileID: 3652685722240304541}
-  image: {fileID: 3652685722240304539}
 --- !u!114 &3652685722240304541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,5 +201,18 @@ MonoBehaviour:
     _blockLevel: 0
   blockItem: {fileID: 6054574848630310264}
   rect: {fileID: 3652685722240304536}
-  gridContains: []
   width: 2
+  heigh: 2
+  gridContains: []
+--- !u!225 &-4148481465896134996
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652685722240304537}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

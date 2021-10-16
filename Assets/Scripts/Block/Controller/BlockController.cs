@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Reference")] 
+    [SerializeField] private CanvasGroup canvasGrp;
     [SerializeField] private BaseBlock block;
-    [SerializeField] private Image image;
 
     private static Action onBlockChange;
 
@@ -28,7 +28,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     private void OnValidate()
     {
         block = GetComponent<BaseBlock>();
-        image = GetComponent<Image>();
+        canvasGrp = GetComponent<CanvasGroup>();
     }
 #endif
     
@@ -42,7 +42,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     {
         block.ResetGridContain();
         this.SetSibling();
-        image.raycastTarget = false;
+        canvasGrp.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -57,8 +57,8 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
         var gridNode = GameGrid.Instance.MinNodeDistance(posOfFirstNode);
         block.UpdatePosition(gridNode);
         StartCoroutine(OnBlockFalling());
-        
-        image.raycastTarget = true;
+        canvasGrp.blocksRaycasts = true;
+
 
     }
     
@@ -69,12 +69,17 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
         {
             BaseBlock dragObject = eventData.pointerDrag.GetComponent<BaseBlock>();
             
-            if (dragObject == block) return;
-            
-            if (dragObject.blockItem.config.itemName == block.blockItem.config.itemName)
+            if (dragObject == block)
             {
-                Debug.Log(dragObject.transform.name + " And " + this.transform.name);
+                return;
+            };
+            
+            if (dragObject.blockItem.config.itemName == block.blockItem.config.itemName && 
+                dragObject.blockData.BlockLevel == block.blockData.BlockLevel)
+            {
+                
                 block.blockData.BlockLevel++;
+                dragObject.ResetGridContain();
                 Destroy(dragObject.gameObject);
             }
         }
@@ -100,7 +105,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
             onBlockChange?.Invoke();
             yield return new WaitForSeconds(0.1f);
         }
-
     }
+    
 
 }

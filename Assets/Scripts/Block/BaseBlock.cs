@@ -22,10 +22,10 @@ public abstract class BaseBlock : MonoBehaviour
     
     [Header("Block config")] 
     public RectTransform rect;
+    public int width;
+    public int heigh;
     [SerializeField] protected List<GridNode> gridContains;
-    [SerializeField] protected int width;
 
-    
     /// <summary>
     /// Node define first point to draw block
     /// </summary>
@@ -55,7 +55,7 @@ public abstract class BaseBlock : MonoBehaviour
     /// Setup grid contain block when spawn
     /// </summary>
     /// <param name="gridContains"></param>
-    public void InitPosition(List<GridNode> gridContains)
+    public Vector2 InitPosition(List<GridNode> gridContains)
     {
         this.gridContains = gridContains;
         foreach (var node in this.gridContains)
@@ -65,6 +65,7 @@ public abstract class BaseBlock : MonoBehaviour
         //Set position
         Vector2 pos = GetPosition();
         rect.anchoredPosition = pos;
+        return pos;
     }
 
     /// <summary>
@@ -176,6 +177,8 @@ public abstract class BaseBlock : MonoBehaviour
         return true;
     }
 
+    
+    
     public abstract bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode);
     
 }
