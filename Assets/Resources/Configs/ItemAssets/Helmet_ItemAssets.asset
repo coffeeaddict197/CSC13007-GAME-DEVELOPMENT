@@ -24,4 +24,4 @@ MonoBehaviour:
     spr: {fileID: 21300000, guid: d186599f5099fcb48b24651a1c4b675a, type: 3}
   - level: 4
     spr: {fileID: 21300000, guid: e9544b2b8ac719d4dbc2f2d63dc621b1, type: 3}
-  skillAssets: {fileID: 0}
+  handler: {fileID: 11400000, guid: 56948de27bfbb794eb3937e9911537aa, type: 2}

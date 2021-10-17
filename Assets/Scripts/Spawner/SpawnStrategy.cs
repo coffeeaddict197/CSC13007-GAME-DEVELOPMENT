@@ -40,18 +40,30 @@ public class SpawnStrategy : MonoBehaviour
             if (blockSpawn.CheckCanSpawnAt(game.grid[blockSpawn.heigh-1, UnityEngine.Random.Range(0, GameGrid.MAX_COL-blockSpawn.width)], game.grid, out listNode))
             {
                 BaseBlock newBlock = Instantiate(blockSpawn, game.transform);
+                RandomLevel(newBlock);
                 Vector2 pos = newBlock.InitPosition(listNode);
-
                 newBlock.rect.anchoredPosition = new Vector2(newBlock.rect.anchoredPosition.x, 2500);
                 newBlock.rect.DOAnchorPosY(pos.y, 0.5f);
-                
                 newBlock.BlockFalling();
-
                 yield return new WaitForSeconds(0.1f);
             }
 
 
         }
+    }
+
+    void RandomLevel(BaseBlock blockSpawn)
+    {
+        int rd = UnityEngine.Random.Range(0, 100);
+        if (rd < 10)
+        {
+            blockSpawn.blockData.BlockLevel += 2;
+        }
+        else if (rd < 30)
+        {
+            blockSpawn.blockData.BlockLevel++;
+        }
+        
     }
     
     

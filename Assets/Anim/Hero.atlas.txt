@@ -1,0 +1,377 @@
+
+Hero.png
+size: 2001,387
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+HeroNude_Arm_Back01
+  rotate: false
+  xy: 1921, 244
+  size: 42, 66
+  orig: 42, 66
+  offset: 0, 0
+  index: -1
+HeroNude_Arm_Front01
+  rotate: false
+  xy: 1955, 144
+  size: 44, 71
+  orig: 44, 71
+  offset: 0, 0
+  index: -1
+HeroNude_Body_01
+  rotate: false
+  xy: 1388, 243
+  size: 117, 142
+  orig: 117, 142
+  offset: 0, 0
+  index: -1
+HeroNude_Body_02
+  rotate: false
+  xy: 1364, 98
+  size: 118, 142
+  orig: 118, 142
+  offset: 0, 0
+  index: -1
+HeroNude_Foot_Back01
+  rotate: true
+  xy: 955, 45
+  size: 168, 83
+  orig: 168, 83
+  offset: 0, 0
+  index: -1
+HeroNude_Foot_Front01
+  rotate: false
+  xy: 1253, 3
+  size: 105, 87
+  orig: 105, 87
+  offset: 0, 0
+  index: -1
+HeroNude_Hair01
+  rotate: true
+  xy: 226, 188
+  size: 197, 115
+  orig: 199, 117
+  offset: 1, 1
+  index: -1
+HeroNude_Hand_Back01
+  rotate: true
+  xy: 1598, 103
+  size: 140, 102
+  orig: 140, 102
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_Back02
+  rotate: true
+  xy: 1628, 246
+  size: 139, 102
+  orig: 141, 104
+  offset: 1, 1
+  index: -1
+HeroNude_Hand_Back03
+  rotate: false
+  xy: 1592, 2
+  size: 131, 96
+  orig: 133, 98
+  offset: 1, 1
+  index: -1
+HeroNude_Hand_Back04
+  rotate: true
+  xy: 1360, 18
+  size: 77, 114
+  orig: 77, 114
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_Back05
+  rotate: true
+  xy: 1732, 247
+  size: 138, 112
+  orig: 138, 112
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_Back06
+  rotate: true
+  xy: 824, 213
+  size: 172, 128
+  orig: 172, 128
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_Back07
+  rotate: true
+  xy: 836, 39
+  size: 172, 117
+  orig: 172, 117
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_front01
+  rotate: true
+  xy: 1216, 92
+  size: 143, 102
+  orig: 143, 102
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_front02
+  rotate: true
+  xy: 1725, 5
+  size: 98, 123
+  orig: 98, 123
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_front03
+  rotate: true
+  xy: 1065, 230
+  size: 155, 102
+  orig: 155, 102
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_front04
+  rotate: true
+  xy: 698, 20
+  size: 180, 136
+  orig: 180, 136
+  offset: 0, 0
+  index: -1
+HeroNude_Hand_front05
+  rotate: true
+  xy: 717, 205
+  size: 180, 105
+  orig: 180, 105
+  offset: 0, 0
+  index: -1
+HeroNude_Head_01
+  rotate: true
+  xy: 573, 202
+  size: 183, 142
+  orig: 185, 144
+  offset: 1, 1
+  index: -1
+HeroNude_Leg_Back01
+  rotate: false
+  xy: 1899, 312
+  size: 56, 73
+  orig: 56, 73
+  offset: 0, 0
+  index: -1
+HeroNude_Leg_Front1
+  rotate: true
+  xy: 836, 2
+  size: 35, 83
+  orig: 35, 83
+  offset: 0, 0
+  index: -1
+Hero_Arm_Back01
+  rotate: false
+  xy: 1846, 310
+  size: 51, 75
+  orig: 51, 75
+  offset: 0, 0
+  index: -1
+Hero_Arm_Front01
+  rotate: false
+  xy: 1852, 139
+  size: 45, 76
+  orig: 45, 76
+  offset: 0, 0
+  index: -1
+Hero_Body_01
+  rotate: false
+  xy: 1507, 245
+  size: 119, 140
+  orig: 119, 140
+  offset: 0, 0
+  index: -1
+Hero_Foot_Back01
+  rotate: true
+  xy: 954, 215
+  size: 170, 109
+  orig: 170, 109
+  offset: 0, 0
+  index: -1
+Hero_Foot_Front01
+  rotate: true
+  xy: 1850, 4
+  size: 107, 113
+  orig: 107, 113
+  offset: 0, 0
+  index: -1
+Hero_Hand_Back01
+  rotate: true
+  xy: 1284, 242
+  size: 143, 102
+  orig: 143, 102
+  offset: 0, 0
+  index: -1
+Hero_Hand_Back04
+  rotate: true
+  xy: 1476, 19
+  size: 77, 114
+  orig: 77, 114
+  offset: 0, 0
+  index: -1
+Hero_Hand_Back05
+  rotate: true
+  xy: 1484, 100
+  size: 141, 112
+  orig: 141, 112
+  offset: 0, 0
+  index: -1
+Hero_Hand_Back06
+  rotate: true
+  xy: 2, 2
+  size: 175, 128
+  orig: 175, 128
+  offset: 0, 0
+  index: -1
+Hero_Hand_Back07
+  rotate: true
+  xy: 132, 4
+  size: 175, 117
+  orig: 175, 117
+  offset: 0, 0
+  index: -1
+Hero_Hand_front01
+  rotate: true
+  xy: 1169, 237
+  size: 148, 113
+  orig: 148, 113
+  offset: 0, 0
+  index: -1
+Hero_Hand_front02
+  rotate: false
+  xy: 1747, 113
+  size: 103, 132
+  orig: 103, 132
+  offset: 0, 0
+  index: -1
+Hero_Hand_front03
+  rotate: true
+  xy: 1040, 55
+  size: 158, 111
+  orig: 158, 111
+  offset: 0, 0
+  index: -1
+Hero_Hand_front04
+  rotate: true
+  xy: 251, 3
+  size: 183, 145
+  orig: 183, 145
+  offset: 0, 0
+  index: -1
+Hero_Hand_front05
+  rotate: true
+  xy: 582, 17
+  size: 183, 114
+  orig: 183, 114
+  offset: 0, 0
+  index: -1
+Hero_Leg_Back01
+  rotate: true
+  xy: 1846, 252
+  size: 56, 73
+  orig: 56, 73
+  offset: 0, 0
+  index: -1
+Hero_Leg_Front1
+  rotate: true
+  xy: 921, 2
+  size: 35, 83
+  orig: 35, 83
+  offset: 0, 0
+  index: -1
+Hero_Mouth01
+  rotate: true
+  xy: 1320, 97
+  size: 143, 42
+  orig: 145, 44
+  offset: 1, 1
+  index: -1
+Hero_Mouth02
+  rotate: false
+  xy: 1006, 2
+  size: 111, 41
+  orig: 113, 43
+  offset: 1, 1
+  index: -1
+Hero_Mouth03
+  rotate: true
+  xy: 1702, 105
+  size: 139, 43
+  orig: 141, 45
+  offset: 1, 1
+  index: -1
+Hero_Mouth04
+  rotate: false
+  xy: 1119, 2
+  size: 132, 51
+  orig: 134, 53
+  offset: 1, 1
+  index: -1
+Hero_Mouth05
+  rotate: true
+  xy: 1965, 266
+  size: 119, 26
+  orig: 121, 28
+  offset: 1, 1
+  index: -1
+Hero_Mouth06
+  rotate: true
+  xy: 1965, 217
+  size: 47, 25
+  orig: 47, 25
+  offset: 0, 0
+  index: -1
+Hero_Ring
+  rotate: true
+  xy: 1153, 78
+  size: 150, 61
+  orig: 150, 61
+  offset: 0, 0
+  index: -1
+Hero_RingStick
+  rotate: false
+  xy: 1899, 116
+  size: 41, 70
+  orig: 41, 70
+  offset: 0, 0
+  index: -1
+Hero_Shadow
+  rotate: false
+  xy: 1899, 188
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Hero_Wing01
+  rotate: true
+  xy: 398, 2
+  size: 186, 182
+  orig: 186, 182
+  offset: 0, 0
+  index: -1
+Hero_Wing02
+  rotate: true
+  xy: 445, 191
+  size: 194, 126
+  orig: 194, 126
+  offset: 0, 0
+  index: -1
+Hero_Wing03
+  rotate: true
+  xy: 2, 179
+  size: 206, 89
+  orig: 206, 89
+  offset: 0, 0
+  index: -1
+Hero_Wing04
+  rotate: true
+  xy: 343, 190
+  size: 195, 100
+  orig: 195, 100
+  offset: 0, 0
+  index: -1
+Hero_Wing05
+  rotate: true
+  xy: 93, 181
+  size: 204, 131
+  orig: 204, 131
+  offset: 0, 0
+  index: -1
