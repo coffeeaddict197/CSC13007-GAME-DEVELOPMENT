@@ -7,10 +7,5 @@ using UnityEngine;
 public class MonsterAnim : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-
-
-    private void Start()
-    {
-        
-    }
+    
 }

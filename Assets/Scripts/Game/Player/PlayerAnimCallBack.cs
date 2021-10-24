@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerAnimCallBack : MonoBehaviour
 {
     [Header("Refence")]
-    public PlayerGear gears;
-
+    [SerializeField] PlayerGear gears;
+    [SerializeField] private PlayerAnim anim;
+    
     public void OnAttack()
     {
-        Debug.Log(gears.TakeDamage());
+        if(MonsterManager.Instance.IsMonsterAvailble())
+            Player.onPlayerTakeDamagae?.Invoke(gears.TakeDamage());
+        else
+            anim.Reset();
     }
 }

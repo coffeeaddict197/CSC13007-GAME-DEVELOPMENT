@@ -23,4 +23,6 @@ public class PlayerAnim : MonoBehaviour
             anim.SetTrigger("Reset");
         }
     }
+
+    public void Reset() => anim.SetTrigger("Reset");
 }
