@@ -17,4 +17,17 @@ public class HelmetHandler : ItemHandler
         }
         return false;
     }
+    
+    
+    public HelmetHandler Clone()
+    {
+        return (HelmetHandler)MemberwiseClone();
+    }
+    
+    public static HelmetHandler CreateInstance(HelmetHandler copier)
+    {
+        var data = ScriptableObject.CreateInstance<HelmetHandler>();
+        data = copier.Clone();
+        return data;
+    }
 }

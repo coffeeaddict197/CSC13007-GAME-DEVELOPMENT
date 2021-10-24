@@ -1,0 +1,258 @@
+
+Dinosaurs.png
+size: 427,523
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Dino_Raptor_ArmLeft01
+  rotate: true
+  xy: 262, 5
+  size: 68, 72
+  orig: 70, 74
+  offset: 1, 1
+  index: -1
+Dino_Raptor_ArmLeft02
+  rotate: true
+  xy: 56, 4
+  size: 32, 43
+  orig: 34, 45
+  offset: 1, 1
+  index: -1
+Dino_Raptor_ArmRight01
+  rotate: true
+  xy: 179, 408
+  size: 63, 80
+  orig: 65, 82
+  offset: 1, 1
+  index: -1
+Dino_Raptor_ArmRight02
+  rotate: true
+  xy: 101, 5
+  size: 31, 43
+  orig: 33, 45
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Dress01
+  rotate: false
+  xy: 179, 270
+  size: 131, 128
+  orig: 133, 130
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeLeft01
+  rotate: true
+  xy: 229, 2
+  size: 20, 15
+  orig: 22, 17
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeLeft02
+  rotate: true
+  xy: 387, 47
+  size: 21, 23
+  orig: 23, 25
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeLeft03
+  rotate: false
+  xy: 262, 197
+  size: 21, 17
+  orig: 23, 19
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeLeft04
+  rotate: true
+  xy: 285, 194
+  size: 20, 15
+  orig: 22, 17
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeLeft05
+  rotate: false
+  xy: 262, 180
+  size: 21, 15
+  orig: 23, 17
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeRight01
+  rotate: true
+  xy: 336, 41
+  size: 32, 19
+  orig: 34, 21
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeRight02
+  rotate: false
+  xy: 195, 14
+  size: 32, 27
+  orig: 34, 29
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeRight03
+  rotate: false
+  xy: 229, 24
+  size: 29, 17
+  orig: 31, 19
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeRight04
+  rotate: false
+  xy: 357, 50
+  size: 28, 18
+  orig: 30, 20
+  offset: 1, 1
+  index: -1
+Dino_Raptor_EyeRight05
+  rotate: true
+  xy: 336, 7
+  size: 32, 18
+  orig: 34, 20
+  offset: 1, 1
+  index: -1
+Dino_Raptor_FootLeft01
+  rotate: false
+  xy: 146, 17
+  size: 47, 24
+  orig: 49, 26
+  offset: 1, 1
+  index: -1
+Dino_Raptor_FootRight01
+  rotate: false
+  xy: 2, 3
+  size: 52, 33
+  orig: 54, 35
+  offset: 1, 1
+  index: -1
+Dino_Raptor_HandLeft01
+  rotate: false
+  xy: 359, 118
+  size: 55, 53
+  orig: 57, 55
+  offset: 1, 1
+  index: -1
+Dino_Raptor_HandRight01
+  rotate: true
+  xy: 245, 216
+  size: 52, 56
+  orig: 54, 58
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Head01
+  rotate: false
+  xy: 2, 341
+  size: 175, 130
+  orig: 177, 132
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Head02
+  rotate: false
+  xy: 2, 209
+  size: 175, 130
+  orig: 177, 132
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Jaw01
+  rotate: true
+  xy: 139, 43
+  size: 164, 121
+  orig: 166, 123
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Jaw02
+  rotate: false
+  xy: 264, 400
+  size: 161, 121
+  orig: 163, 123
+  offset: 1, 1
+  index: -1
+Dino_Raptor_LegLeft01
+  rotate: true
+  xy: 359, 70
+  size: 46, 58
+  orig: 48, 60
+  offset: 1, 1
+  index: -1
+Dino_Raptor_LegRight01
+  rotate: true
+  xy: 179, 218
+  size: 50, 64
+  orig: 52, 66
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft01
+  rotate: false
+  xy: 262, 173
+  size: 6, 5
+  orig: 8, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft02
+  rotate: false
+  xy: 278, 173
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft03
+  rotate: false
+  xy: 417, 393
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight01
+  rotate: false
+  xy: 270, 173
+  size: 6, 5
+  orig: 8, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight02
+  rotate: false
+  xy: 179, 400
+  size: 6, 6
+  orig: 8, 8
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight03
+  rotate: false
+  xy: 179, 211
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_Tail01
+  rotate: true
+  xy: 312, 279
+  size: 119, 103
+  orig: 119, 103
+  offset: 0, 0
+  index: -1
+Dino_Raptor_Tail02
+  rotate: false
+  xy: 312, 173
+  size: 109, 104
+  orig: 109, 104
+  offset: 0, 0
+  index: -1
+Dino_Raptor_Tail03
+  rotate: false
+  xy: 262, 75
+  size: 95, 96
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+Dino_Raptor_Torso01
+  rotate: false
+  xy: 2, 38
+  size: 135, 169
+  orig: 135, 169
+  offset: 0, 0
+  index: -1
+Dinosaurs_Shadow
+  rotate: false
+  xy: 2, 473
+  size: 260, 48
+  orig: 266, 52
+  offset: 3, 2
+  index: -1

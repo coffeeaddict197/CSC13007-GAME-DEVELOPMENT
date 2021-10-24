@@ -16,7 +16,19 @@ public class ShieldHandler : ItemHandler
             gear.EquipShield(this,spr);
             return true;
         }
-
         return false;
+    }
+    
+    
+    public ShieldHandler Clone()
+    {
+        return (ShieldHandler)MemberwiseClone();
+    }
+    
+    public static ShieldHandler CreateInstance(ShieldHandler copier)
+    {
+        var data = ScriptableObject.CreateInstance<ShieldHandler>();
+        data = copier.Clone();
+        return data;
     }
 }

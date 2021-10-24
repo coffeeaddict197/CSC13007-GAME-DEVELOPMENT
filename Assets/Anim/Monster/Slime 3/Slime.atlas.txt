@@ -1,0 +1,83 @@
+
+Slime.png
+size: 691,346
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Slime_Blue_Eye_Front01
+  rotate: false
+  xy: 451, 3
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+Slime_Blue_Eye_Front02
+  rotate: false
+  xy: 543, 4
+  size: 90, 90
+  orig: 90, 90
+  offset: 0, 0
+  index: -1
+Slime_Blue_Eye_Front03
+  rotate: true
+  xy: 359, 2
+  size: 91, 90
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
+Slime_Eye_Pupil01
+  rotate: false
+  xy: 635, 28
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+Slime_Eye_Pupil02
+  rotate: false
+  xy: 635, 6
+  size: 13, 20
+  orig: 13, 20
+  offset: 0, 0
+  index: -1
+Slime_Eye_Pupil03
+  rotate: false
+  xy: 650, 7
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+Slime_Green_Body01
+  rotate: false
+  xy: 2, 5
+  size: 355, 339
+  orig: 355, 339
+  offset: 0, 0
+  index: -1
+Slime_Mouth_01
+  rotate: true
+  xy: 487, 96
+  size: 248, 126
+  orig: 248, 126
+  offset: 0, 0
+  index: -1
+Slime_Mouth_02
+  rotate: true
+  xy: 359, 95
+  size: 249, 126
+  orig: 249, 126
+  offset: 0, 0
+  index: -1
+Slime_Shadow
+  rotate: false
+  xy: 635, 50
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Slime_Tongue01
+  rotate: true
+  xy: 615, 106
+  size: 238, 61
+  orig: 238, 61
+  offset: 0, 0
+  index: -1

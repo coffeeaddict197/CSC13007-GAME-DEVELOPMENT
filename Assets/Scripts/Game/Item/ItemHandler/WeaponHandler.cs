@@ -4,8 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Configs/ItemHandler/Weapon", fileName = "WeaponHandler")]
 public class WeaponHandler : ItemHandler
 {
-    public float damage;
-    public float durability;
+    public int damage;
 
     [Header("Position Setup")] public Vector3 initPosition;
     
@@ -20,5 +19,17 @@ public class WeaponHandler : ItemHandler
             return true;
         }
         return false;
+    }
+
+    public WeaponHandler Clone()
+    {
+        return (WeaponHandler)MemberwiseClone();
+    }
+    
+    public static WeaponHandler CreateInstance(WeaponHandler copier)
+    {
+        var data = ScriptableObject.CreateInstance<WeaponHandler>();
+        data = copier.Clone();
+        return data;
     }
 }

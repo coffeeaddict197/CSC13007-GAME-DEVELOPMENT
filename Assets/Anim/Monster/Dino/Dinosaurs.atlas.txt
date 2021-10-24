@@ -1,0 +1,258 @@
+
+Dinosaurs.png
+size: 777,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Dino_Raptor_HandLeft01
+  rotate: false
+  xy: 85, 64
+  size: 55, 53
+  orig: 57, 55
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft01
+  rotate: true
+  xy: 383, 116
+  size: 6, 5
+  orig: 8, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft02
+  rotate: false
+  xy: 383, 101
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleLeft03
+  rotate: false
+  xy: 383, 94
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight01
+  rotate: true
+  xy: 383, 108
+  size: 6, 5
+  orig: 8, 7
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight02
+  rotate: false
+  xy: 383, 124
+  size: 6, 6
+  orig: 8, 8
+  offset: 1, 1
+  index: -1
+Dino_Raptor_PupilleRight03
+  rotate: false
+  xy: 383, 87
+  size: 5, 5
+  orig: 7, 7
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_ArmLeft01
+  rotate: true
+  xy: 390, 19
+  size: 68, 72
+  orig: 70, 74
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_ArmLeft02
+  rotate: false
+  xy: 743, 58
+  size: 32, 43
+  orig: 34, 45
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_ArmRight01
+  rotate: true
+  xy: 2, 53
+  size: 64, 81
+  orig: 66, 83
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_ArmRight02
+  rotate: false
+  xy: 743, 13
+  size: 31, 43
+  orig: 33, 45
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_Dress01
+  rotate: false
+  xy: 391, 89
+  size: 131, 128
+  orig: 133, 130
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeLeft01
+  rotate: false
+  xy: 383, 2
+  size: 20, 15
+  orig: 22, 17
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeLeft02
+  rotate: false
+  xy: 630, 194
+  size: 21, 23
+  orig: 23, 25
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeLeft03
+  rotate: true
+  xy: 498, 8
+  size: 21, 17
+  orig: 23, 19
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeLeft04
+  rotate: false
+  xy: 405, 2
+  size: 20, 15
+  orig: 22, 17
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeLeft05
+  rotate: false
+  xy: 630, 109
+  size: 21, 15
+  orig: 23, 17
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeRight01
+  rotate: true
+  xy: 630, 160
+  size: 32, 19
+  orig: 34, 21
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeRight02
+  rotate: false
+  xy: 464, 2
+  size: 32, 27
+  orig: 34, 29
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeRight03
+  rotate: true
+  xy: 199, 58
+  size: 29, 17
+  orig: 31, 19
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeRight04
+  rotate: true
+  xy: 197, 89
+  size: 28, 18
+  orig: 30, 20
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_EyeRight05
+  rotate: true
+  xy: 630, 126
+  size: 32, 18
+  orig: 34, 20
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_FootLeft01
+  rotate: true
+  xy: 56, 4
+  size: 47, 24
+  orig: 49, 26
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_FootRight01
+  rotate: false
+  xy: 2, 18
+  size: 52, 33
+  orig: 54, 35
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_HandLeft01
+  rotate: true
+  xy: 142, 62
+  size: 55, 53
+  orig: 57, 55
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_HandRight01
+  rotate: false
+  xy: 464, 31
+  size: 53, 56
+  orig: 55, 58
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_Head02
+  rotate: false
+  xy: 2, 119
+  size: 216, 148
+  orig: 218, 150
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_Jaw01
+  rotate: true
+  xy: 653, 103
+  size: 164, 121
+  orig: 166, 123
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_Jaw02
+  rotate: false
+  xy: 220, 9
+  size: 161, 121
+  orig: 163, 123
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_LegLeft01
+  rotate: false
+  xy: 85, 4
+  size: 46, 58
+  orig: 48, 60
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_LegRight01
+  rotate: true
+  xy: 133, 10
+  size: 50, 64
+  orig: 52, 66
+  offset: 1, 1
+  index: -1
+Dino_SpittingLizard_Tail01
+  rotate: false
+  xy: 524, 3
+  size: 119, 103
+  orig: 119, 103
+  offset: 0, 0
+  index: -1
+Dino_SpittingLizard_Tail02
+  rotate: true
+  xy: 524, 108
+  size: 109, 104
+  orig: 109, 104
+  offset: 0, 0
+  index: -1
+Dino_SpittingLizard_Tail03
+  rotate: true
+  xy: 645, 6
+  size: 95, 96
+  orig: 95, 96
+  offset: 0, 0
+  index: -1
+Dino_SpittingLizard_Torso01
+  rotate: true
+  xy: 220, 132
+  size: 135, 169
+  orig: 135, 169
+  offset: 0, 0
+  index: -1
+Dinosaurs_Shadow
+  rotate: false
+  xy: 391, 219
+  size: 260, 48
+  orig: 266, 52
+  offset: 3, 2
+  index: -1

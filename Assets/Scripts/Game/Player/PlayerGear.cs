@@ -7,8 +7,9 @@ public class PlayerGear : MonoBehaviour
     [Header("Weapon")] 
     [SerializeField] SpriteRenderer sprWeapon;
     private WeaponHandler _weapon;
-    
-    [Header("Helmet")]
+
+    [Header("Helmet")] 
+    [SerializeField] private Animator anim;
     [SerializeField] SpriteRenderer sprHelmet;
     private HelmetHandler _helmet;
     
@@ -20,7 +21,7 @@ public class PlayerGear : MonoBehaviour
     //Weapon
     public void EquipWeapon(WeaponHandler weapon, Sprite weaponSpr)
     {
-        _weapon = weapon;
+        _weapon = WeaponHandler.CreateInstance(weapon);
         sprWeapon.sprite = weaponSpr;
         sprWeapon.transform.localPosition = weapon.initPosition;
 
@@ -30,14 +31,31 @@ public class PlayerGear : MonoBehaviour
     public void DropWeapon()
     {
         _weapon = null;
-        sprWeapon = null;
+        sprWeapon.sprite = null;
+    }
+
+    public int TakeDamage()
+    {
+        if (_weapon != null)
+        {
+            _weapon.durability -= 5;
+            if(_weapon.durability <= 0)
+            {
+                DropWeapon();
+                return 5;
+            }
+            return _weapon.damage;
+        }
+
+        return 5;
     }
     
     
     //Helmet
     public void EquipHelmet(HelmetHandler helmet, Sprite helmetSpr)
     {
-        _helmet = helmet;
+        anim.SetLayerWeight(1,1f);
+        _helmet = HelmetHandler.CreateInstance(helmet);
         sprHelmet.sprite = helmetSpr;
 
     }
@@ -45,6 +63,7 @@ public class PlayerGear : MonoBehaviour
 
     public void DropHelmet()
     {
+        anim.SetLayerWeight(1,0f);
         _helmet = null;
         sprHelmet = null;
     }
@@ -53,7 +72,7 @@ public class PlayerGear : MonoBehaviour
     //Shield
     public void EquipShield(ShieldHandler shield, Sprite shieldSpr)
     {
-        _shield = shield;
+        _shield = ShieldHandler.CreateInstance(shield);
         sprShield.sprite = shieldSpr;
 
     }

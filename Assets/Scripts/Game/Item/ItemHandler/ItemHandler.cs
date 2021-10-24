@@ -5,6 +5,9 @@ using UnityEngine;
 
 public abstract class ItemHandler : ScriptableObject
 {
+    public float durability;
+
     public abstract bool OnEquipItem(BaseBlock block);
-   
+    
+
 }
