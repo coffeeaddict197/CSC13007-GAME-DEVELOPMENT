@@ -7,18 +7,23 @@ public class BackgroundScroll : MonoBehaviour
 {
     public List<BackgroundElement> elements;
 
-    private void Update()
+    public static BackgroundScroll Instance;
+
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.F))
+        Instance = this;
+    }
+    
+    public void UpdateBG()
+    {
+        for (int i = 0; i < elements.Count; i++)
         {
-            for (int i = 0; i < elements.Count; i++)
-            {
-                float currentOffset = elements[i].rend.material.mainTextureOffset.x;
-                currentOffset += Time.deltaTime * elements[i].speed;
-                elements[i].rend.material.SetTextureOffset("_MainTex", new Vector2(currentOffset, 0));
-            }
+            float currentOffset = elements[i].rend.material.mainTextureOffset.x;
+            currentOffset += Time.deltaTime * elements[i].speed;
+            elements[i].rend.material.SetTextureOffset("_MainTex", new Vector2(currentOffset, 0));
         }
     }
+
 }
 
 [Serializable]

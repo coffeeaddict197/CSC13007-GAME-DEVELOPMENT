@@ -9,10 +9,7 @@ public class PlayerAnimCallBack : MonoBehaviour
     [SerializeField] private PlayerAnim anim;
     
     public void OnAttack()
-    {
-        if(MonsterManager.Instance.IsMonsterAvailble())
-            Player.onPlayerTakeDamagae?.Invoke(gears.TakeDamage());
-        else
-            anim.Reset();
+    { 
+        Player.onPlayerDamage?.Invoke(gears.TakeDamage());
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8127030067223695117}
   - component: {fileID: 8127030067223695116}
   - component: {fileID: 8127030067223695115}
+  - component: {fileID: 5384120364901702570}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -137,6 +138,19 @@ MonoBehaviour:
     autoReset: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+--- !u!114 &5384120364901702570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127030067223695113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88624819981f4d74e99bf4b402a92d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 8127030067566279223}
 --- !u!1 &8127030067566279221
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,10 +199,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 600
   _monsterGen: 0
+  _health: 0
+  monsterName: Yellow Slime
+  monsterDamage: 30
+  isDeath: 0
+  _anim: {fileID: 8127030067223695116}
   _textHelth: {fileID: 8127030068836385846}
   _fillHealth: {fileID: 8127030069001479200}
-  monsterName: Yellow Slime
-  isDeath: 0
 --- !u!114 &8127030067566279224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +440,7 @@ GameObject:
   - component: {fileID: 8127030068943759658}
   - component: {fileID: 8127030068943759657}
   - component: {fileID: 8127030068943759656}
+  - component: {fileID: 5198860128260136641}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -510,6 +528,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5198860128260136641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127030068943759654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88624819981f4d74e99bf4b402a92d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 0}
 --- !u!1 &8127030069001479198
 GameObject:
   m_ObjectHideFlags: 0

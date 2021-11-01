@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MonsterManager : MonoSingleton<MonsterManager>
@@ -24,7 +25,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         {
             if (idxCurrentMonster < listMonster.Count)
             {
-                GetCurrentMonster().Move(new Vector3(1.41f,1.76f,0f));
+                GetCurrentMonster().MonsterAction();
             }
         }
     }
@@ -42,7 +43,23 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         return null;
     }
 
-    Monster GetCurrentMonster() =>  listMonster[idxCurrentMonster];
+    Monster GetCurrentMonster()
+    {
+        if (listMonster.Count > 0 && idxCurrentMonster < listMonster.Count)
+        {
+            return listMonster[idxCurrentMonster];
+        }
+
+        return null;
+    }
+
+    public void RemoveMonster(Monster m)
+    {
+        if (listMonster.Contains(m))
+        {
+            listMonster.Remove(m);
+        }
+    }
     
 
     public bool IsMonsterAvailble()
@@ -52,8 +69,12 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         {
             return true;
         }
-
         return false;
+    }
+
+    public bool AllMonsterDeath()
+    {
+        return listMonster.Count == 0;
     }
     
     

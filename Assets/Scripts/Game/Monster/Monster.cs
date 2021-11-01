@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 using  TMPro;
@@ -19,37 +20,48 @@ public class Monster : MonoBehaviour
     [SerializeField] private int _maxHealth;
     [SerializeField] private MonsterGen _monsterGen;
     [SerializeField] int _health = 0;
+    
+    [Header("Stats")]
+    public string monsterName;
+    public int monsterDamage;
+    public bool isDeath;
 
+    [Header("Animator")] 
+    [SerializeField] private Animator _anim;
+    
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI _textHelth;
     [SerializeField] private Image _fillHealth;
     
-    [Header("Stats")]
-    public string monsterName;
-    public bool isDeath;
-
     public int Health
     {
         get => _health;
         set
         {
             _health = value;
+
+            if (_health < 0)
+                _health = 0;
+            
             _textHelth.text = _health.ToString();
             _fillHealth.fillAmount = (float) _health / _maxHealth;
 
         }
     }
+    
+    
+    //---------------BUILD IN METHOD-----------------
 
     private void OnEnable()
     {
         _health = _maxHealth;
         _textHelth.text = _maxHealth.ToString();
-        Player.onPlayerTakeDamagae += OnMonsterTakeDamage;
+        Player.onPlayerDamage += OnMonsterTakeDamage;
     }
 
     private void OnDisable()
     {
-        Player.onPlayerTakeDamagae -= OnMonsterTakeDamage;
+        Player.onPlayerDamage -= OnMonsterTakeDamage;
     }
 
     public void Init(int health, MonsterGen gen)
@@ -57,13 +69,50 @@ public class Monster : MonoBehaviour
         _maxHealth = health;
         _monsterGen = gen;
     }
+    
+    //---------------END BUILD IN METHOD-----------------
 
+    public void MonsterAction() => StartCoroutine(MonsterCoreAction());
+    
+    IEnumerator MonsterCoreAction()
+    {
+        yield return StartCoroutine(MonsterStartMove());
+        yield return StartCoroutine(MonsterAttack());
+        yield return StartCoroutine(MonsterDie());
+    }
+
+    IEnumerator MonsterStartMove()
+    {
+        Move(new Vector3(1.41f,1.76f,0f));
+        yield return new WaitForSeconds(1f);
+    }
+    
+    IEnumerator MonsterAttack()
+    {
+        _anim.SetTrigger("Attack");
+        while (Health > 0)
+        {
+            if(Player.Instance.CurrentHealth > 0)
+                _anim.SetTrigger("Reset");
+            yield return null;
+        }
+    }
+    
+    IEnumerator MonsterDie()
+    {
+        _anim.SetTrigger("Die");
+        yield return new WaitForSeconds(2f);
+        //MonsterManager.Instance.RemoveMonster(this);
+
+    }
+    
     void OnMonsterTakeDamage(int damage)
     {
         Health -= damage;
-        if (Health < 0)
+        if (Health <= 0)
         {
             isDeath = true;
+            _anim.SetTrigger("Die");
         }
     }
 
