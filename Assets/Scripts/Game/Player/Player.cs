@@ -43,14 +43,17 @@ public class Player : MonoSingleton<Player>
     IEnumerator PlayerLoopAction()
     {
         yield return StartCoroutine(PlayerMovement());
+        
         yield return StartCoroutine(PlayerAttack());
-        bool isNotEndGame = _currentHealth > 0;
+        
+        bool isNotEndGame = !MonsterManager.Instance.AllMonsterDeath() && _currentHealth > 0;
+        // isNotEndGame = MonsterManager.Instance.AllMonsterDeath()
+        Debug.Log(isNotEndGame);
         if (isNotEndGame)
         {
-            // bool isClear = MonsterManager.Instance.AllMonsterDeath();
-            // if (isClear)
-            //     yield return StartCoroutine(WinnerHandler());
-            // else
+            //Respawn weapon
+            SpawnStrategy.Instance.SpawnBlock();
+            yield return new WaitForSeconds(1f);
             StartCoroutine(PlayerLoopAction());
         }
 
@@ -68,15 +71,17 @@ public class Player : MonoSingleton<Player>
             BackgroundScroll.Instance.UpdateBG();
             yield return null;
         }
+        
         _anim.SetTrigger("Reset");
         yield return null;
     }
     
     IEnumerator PlayerAttack()
     {
+        MonsterManager.Instance.GetCurrentMonster().MonsterAction();
         yield return new WaitForSeconds(1f);
         _anim.SetTrigger("Attack");
-
+        
         while (MonsterManager.Instance.IsMonsterAvailble())
         {
             if(_currentHealth < 0)
@@ -84,10 +89,9 @@ public class Player : MonoSingleton<Player>
                 PlayerDie();
                 yield break;
             }
-            Debug.Log("Attacking");
             yield return null;
         }
-        Debug.Log("Attacking Complete");
+        
         _anim.SetTrigger("Reset");
         yield return new WaitForSeconds(1f);
     }

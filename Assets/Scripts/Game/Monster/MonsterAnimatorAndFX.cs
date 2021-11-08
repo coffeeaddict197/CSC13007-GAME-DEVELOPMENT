@@ -13,6 +13,6 @@ public class MonsterAnimatorAndFX : MonoBehaviour
 
     public void OnAttackPlayer()
     {
-        Player.Instance.CurrentHealth -= monster.monsterDamage;
+        monster.onMonsterAttack?.Invoke();
     }
 }

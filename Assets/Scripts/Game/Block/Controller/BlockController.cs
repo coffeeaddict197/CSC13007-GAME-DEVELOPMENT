@@ -37,6 +37,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
         if (block.blockItem.OnClick(block))
         {
             block.ResetGridContain();
+            ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());
             Destroy(block.gameObject);
             StartCoroutine(OnBlockFalling());
         }

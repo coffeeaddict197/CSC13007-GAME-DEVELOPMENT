@@ -6,7 +6,9 @@ public class WeaponHandler : ItemHandler
 {
     public int damage;
 
-    [Header("Position Setup")] public Vector3 initPosition;
+    [Header("Position Setup")] 
+    public Vector3 initPosition;
+    public Vector3 initRotation;
     
     public override bool OnEquipItem(BaseBlock block)
     {

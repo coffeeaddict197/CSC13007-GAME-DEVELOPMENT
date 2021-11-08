@@ -6,6 +6,17 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Configs/ItemHandler/Shield", fileName = "Shield")]
 public class ShieldHandler : ItemHandler
 {
+    public override float CurrentDurability
+    {
+        get => _currentDurability;
+        set
+        {
+            _currentDurability = value;
+            ItemEquipSlot.DoFill(ItemType.Shield,_currentDurability/durability);
+        }
+    }
+    
+    
     public override bool OnEquipItem(BaseBlock block)
     {
         PlayerGear gear = Player.Instance.gears;

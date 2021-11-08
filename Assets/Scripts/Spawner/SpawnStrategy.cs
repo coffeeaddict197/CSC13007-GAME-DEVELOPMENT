@@ -6,7 +6,7 @@ using UnityEngine;
 using Random = System.Random;
 
 
-public class SpawnStrategy : MonoBehaviour
+public class SpawnStrategy : MonoSingleton<SpawnStrategy>
 {
 
     public List<BaseBlock> listBlock;
@@ -20,14 +20,10 @@ public class SpawnStrategy : MonoBehaviour
         StartCoroutine(StartSpawn());
 
     }
-
-    private void Update()
+    
+    public void SpawnBlock()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            StartCoroutine(StartSpawn());
-
-        }
+        StartCoroutine(StartSpawn());
     }
 
     IEnumerator StartSpawn()

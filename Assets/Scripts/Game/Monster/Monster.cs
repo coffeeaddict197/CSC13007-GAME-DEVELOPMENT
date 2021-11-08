@@ -33,6 +33,8 @@ public class Monster : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textHelth;
     [SerializeField] private Image _fillHealth;
     
+    public Action onMonsterAttack;
+    
     public int Health
     {
         get => _health;
@@ -51,22 +53,22 @@ public class Monster : MonoBehaviour
     
     
     //---------------BUILD IN METHOD-----------------
-
     private void OnEnable()
     {
-        _health = _maxHealth;
-        _textHelth.text = _maxHealth.ToString();
+        this.onMonsterAttack += OnMonsterAttack;
         Player.onPlayerDamage += OnMonsterTakeDamage;
     }
 
     private void OnDisable()
     {
+        this.onMonsterAttack -= OnMonsterAttack;
         Player.onPlayerDamage -= OnMonsterTakeDamage;
     }
 
     public void Init(int health, MonsterGen gen)
     {
         _maxHealth = health;
+        Health = _maxHealth;
         _monsterGen = gen;
     }
     
@@ -83,7 +85,7 @@ public class Monster : MonoBehaviour
 
     IEnumerator MonsterStartMove()
     {
-        Move(new Vector3(1.41f,1.76f,0f));
+        Move(new Vector3(1.41f,2.196f,0f));
         yield return new WaitForSeconds(1f);
     }
     
@@ -101,13 +103,24 @@ public class Monster : MonoBehaviour
     IEnumerator MonsterDie()
     {
         _anim.SetTrigger("Die");
-        yield return new WaitForSeconds(2f);
-        //MonsterManager.Instance.RemoveMonster(this);
+        yield return new WaitForSeconds(1f);
+        MonsterManager.Instance.RemoveMonster(this);
+    }
 
+
+    void OnMonsterAttack()
+    {
+        Player.Instance.CurrentHealth -= monsterDamage;
+        PlayerGear gear = Player.Instance.gears;
+        gear.AffectShieldDurability((float)monsterDamage / 2);
+        gear.AffectHelmetDurability((float)monsterDamage / 3);
     }
     
     void OnMonsterTakeDamage(int damage)
     {
+        if (this != MonsterManager.Instance.GetCurrentMonster())
+            return;
+        
         Health -= damage;
         if (Health <= 0)
         {

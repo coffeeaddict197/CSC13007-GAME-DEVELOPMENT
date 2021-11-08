@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aac8592eedf41044be2b563bfa6a4d1, type: 3}
   m_Name: ShieldHandler
   m_EditorClassIdentifier: 
+  durability: 100

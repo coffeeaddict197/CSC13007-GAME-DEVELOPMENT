@@ -22,6 +22,7 @@ public class PlayerGear : MonoBehaviour
     public void EquipWeapon(WeaponHandler weapon, Sprite weaponSpr)
     {
         _weapon = WeaponHandler.CreateInstance(weapon);
+        _weapon.Init();
         sprWeapon.sprite = weaponSpr;
         sprWeapon.transform.localPosition = weapon.initPosition;
 
@@ -38,8 +39,8 @@ public class PlayerGear : MonoBehaviour
     {
         if (_weapon != null)
         {
-            _weapon.durability -= 5;
-            if(_weapon.durability <= 0)
+            _weapon.CurrentDurability -= 5;
+            if(_weapon.CurrentDurability <= 0)
             {
                 DropWeapon();
                 return 5;
@@ -56,16 +57,28 @@ public class PlayerGear : MonoBehaviour
     {
         anim.SetLayerWeight(1,1f);
         _helmet = HelmetHandler.CreateInstance(helmet);
+        _helmet.Init();
         sprHelmet.sprite = helmetSpr;
-
     }
+
+    public void AffectHelmetDurability(float durability)
+    {
+        if (_helmet == null)
+            return;
+        _helmet.CurrentDurability -= durability;
+        if(_helmet.CurrentDurability <= 0)
+            DropHelmet();
+    }
+    
+    
     public bool IsEquipHelmet => _helmet != null;
 
     public void DropHelmet()
     {
         anim.SetLayerWeight(1,0f);
         _helmet = null;
-        sprHelmet = null;
+        sprHelmet.sprite = null;
+        ItemEquipSlot.UnEquip(ItemType.Helmet);
     }
     
     
@@ -73,6 +86,7 @@ public class PlayerGear : MonoBehaviour
     public void EquipShield(ShieldHandler shield, Sprite shieldSpr)
     {
         _shield = ShieldHandler.CreateInstance(shield);
+        _shield.Init();
         sprShield.sprite = shieldSpr;
 
     }
@@ -81,6 +95,19 @@ public class PlayerGear : MonoBehaviour
     public void DropShield()
     {
         _shield = null;
-        sprShield = null;
+        sprShield.sprite = null;
+        ItemEquipSlot.UnEquip(ItemType.Shield);
     }
+
+    public void AffectShieldDurability(float durability)
+    {
+        if (_shield == null)
+            return;
+        _shield.CurrentDurability -= durability;
+        if (_shield.CurrentDurability <= 0)
+        {
+            DropShield();
+        }
+    } 
+
 }
