@@ -17,14 +17,15 @@ public enum MonsterGen
 public class Monster : MonoBehaviour
 {
 
-    [SerializeField] private int _maxHealth;
-    [SerializeField] private MonsterGen _monsterGen;
-    [SerializeField] int _health = 0;
     
     [Header("Stats")]
     public string monsterName;
     public int monsterDamage;
     public bool isDeath;
+    
+    private int _maxHealth;
+    private MonsterGen _monsterGen;
+    private int _health = 0;
 
     [Header("Animator")] 
     [SerializeField] private Animator _anim;
@@ -32,6 +33,7 @@ public class Monster : MonoBehaviour
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI _textHelth;
     [SerializeField] private Image _fillHealth;
+    [SerializeField] private Transform anchorPosition;
     
     public Action onMonsterAttack;
     
@@ -108,7 +110,7 @@ public class Monster : MonoBehaviour
     }
 
 
-    void OnMonsterAttack()
+    protected virtual void OnMonsterAttack()
     {
         Player.Instance.CurrentHealth -= monsterDamage;
         PlayerGear gear = Player.Instance.gears;
@@ -129,9 +131,8 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void Move(Vector3 position)
-    {
-        transform.DOMove(position, 0.5f);
-    }
-    
+    public void Move(Vector3 position) => transform.DOMove(position, 0.5f);
+
+    public Vector3 GetAnchorPosition() => anchorPosition.position;
+
 }

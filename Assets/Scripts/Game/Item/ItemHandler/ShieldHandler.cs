@@ -24,7 +24,8 @@ public class ShieldHandler : ItemHandler
         if (!gear.IsEquipShield)
         {
             Sprite spr = block.blockItem.GetItemSprite();
-            gear.EquipShield(this,spr);
+            gear.EquipShield(this,spr); 
+            ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());
             return true;
         }
         return false;

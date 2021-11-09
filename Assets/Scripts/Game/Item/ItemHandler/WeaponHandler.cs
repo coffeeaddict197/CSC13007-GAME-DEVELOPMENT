@@ -18,6 +18,7 @@ public class WeaponHandler : ItemHandler
         {
             Sprite spr = block.blockItem.GetItemSprite();
             gear.EquipWeapon(this,spr);
+            ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());
             return true;
         }
         return false;

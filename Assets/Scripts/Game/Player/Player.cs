@@ -8,7 +8,6 @@ public class Player : MonoSingleton<Player>
     [Header("Stat")] 
     public int maxHealth;
     private int _currentHealth;
-
     public int CurrentHealth
     {
         get => _currentHealth;
@@ -18,6 +17,12 @@ public class Player : MonoSingleton<Player>
             {
                 _currentHealth = value;
             }
+
+            if (_currentHealth >= maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
+            
             _playerUI.OnHealhChange(_currentHealth,maxHealth);
         }
     }

@@ -24,3 +24,4 @@ MonoBehaviour:
     spr: {fileID: 21300000, guid: 6702f187c2f860948a3bf3e14ca31414, type: 3}
   - level: 4
     spr: {fileID: 21300000, guid: 0d41c2d8bd9e51e4ba09253c4ff089bb, type: 3}
+  handler: {fileID: 11400000, guid: 659952088e1ba5040864f747dec9f552, type: 2}

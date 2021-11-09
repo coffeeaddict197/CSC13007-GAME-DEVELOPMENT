@@ -9,7 +9,11 @@ public class PlayerAnimCallBack : MonoBehaviour
     [SerializeField] private PlayerAnim anim;
     
     public void OnAttack()
-    { 
-        Player.onPlayerDamage?.Invoke(gears.TakeDamage());
+    {
+        int damage = gears.TakeDamage();
+        Player.onPlayerDamage?.Invoke(damage);
+        
+        Vector3 posTarget = MonsterManager.Instance.GetCurrentMonster().GetAnchorPosition();
+        FXFactory.Instance.fxTextFactory.SpawnFX(posTarget,damage.ToString());
     }
 }

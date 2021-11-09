@@ -22,6 +22,7 @@ public class HelmetHandler : ItemHandler
         {
             Sprite spr = block.blockItem.GetItemSprite();
             gear.EquipHelmet(this,spr);
+            ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());
             return true;
         }
         return false;
