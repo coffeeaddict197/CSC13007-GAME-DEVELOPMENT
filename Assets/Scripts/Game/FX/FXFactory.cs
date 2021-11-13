@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class FXFactory : MonoSingleton<FXFactory>
 {
+    [Header("FX Text Take Damage")]
     public FXTextFactory fxTextFactory;
     private void Start()
     {
@@ -44,6 +46,7 @@ public class FXPool
 public class FXTextFactory : FXPool
 {
     [SerializeField] private TextMeshProUGUI textModel;
+    [SerializeField] private Ease ease;
 
     public void Init()
     {
@@ -64,6 +67,14 @@ public class FXTextFactory : FXPool
             obj.gameObject.SetActive(true);
             obj.transform.position = position;
             obj.text = txt;
+
+            Sequence txtSeq = DOTween.Sequence();
+            txtSeq.Append(obj.transform.DOScale(1, 0.3f).From(1.7F).SetEase(ease))
+                .Join(obj.transform.DOJump(obj.transform.position + new Vector3(0.1f,-0.1f,0),0.2F,0,0.5f)).SetDelay(0.2F).OnComplete(
+                    () =>
+                    {
+                        obj.gameObject.SetActive(false);
+                    });
         }
     }
     

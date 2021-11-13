@@ -45,7 +45,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7072873723656154662}
+  m_Motion: {fileID: 4548773358361722480, guid: acb35da2dcbb9594cae0de0cec0c2d8c,
+    type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -210,7 +211,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -314789377786025296}
+  m_Motion: {fileID: -5875719904373170517, guid: acb35da2dcbb9594cae0de0cec0c2d8c,
+    type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -350,7 +352,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slime_Controller
+  m_Name: DinoAnim
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -518,7 +520,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -6715263643433494908}
+  m_Motion: {fileID: 533564360641897480, guid: acb35da2dcbb9594cae0de0cec0c2d8c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -569,7 +571,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2120267148938534117}
+  m_Motion: {fileID: -2447587918210023047, guid: acb35da2dcbb9594cae0de0cec0c2d8c,
+    type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

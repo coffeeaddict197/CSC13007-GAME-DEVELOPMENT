@@ -14,25 +14,21 @@ public class Player : MonoSingleton<Player>
         set
         {
             if (value >= 0)
-            {
                 _currentHealth = value;
-            }
-
             if (_currentHealth >= maxHealth)
-            {
                 _currentHealth = maxHealth;
-            }
-            
             _playerUI.OnHealhChange(_currentHealth,maxHealth);
         }
     }
     
     [Header("Reference")]
     public PlayerGear gears;
-    [SerializeField] PlayerUI _playerUI;
+    [SerializeField] private Transform anchor;
+    [SerializeField] private PlayerUI _playerUI;
     [SerializeField] private Animator _anim;
     //Event
     public static Action<int> onPlayerDamage;
+    public static Action<int> onPlayerTakeDamage;
     
     
     //---------------BUILD IN METHOD---------------
@@ -42,23 +38,33 @@ public class Player : MonoSingleton<Player>
         yield return new WaitForSeconds(1f);
         StartCoroutine(PlayerLoopAction());
     }
-    
+
+    private void OnEnable()
+    {
+        onPlayerTakeDamage += OnPlayerTakeDamage;
+    }
+
+    private void OnDisable()
+    {
+        onPlayerTakeDamage -= OnPlayerTakeDamage;
+    }
+
     //---------------END BUILD IN METHOD------------
 
     IEnumerator PlayerLoopAction()
     {
         yield return StartCoroutine(PlayerMovement());
-        
         yield return StartCoroutine(PlayerAttack());
+        yield return new WaitForSeconds(1f);
+    
         
-        bool isNotEndGame = !MonsterManager.Instance.AllMonsterDeath() && _currentHealth > 0;
-        // isNotEndGame = MonsterManager.Instance.AllMonsterDeath()
-        Debug.Log(isNotEndGame);
+        MonsterManager monsterManager = MonsterManager.Instance;
+        LevelProgress.onUpdateProgress?.Invoke( monsterManager.CurrentMonster ,monsterManager.MaxMonster);
+        bool isNotEndGame = !monsterManager.AllMonsterDeath() && _currentHealth > 0;
         if (isNotEndGame)
         {
             //Respawn weapon
             SpawnStrategy.Instance.SpawnBlock();
-            yield return new WaitForSeconds(1f);
             StartCoroutine(PlayerLoopAction());
         }
 
@@ -129,6 +135,12 @@ public class Player : MonoSingleton<Player>
     {
         maxHealth = maxHeal;
         CurrentHealth = maxHeal;
+    }
+
+    void OnPlayerTakeDamage(int damage)
+    {
+        FXFactory.Instance.fxTextFactory.SpawnFX(anchor.position,damage.ToString());
+        CurrentHealth -= damage;
     }
 
 }

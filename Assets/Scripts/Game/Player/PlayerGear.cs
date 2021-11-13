@@ -39,7 +39,7 @@ public class PlayerGear : MonoBehaviour
     {
         if (_weapon != null)
         {
-            _weapon.CurrentDurability -= 5;
+            _weapon.CurrentDurability -= 10;
             if(_weapon.CurrentDurability <= 0)
             {
                 DropWeapon();

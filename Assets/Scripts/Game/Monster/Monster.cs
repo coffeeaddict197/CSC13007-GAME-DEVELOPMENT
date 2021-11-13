@@ -23,9 +23,9 @@ public class Monster : MonoBehaviour
     public int monsterDamage;
     public bool isDeath;
     
-    private int _maxHealth;
-    private MonsterGen _monsterGen;
-    private int _health = 0;
+    protected int _maxHealth;
+    protected MonsterGen _monsterGen;
+    protected int _health = 0;
 
     [Header("Animator")] 
     [SerializeField] private Animator _anim;
@@ -112,18 +112,19 @@ public class Monster : MonoBehaviour
 
     protected virtual void OnMonsterAttack()
     {
-        Player.Instance.CurrentHealth -= monsterDamage;
+        Player.onPlayerTakeDamage(monsterDamage);
         PlayerGear gear = Player.Instance.gears;
         gear.AffectShieldDurability((float)monsterDamage / 2);
         gear.AffectHelmetDurability((float)monsterDamage / 3);
     }
     
-    void OnMonsterTakeDamage(int damage)
+    protected virtual void OnMonsterTakeDamage(int damage)
     {
         if (this != MonsterManager.Instance.GetCurrentMonster())
             return;
         
         Health -= damage;
+        FXFactory.Instance.fxTextFactory.SpawnFX(GetAnchorPosition(),damage.ToString());
         if (Health <= 0)
         {
             isDeath = true;

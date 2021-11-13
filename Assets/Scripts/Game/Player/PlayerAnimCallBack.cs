@@ -12,8 +12,5 @@ public class PlayerAnimCallBack : MonoBehaviour
     {
         int damage = gears.TakeDamage();
         Player.onPlayerDamage?.Invoke(damage);
-        
-        Vector3 posTarget = MonsterManager.Instance.GetCurrentMonster().GetAnchorPosition();
-        FXFactory.Instance.fxTextFactory.SpawnFX(posTarget,damage.ToString());
     }
 }

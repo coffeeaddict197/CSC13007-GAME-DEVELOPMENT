@@ -7,39 +7,28 @@ using UnityEngine;
 public class MonsterManager : MonoSingleton<MonsterManager>
 {
     [SerializeField] List<Monster> listMonster;
+    public int MaxMonster { get; set; }
+    public int CurrentMonster => MaxMonster - listMonster.Count;
 
     [Header("List Monster")] 
-
-    public List<Monster> modelMonster;
+    public List<MonsterModel> monstersModel;
     
     private void Start()
     {
         listMonster = new List<Monster>();
         CreateListMonster();
+        MaxMonster = listMonster.Count;
     }
 
     public void CreateListMonster()
     {
-        
-        CreateMonster("Yellow Slime", 200, MonsterGen.Earth);
-        CreateMonster("Yellow Slime", 200, MonsterGen.Earth);
-
+        CreateMonster(MonsterType.Slime, "Yellow Slime", 200, MonsterGen.Earth);
+        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
     }
-
-    private void Update()
+    
+    Monster CreateMonster(MonsterType type, string monsterName,int health,MonsterGen gen)
     {
-        // if (Input.GetKeyDown(KeyCode.A))
-        // {
-        //     if (idxCurrentMonster < listMonster.Count)
-        //     {
-        //         GetCurrentMonster().MonsterAction();
-        //     }
-        // }
-    }
-
-    Monster CreateMonster(string monsterName,int health,MonsterGen gen)
-    {
-        Monster model = modelMonster.Find(x => x.monsterName == monsterName);
+        Monster model = monstersModel.Find(x => x.monsterType == type)?.GetMonster(monsterName);
         if (model != null)
         {
             Monster newMons = Instantiate(model, new Vector3(4, 2.196f, 0), Quaternion.identity, this.transform);
@@ -56,7 +45,6 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         {
             return listMonster[0];
         }
-
         return null;
     }
 
@@ -85,4 +73,29 @@ public class MonsterManager : MonoSingleton<MonsterManager>
     }
     
     
+}
+
+
+public enum MonsterType
+{
+    Slime,
+    Dino,
+    Dragon
+}
+
+[Serializable]
+public class MonsterModel
+{
+    public MonsterType monsterType;
+    public List<Monster> monstersModel;
+
+    public Monster GetMonster(string monsterName)
+    {
+        Monster model = monstersModel.Find(x => x.monsterName == monsterName);
+        if (model != null)
+        {
+            return model;
+        }
+        return null;
+    }
 }
