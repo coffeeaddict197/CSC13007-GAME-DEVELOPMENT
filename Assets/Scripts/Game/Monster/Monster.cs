@@ -105,7 +105,10 @@ public class Monster : MonoBehaviour
     IEnumerator MonsterDie()
     {
         _anim.SetTrigger("Die");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        MonsterFX.Instance.FXPlayMonsterDeath();
+        yield return new WaitForSeconds(0.2f);
+        this.gameObject.SetActive(false);
         MonsterManager.Instance.RemoveMonster(this);
     }
 
@@ -124,6 +127,7 @@ public class Monster : MonoBehaviour
             return;
         
         Health -= damage;
+        MonsterFX.Instance.FXPlayMonsterTakeDamage();
         FXFactory.Instance.fxTextFactory.SpawnFX(GetAnchorPosition(),damage.ToString());
         if (Health <= 0)
         {

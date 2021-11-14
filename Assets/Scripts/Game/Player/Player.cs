@@ -26,6 +26,7 @@ public class Player : MonoSingleton<Player>
     [SerializeField] private Transform anchor;
     [SerializeField] private PlayerUI _playerUI;
     [SerializeField] private Animator _anim;
+    [SerializeField] private PlayerFX _FX;
     //Event
     public static Action<int> onPlayerDamage;
     public static Action<int> onPlayerTakeDamage;
@@ -41,11 +42,13 @@ public class Player : MonoSingleton<Player>
 
     private void OnEnable()
     {
+        onPlayerDamage += OnPlayerDamage;
         onPlayerTakeDamage += OnPlayerTakeDamage;
     }
 
     private void OnDisable()
     {
+        onPlayerDamage -= OnPlayerDamage;
         onPlayerTakeDamage -= OnPlayerTakeDamage;
     }
 
@@ -140,7 +143,13 @@ public class Player : MonoSingleton<Player>
     void OnPlayerTakeDamage(int damage)
     {
         FXFactory.Instance.fxTextFactory.SpawnFX(anchor.position,damage.ToString());
+        this._FX.FXPlayPlayerTakeDamage();
         CurrentHealth -= damage;
+    }
+
+    void OnPlayerDamage(int damage)
+    {
+        
     }
 
 }
