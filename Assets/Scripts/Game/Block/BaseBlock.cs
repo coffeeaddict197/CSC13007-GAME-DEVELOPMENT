@@ -71,12 +71,16 @@ public abstract class BaseBlock : MonoBehaviour
     /// <summary>
     /// Falling action if can fall
     /// </summary>
-    public void BlockFalling()
+    public void BlockFalling(bool isFirstSpawn = false)
     {
         if(Falling())
         {
             Vector2 newPos = GetPosition();
-            rect.DOAnchorPos(newPos, 0.5f);
+            rect.DOAnchorPos(newPos, 0.5f).OnComplete(() =>
+            {
+                if(isFirstSpawn)
+                    blockItem.DoEffect();
+            });
         }
     }
     

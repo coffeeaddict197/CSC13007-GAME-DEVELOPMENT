@@ -40,7 +40,7 @@ public class SpawnStrategy : MonoSingleton<SpawnStrategy>
                 Vector2 pos = newBlock.InitPosition(listNode);
                 newBlock.rect.anchoredPosition = new Vector2(newBlock.rect.anchoredPosition.x, 2500);
                 newBlock.rect.DOAnchorPosY(pos.y, 0.5f);
-                newBlock.BlockFalling();
+                newBlock.BlockFalling(true);
                 yield return new WaitForSeconds(0.1f);
             }
 

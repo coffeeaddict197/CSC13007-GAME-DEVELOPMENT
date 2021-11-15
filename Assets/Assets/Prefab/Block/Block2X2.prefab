@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3959239421517933619}
   - component: {fileID: 4153759397232086607}
   - component: {fileID: 6054574848630310264}
+  - component: {fileID: 8537272470261554522}
   m_Layer: 5
   m_Name: BlockItem
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -90,6 +90,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 0}
   itemImg: {fileID: 4153759397232086607}
+  effect: {fileID: 8537272470261554522}
+--- !u!114 &8537272470261554522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612445513217638357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b2ed11d675446c5a49da1ea296d490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectFactor: 1
+  m_ColorFactor: 0
+  m_BlurFactor: 1
+  m_EffectMode: 0
+  m_ColorMode: 1
+  m_BlurMode: 0
+  m_AdvancedBlur: 0
 --- !u!1 &3652685722240304537
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +174,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

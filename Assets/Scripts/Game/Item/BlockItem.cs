@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Coffee.UIEffects;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 public class BlockItem : MonoBehaviour
@@ -9,6 +12,18 @@ public class BlockItem : MonoBehaviour
     
     [Header("UI")] 
     [SerializeField] private Image itemImg;
+
+    [Header("Effect")] 
+    [SerializeField] private UIEffect effect;
+    
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        effect = GetComponent<UIEffect>();
+    }
+#endif
+    
+    
 
     public void InitItem(BlockType blockType,string itemName = "")
     {
@@ -31,6 +46,29 @@ public class BlockItem : MonoBehaviour
     public bool OnClick(BaseBlock block)
     {
         return config.handler.OnEquipItem(block);
+    }
+
+    public void DoEffect()
+    {
+        StartCoroutine(DOFX());  //Need to use Coroutine
+        Sequence seq = DOTween.Sequence();
+        seq.Append(transform.DOScale(1.3f, 0.4F).From(1))
+            .Append(transform.DOScale(1, 0.4F));
+    }
+
+    IEnumerator DOFX()
+    {
+        while (effect.colorFactor < 0.5f)
+        {
+            effect.colorFactor += Time.deltaTime;
+            yield return null;
+        }
+        
+        while (effect.colorFactor > 0)
+        {
+            effect.colorFactor -= Time.deltaTime;
+            yield return null;
+        }
     }
 
 

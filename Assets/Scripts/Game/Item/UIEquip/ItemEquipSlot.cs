@@ -52,6 +52,13 @@ public class ItemEquipSlot : MonoBehaviour
         fillAmout.DOFillAmount(fillVal, 0.2f);
     }
 
+    void Shake()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.Append(image.transform.DOShakeRotation(0.2f, 20f,10,0))
+            .Join(image.transform.DOShakeScale(0.2f, 0.3f,10,0));
+    }
+
     
     //-------------------Manager handler-------------------
 
@@ -77,6 +84,7 @@ public class ItemEquipSlot : MonoBehaviour
         if (!slotEquip.Equals(default))
         {
             slotEquip.Value.DoFill(fillAmount);
+            slotEquip.Value.Shake();
         }
     }
     
@@ -96,4 +104,8 @@ public class ItemEquipSlot : MonoBehaviour
         {
             slotEquip.Value.UnEquip();
         }
-    }}
+    }
+
+    
+}
+
