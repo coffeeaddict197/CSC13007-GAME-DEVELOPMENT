@@ -1,0 +1,275 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpinFX
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: Electric
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.43333334
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.45
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.46666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: Electric/Spin
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 05eed035570c7fd46a1c9edf0c6aaef3, type: 3}
+    - time: 0.18333334
+      value: {fileID: 21300000, guid: f951be36f66419c41abaaa08fc65867b, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 631e6a338f7851d4b8f215e8239f63f4, type: 3}
+    - time: 0.21666667
+      value: {fileID: 21300000, guid: 3ffabb5a3bf1566409d9e4f06799093e, type: 3}
+    - time: 0.23333333
+      value: {fileID: 21300000, guid: 003650ddcf27e9d47b2f327b66ddf08b, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: b84c120777a67854f8d48d9f1a5c1586, type: 3}
+    - time: 0.26666668
+      value: {fileID: 21300000, guid: 56cd1456dbec95b439af87d137f04c78, type: 3}
+    - time: 0.28333333
+      value: {fileID: 21300000, guid: 0af7c6014e738d843b3c631fb56f8661, type: 3}
+    - time: 0.31666666
+      value: {fileID: 21300000, guid: fedaae1ad8dac6a48ab33cbf3714f83f, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 2da03a7e7530bbc448489a2ff2579ef7, type: 3}
+    - time: 0.35
+      value: {fileID: 21300000, guid: f9c9b42c08c874f40a24e6308d2a334b, type: 3}
+    - time: 0.36666667
+      value: {fileID: 21300000, guid: 554f759370484ad4d845d3944710268c, type: 3}
+    - time: 0.38333333
+      value: {fileID: 21300000, guid: 57a1333f2d4c7a34bad902d410a950c2, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 1e65b80571d26e242ac7d9431deac8f6, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: 3d27b6f071b087c4f9c0e977b75475ad, type: 3}
+    - time: 0.43333334
+      value: {fileID: 21300000, guid: 1b6ada9a051967642ac354d7a9dc7835, type: 3}
+    attribute: m_Sprite
+    path: Electric/Spin
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 491703804
+      attribute: 304273561
+      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2588171316
+      attribute: 304273561
+      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2588171316
+      attribute: 2015549526
+      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 05eed035570c7fd46a1c9edf0c6aaef3, type: 3}
+    - {fileID: 21300000, guid: f951be36f66419c41abaaa08fc65867b, type: 3}
+    - {fileID: 21300000, guid: 631e6a338f7851d4b8f215e8239f63f4, type: 3}
+    - {fileID: 21300000, guid: 3ffabb5a3bf1566409d9e4f06799093e, type: 3}
+    - {fileID: 21300000, guid: 003650ddcf27e9d47b2f327b66ddf08b, type: 3}
+    - {fileID: 21300000, guid: b84c120777a67854f8d48d9f1a5c1586, type: 3}
+    - {fileID: 21300000, guid: 56cd1456dbec95b439af87d137f04c78, type: 3}
+    - {fileID: 21300000, guid: 0af7c6014e738d843b3c631fb56f8661, type: 3}
+    - {fileID: 21300000, guid: fedaae1ad8dac6a48ab33cbf3714f83f, type: 3}
+    - {fileID: 21300000, guid: 2da03a7e7530bbc448489a2ff2579ef7, type: 3}
+    - {fileID: 21300000, guid: f9c9b42c08c874f40a24e6308d2a334b, type: 3}
+    - {fileID: 21300000, guid: 554f759370484ad4d845d3944710268c, type: 3}
+    - {fileID: 21300000, guid: 57a1333f2d4c7a34bad902d410a950c2, type: 3}
+    - {fileID: 21300000, guid: 1e65b80571d26e242ac7d9431deac8f6, type: 3}
+    - {fileID: 21300000, guid: 3d27b6f071b087c4f9c0e977b75475ad, type: 3}
+    - {fileID: 21300000, guid: 1b6ada9a051967642ac354d7a9dc7835, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.46666667
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16666667
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: Electric
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.43333334
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.45
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.46666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Color.a
+    path: Electric/Spin
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

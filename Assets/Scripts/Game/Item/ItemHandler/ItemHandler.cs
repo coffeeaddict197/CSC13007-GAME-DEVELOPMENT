@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ public abstract class ItemHandler : ScriptableObject
         set
         {
             _currentDurability = value;
-            ItemEquipSlot.DoFill(ItemType.Weapon,_currentDurability/durability);
+            ItemEquipSlot.DoFill(ItemType.Weapon,_currentDurability/durability, Math.Abs(_currentDurability - durability) < 0.1f);
         }
     }
 

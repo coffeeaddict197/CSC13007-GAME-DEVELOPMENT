@@ -52,11 +52,14 @@ public class ItemEquipSlot : MonoBehaviour
         fillAmout.DOFillAmount(fillVal, 0.2f);
     }
 
-    void Shake()
+    void Shake(bool isEquip = false)
     {
         Sequence seq = DOTween.Sequence();
-        seq.Append(image.transform.DOShakeRotation(0.2f, 20f,10,0))
-            .Join(image.transform.DOShakeScale(0.2f, 0.3f,10,0));
+        seq.Append(image.transform.DOShakeRotation(0.2f, 30f, 10, 0))
+            .Join(image.transform.DOShakeScale(0.2f, 0.3f, 10, 0));
+            
+        if(!isEquip)    
+            seq.Join(image.DOColor(new Color(1,0.3F,0.3f,1),0.3f).SetLoops(2,LoopType.Yoyo));
     }
 
     
@@ -78,13 +81,13 @@ public class ItemEquipSlot : MonoBehaviour
         }
     }
 
-    public static void DoFill(ItemType Itemtype,float fillAmount)
+    public static void DoFill(ItemType Itemtype,float fillAmount, bool isEquip = false)
     {
         var slotEquip = slotsEquip.FirstOrDefault(x => x.Key == Itemtype);
         if (!slotEquip.Equals(default))
         {
             slotEquip.Value.DoFill(fillAmount);
-            slotEquip.Value.Shake();
+            slotEquip.Value.Shake(isEquip);
         }
     }
     

@@ -58,6 +58,7 @@ public class BlockItem : MonoBehaviour
 
     IEnumerator DOFX()
     {
+        effect.enabled = true;
         while (effect.colorFactor < 0.5f)
         {
             effect.colorFactor += Time.deltaTime;
@@ -69,6 +70,8 @@ public class BlockItem : MonoBehaviour
             effect.colorFactor -= Time.deltaTime;
             yield return null;
         }
+
+        effect.enabled = false;
     }
 
 

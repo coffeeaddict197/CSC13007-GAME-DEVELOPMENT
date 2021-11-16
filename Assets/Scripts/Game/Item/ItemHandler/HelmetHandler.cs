@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class HelmetHandler : ItemHandler
         set
         {
             _currentDurability = value;
-            ItemEquipSlot.DoFill(ItemType.Helmet,_currentDurability/durability);
+            ItemEquipSlot.DoFill(ItemType.Helmet,_currentDurability/durability,Math.Abs(_currentDurability - durability) < 0.1f);
         }
     }
     public override bool OnEquipItem(BaseBlock block)

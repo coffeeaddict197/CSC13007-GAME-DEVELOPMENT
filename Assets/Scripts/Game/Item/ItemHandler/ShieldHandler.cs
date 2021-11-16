@@ -12,7 +12,7 @@ public class ShieldHandler : ItemHandler
         set
         {
             _currentDurability = value;
-            ItemEquipSlot.DoFill(ItemType.Shield,_currentDurability/durability);
+            ItemEquipSlot.DoFill(ItemType.Shield,_currentDurability/durability,Mathf.Abs(_currentDurability - durability) < 0.1f);
         }
     }
     

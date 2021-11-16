@@ -96,8 +96,8 @@ public class Monster : MonoBehaviour
         _anim.SetTrigger("Attack");
         while (Health > 0)
         {
-            if(Player.Instance.CurrentHealth > 0)
-                _anim.SetTrigger("Reset");
+            // if(Player.Instance.CurrentHealth > 0)
+            //     _anim.SetTrigger("Reset");
             yield return null;
         }
     }
