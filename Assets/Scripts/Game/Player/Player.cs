@@ -142,7 +142,7 @@ public class Player : MonoSingleton<Player>
 
     void OnPlayerTakeDamage(int damage)
     {
-        FXFactory.Instance.fxTextFactory.SpawnFX(anchor.position,damage.ToString());
+        FXFactory.Instance.GetFXTextFactory().SpawnFX(anchor.position,damage.ToString(),FXTextFactory.damageColor);
         this._FX.FXPlayPlayerTakeDamage();
         CurrentHealth -= damage;
     }
@@ -150,6 +150,13 @@ public class Player : MonoSingleton<Player>
     void OnPlayerDamage(int damage)
     {
         
+    }
+
+    public Transform PlayerAnchor => anchor;
+    
+    public void OnPlayerHealth(int health)
+    {
+        _FX.FXPlayPlayerHealth(health);
     }
 
 }

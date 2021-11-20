@@ -82,11 +82,16 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
             if (dragObject.blockItem.config.itemName == block.blockItem.config.itemName && 
                 dragObject.blockData.BlockLevel == block.blockData.BlockLevel)
             {
-                
+                //LOGIC
                 block.blockData.BlockLevel++;
                 dragObject.ResetGridContain();
+                
+                //FX
+                FXFactory.Instance.GetFXCombineFactory().SpawnFX(block.rect);
+                
                 Destroy(dragObject.gameObject);
                 StartCoroutine(OnBlockFalling());
+
             }
         }
     }

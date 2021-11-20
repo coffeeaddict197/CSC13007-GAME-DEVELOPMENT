@@ -33,6 +33,7 @@ public class PlayerGear : MonoBehaviour
     {
         _weapon = null;
         sprWeapon.sprite = null;
+        ItemEquipSlot.UnEquip(ItemType.Weapon);
     }
 
     public int TakeDamage()

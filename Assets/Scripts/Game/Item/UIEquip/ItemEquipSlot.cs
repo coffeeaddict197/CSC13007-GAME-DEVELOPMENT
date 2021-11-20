@@ -18,6 +18,9 @@ public class ItemEquipSlot : MonoBehaviour
     [Header("Fill Amount")] 
     [SerializeField] private Image fillAmout;
     [SerializeField] private FillEquipDuration fillColorDuration;
+
+    [Header("FX")] 
+    [SerializeField] private ParticleSystem fx_SmokeBreak;
     
     
     private void OnEnable()
@@ -42,6 +45,8 @@ public class ItemEquipSlot : MonoBehaviour
 
     void UnEquip()
     {
+        Debug.Log("Un equip");
+        fx_SmokeBreak.Play();
         imageEmpty.gameObject.SetActive(true);
         image.gameObject.SetActive(false);
         fakeShadow.gameObject.SetActive(false);

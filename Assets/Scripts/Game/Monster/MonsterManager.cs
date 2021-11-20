@@ -24,6 +24,10 @@ public class MonsterManager : MonoSingleton<MonsterManager>
     {
         CreateMonster(MonsterType.Slime, "Yellow Slime", 200, MonsterGen.Earth);
         CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
     }
     
     Monster CreateMonster(MonsterType type, string monsterName,int health,MonsterGen gen)
