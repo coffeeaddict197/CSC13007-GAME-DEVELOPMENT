@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82460161211ba934489012f853710da7, type: 3}
-  m_Name: DaggerHandler
+  m_Name: SwordHandler
   m_EditorClassIdentifier: 
-  damage: 100
-  durability: 50
-  initPosition: {x: 0.395, y: 0.19, z: 0}
+  durability: 40
+  damageByLevel: 960000004a010000f401000052030000
+  initPosition: {x: 0.527, y: 0.223, z: 0}
+  initRotation: {x: 0, y: 0, z: 0}

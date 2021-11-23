@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Configs/ItemHandler/Weapon", fileName = "WeaponHandler")]
 public class WeaponHandler : ItemHandler
 {
+    public List<int> damageByLevel;
     public int damage;
 
     [Header("Position Setup")] 
@@ -16,6 +17,7 @@ public class WeaponHandler : ItemHandler
         
         if (!gear.IsEquipWeapon)
         {
+            damage = damageByLevel[block.blockData.BlockLevel - 1];
             Sprite spr = block.blockItem.GetItemSprite();
             gear.EquipWeapon(this,spr);
             ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());

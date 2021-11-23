@@ -12,8 +12,15 @@ public static class Ultility
             anchorPoint.x += node.rect.anchoredPosition.x;
             anchorPoint.y += node.rect.anchoredPosition.y;
         }
+
         anchorPoint /= listNode.Count;
         return anchorPoint;
     }
 
+    static public int RandomIn(int value, int min, int max)
+    {
+        min = value - 5;
+        max = value + 5;
+        return Random.Range(min, max);
+    }
 }

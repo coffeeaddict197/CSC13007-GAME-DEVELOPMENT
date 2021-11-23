@@ -31,7 +31,7 @@ public class BlockData
 
     public void OnChangeLevel(int level)
     {
-        if (level >= 4)
+        if (level > 4)
             return;
         if (level >= _blockLevel)
         {

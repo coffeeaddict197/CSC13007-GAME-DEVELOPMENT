@@ -46,7 +46,7 @@ public class PlayerGear : MonoBehaviour
                 DropWeapon();
                 return 5;
             }
-            return _weapon.damage;
+            return Ultility.RandomIn(_weapon.damage,_weapon.damage-10,_weapon.damage+10);
         }
 
         return 5;
@@ -60,6 +60,13 @@ public class PlayerGear : MonoBehaviour
         _helmet = HelmetHandler.CreateInstance(helmet);
         _helmet.Init();
         sprHelmet.sprite = helmetSpr;
+    }
+
+    public int HelmetPhysicsResistant()
+    {
+        if (_helmet != null)
+            return _helmet.physicsResistant;
+        return 0;
     }
 
     public void AffectHelmetDurability(float durability)
@@ -109,6 +116,13 @@ public class PlayerGear : MonoBehaviour
         {
             DropShield();
         }
-    } 
+    }
+    
+    public int SheildPhysicsResistant()
+    {
+        if (_shield != null)
+            return _shield.physicsResistant;
+        return 0;
+    }
 
 }

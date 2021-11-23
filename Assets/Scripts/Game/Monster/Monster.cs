@@ -6,6 +6,7 @@ using Spine.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 using  TMPro;
+using Random = UnityEngine.Random;
 
 public enum MonsterGen
 {
@@ -87,7 +88,7 @@ public class Monster : MonoBehaviour
 
     IEnumerator MonsterStartMove()
     {
-        Move(new Vector3(1.41f,2.196f,0f));
+        Move(new Vector3(1.41f,Player.Instance.transform.position.y,0f));
         yield return new WaitForSeconds(1f);
     }
     
@@ -115,8 +116,9 @@ public class Monster : MonoBehaviour
 
     protected virtual void OnMonsterAttack()
     {
-        Player.onPlayerTakeDamage(monsterDamage);
         PlayerGear gear = Player.Instance.gears;
+        int damage = Mathf.Abs(Ultility.RandomIn(monsterDamage,monsterDamage-5,monsterDamage+5) - gear.SheildPhysicsResistant() - gear.SheildPhysicsResistant());
+        Player.onPlayerTakeDamage(damage);
         gear.AffectShieldDurability((float)monsterDamage / 2);
         gear.AffectHelmetDurability((float)monsterDamage / 3);
     }

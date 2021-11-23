@@ -35,7 +35,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
         Monster model = monstersModel.Find(x => x.monsterType == type)?.GetMonster(monsterName);
         if (model != null)
         {
-            Monster newMons = Instantiate(model, new Vector3(4, 2.196f, 0), Quaternion.identity, this.transform);
+            Monster newMons = Instantiate(model, new Vector3(4, Player.Instance.transform.position.y, 0), Quaternion.identity, this.transform);
             newMons.Init(health,gen);
             listMonster.Add(newMons);
             return newMons;

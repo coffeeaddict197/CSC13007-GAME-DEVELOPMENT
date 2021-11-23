@@ -43,8 +43,6 @@ public class SpawnStrategy : MonoSingleton<SpawnStrategy>
                 newBlock.BlockFalling(true);
                 yield return new WaitForSeconds(0.1f);
             }
-
-
         }
     }
 

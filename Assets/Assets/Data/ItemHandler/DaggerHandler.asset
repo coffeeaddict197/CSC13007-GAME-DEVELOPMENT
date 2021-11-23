@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aac8592eedf41044be2b563bfa6a4d1, type: 3}
-  m_Name: ShieldHandler
+  m_Script: {fileID: 11500000, guid: 82460161211ba934489012f853710da7, type: 3}
+  m_Name: DaggerHandler
   m_EditorClassIdentifier: 
-  durability: 100
+  durability: 50
+  damageByLevel: 64000000fa0000009001000058020000
+  initPosition: {x: 0.395, y: 0.19, z: 0}
+  initRotation: {x: 0, y: 0, z: 0}

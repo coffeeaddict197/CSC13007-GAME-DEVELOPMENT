@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Configs/ItemHandler/Helmet", fileName = "HelmetHandler")]
 public class HelmetHandler : ItemHandler
 {
+    public int physicsResistant;
     public override float CurrentDurability
     {
         get => _currentDurability;

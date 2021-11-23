@@ -58,6 +58,7 @@ public class Player : MonoSingleton<Player>
     {
         yield return StartCoroutine(PlayerMovement());
         yield return StartCoroutine(PlayerAttack());
+        _FX.FXOnCollectionCoin(1.5f);
         yield return new WaitForSeconds(1f);
     
         

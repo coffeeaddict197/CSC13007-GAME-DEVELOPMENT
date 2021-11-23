@@ -19,6 +19,10 @@ public class ItemEquipSlot : MonoBehaviour
     [SerializeField] private Image fillAmout;
     [SerializeField] private FillEquipDuration fillColorDuration;
 
+    public static string fillGreenColor = "#4BF82E";
+    public static string fillYellowColor = "#F8C52E";
+    public static string fillRedColor = "#F82E35";
+
     [Header("FX")] 
     [SerializeField] private ParticleSystem fx_SmokeBreak;
     
@@ -55,6 +59,17 @@ public class ItemEquipSlot : MonoBehaviour
     void DoFill(float fillVal)
     {
         fillAmout.DOFillAmount(fillVal, 0.2f);
+
+        Color color = fillAmout.color;
+        if (fillVal < 0.3f)
+        
+            ColorUtility.TryParseHtmlString(fillRedColor, out color);
+        else if (fillVal < 0.7f)
+            ColorUtility.TryParseHtmlString(fillYellowColor, out color);
+        else
+            ColorUtility.TryParseHtmlString(fillGreenColor, out color);
+
+        fillAmout.color = color;
     }
 
     void Shake(bool isEquip = false)

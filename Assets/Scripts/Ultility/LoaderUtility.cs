@@ -61,7 +61,6 @@ public class LoaderUtility : MonoSingleton<LoaderUtility>
                 asset = t
             });
         }
-        // ưDebug.Log("LOAD ASSETS: " + t + " PATH: " + fileName);
         return t;
     }
 

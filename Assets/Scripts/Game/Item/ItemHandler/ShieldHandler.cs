@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Configs/ItemHandler/Shield", fileName = "Shield")]
 public class ShieldHandler : ItemHandler
 {
+    public int physicsResistant;
     public override float CurrentDurability
     {
         get => _currentDurability;
