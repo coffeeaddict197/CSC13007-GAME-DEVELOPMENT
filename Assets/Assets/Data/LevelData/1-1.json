@@ -1,26 +1,31 @@
-[
-  {
-    "monsterType": 1,
-    "name" : "Yellow Slime",
-    "health": 200,
-    "gen" : 1
-  },
-  {
-    "monsterType": 1,
-    "name" : "Blue Slime",
-    "health": 200,
-    "gen" : 1
-  },
-  {
-    "monsterType": 2,
-    "name" : "Purple Slime",
-    "health": 200,
-    "gen" : 1
-  },
-  {
-    "monsterType": 1,
-    "name" : "Yellow Slime",
-    "health": 200,
-    "gen" : 1
-  }
-]
+{
+  "map" : 1,
+  "level" :1,
+  "listMonster" : [
+    {
+      "monsterType": 1,
+      "name" : "Yellow Slime",
+      "health": 200,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Blue Slime",
+      "health": 200,
+      "gen" : 1
+    },
+    {
+      "monsterType": 2,
+      "name" : "Purple Slime",
+      "health": 200,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Yellow Slime",
+      "health": 200,
+      "gen" : 1
+    }
+  ]
+  
+}

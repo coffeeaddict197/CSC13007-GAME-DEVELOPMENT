@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a121f935ac68b674281c9112d490fe15, type: 3}
-  m_Name: Level1-1
+  m_Name: LevelConfigs
   m_EditorClassIdentifier: 
   levelAssetsConfig:
   - map: 1
     level: 1
-    levelInTextFormat: {fileID: 4900000, guid: 5cf7b79f47f68cc4fa217d0181816e3e, type: 3}
-    monsterLevel:
+    listMonster:
     - monsterType: 1
       name: Yellow Slime
       health: 200

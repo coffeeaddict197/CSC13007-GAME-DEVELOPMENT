@@ -20,7 +20,15 @@ public class SpawnStrategy : MonoSingleton<SpawnStrategy>
         StartCoroutine(StartSpawn());
 
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SpawnBlock();
+        }
+    }
+
     public void SpawnBlock()
     {
         StartCoroutine(StartSpawn());

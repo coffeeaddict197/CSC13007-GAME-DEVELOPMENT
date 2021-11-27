@@ -116,6 +116,7 @@ public class Monster : MonoBehaviour
 
     protected virtual void OnMonsterAttack()
     {
+        MonsterFX.Instance.FXPlayMonsterAttack();
         PlayerGear gear = Player.Instance.gears;
         int damage = Mathf.Abs(Ultility.RandomIn(monsterDamage,monsterDamage-5,monsterDamage+5) - gear.SheildPhysicsResistant() - gear.SheildPhysicsResistant());
         Player.onPlayerTakeDamage(damage);

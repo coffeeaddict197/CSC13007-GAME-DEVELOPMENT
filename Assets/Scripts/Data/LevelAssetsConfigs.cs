@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Configs/LevelAssetsConfig", fileName = "Levelx-x")]
@@ -11,14 +13,25 @@ public class LevelAssetsConfigs : ScriptableObject
 
     private void OnValidate()
     {
-        for (int i = 0; i < levelAssetsConfig.Count; i++)
+        string path = "Assets/Assets/Data/LevelData/";
+        var info = new DirectoryInfo(path);
+        var fileInfo = info.GetFiles("*.json");
+        levelAssetsConfig = new List<LevelsConfig>();
+        for (int i = 0; i < fileInfo.Length; i++)
         {
-            levelAssetsConfig[i].LoadLevelConfig();
+            TextAsset jsonAsset = AssetDatabase.LoadAssetAtPath($"{path}{fileInfo[i].Name}", typeof(TextAsset)) as TextAsset; 
+            LevelsConfig config = JsonConvert.DeserializeObject<LevelsConfig>(jsonAsset.text);
+            levelAssetsConfig.Add(config);
         }
     }
 
 #endif
     public List<LevelsConfig> levelAssetsConfig;
+
+    public static LevelAssetsConfigs LevelConfigs()
+    {
+        return LoaderUtility.Instance.GetAsset<LevelAssetsConfigs>("Configs/LevelAssets/LevelConfigs");
+    }
 }
 
 [System.Serializable]
@@ -26,13 +39,7 @@ public class LevelsConfig
 {
     public int map;
     public int level;
-    public TextAsset levelInTextFormat;
-    public List<MonsterLevelConfigs> monsterLevel;
-
-    public void LoadLevelConfig()
-    {
-        monsterLevel = JsonConvert.DeserializeObject<List<MonsterLevelConfigs>>(levelInTextFormat.text);
-    }
+    public List<MonsterLevelConfigs> listMonster;
 }
 
 [System.Serializable]
