@@ -36,7 +36,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     {
         if (block.blockItem.OnClick(block))
         {
-            block.ResetGridContain();
+            BlockManager.Instance.Remove(block);
             Destroy(block.gameObject);
             StartCoroutine(OnBlockFalling());
         }
@@ -63,8 +63,6 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
         block.UpdatePosition(gridNode);
         StartCoroutine(OnBlockFalling());
         canvasGrp.blocksRaycasts = true;
-
-
     }
     
     
@@ -83,17 +81,22 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
                 dragObject.blockData.BlockLevel == block.blockData.BlockLevel)
             {
                 //LOGIC
+                BlockManager.Instance.Remove(dragObject);
                 block.blockData.BlockLevel++;
-                dragObject.ResetGridContain();
-                
                 //FX
                 FXFactory.Instance.GetFXCombineFactory().SpawnFX(block.rect);
-                
                 Destroy(dragObject.gameObject);
                 StartCoroutine(OnBlockFalling());
 
             }
         }
+    }
+
+    public void OnDestroy()
+    {
+        block.ResetGridContain();
+        BlockManager.Instance.Remove(block);
+        onBlockChange?.Invoke();
     }
 
 
@@ -117,6 +120,8 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
             yield return new WaitForSeconds(0.1f);
         }
     }
+    
+    
     
 
 }

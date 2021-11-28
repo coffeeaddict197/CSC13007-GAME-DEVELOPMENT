@@ -68,7 +68,7 @@ public class Player : MonoSingleton<Player>
         if (isNotEndGame)
         {
             //Respawn weapon
-            SpawnStrategy.Instance.SpawnBlock();
+            BlockManager.Instance.SpawnBlock();
             StartCoroutine(PlayerLoopAction());
         }
 

@@ -1,0 +1,377 @@
+
+Thief.png
+size: 1998,1104
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Fight_0001
+  rotate: true
+  xy: 1157, 4
+  size: 188, 221
+  orig: 256, 256
+  offset: 44, 17
+  index: -1
+Fight_0002
+  rotate: true
+  xy: 1484, 219
+  size: 174, 218
+  orig: 256, 256
+  offset: 42, 19
+  index: -1
+Fight_0003
+  rotate: false
+  xy: 1657, 639
+  size: 175, 220
+  orig: 256, 256
+  offset: 39, 18
+  index: -1
+Fight_0004
+  rotate: true
+  xy: 2, 2
+  size: 176, 196
+  orig: 256, 256
+  offset: 39, 35
+  index: -1
+Fight_0005
+  rotate: true
+  xy: 994, 646
+  size: 197, 191
+  orig: 256, 256
+  offset: 21, 44
+  index: -1
+Fight_0006
+  rotate: false
+  xy: 366, 638
+  size: 219, 205
+  orig: 256, 256
+  offset: 2, 40
+  index: -1
+Fight_0007
+  rotate: true
+  xy: 798, 183
+  size: 197, 216
+  orig: 256, 256
+  offset: 23, 35
+  index: -1
+Fight_0008
+  rotate: false
+  xy: 587, 641
+  size: 191, 202
+  orig: 256, 256
+  offset: 36, 28
+  index: -1
+Fight_0009
+  rotate: true
+  xy: 581, 183
+  size: 194, 215
+  orig: 256, 256
+  offset: 38, 20
+  index: -1
+Fight_0010
+  rotate: true
+  xy: 1600, 4
+  size: 213, 235
+  orig: 256, 256
+  offset: 33, 10
+  index: -1
+Fight_0011
+  rotate: false
+  xy: 1620, 861
+  size: 230, 241
+  orig: 256, 256
+  offset: 16, 7
+  index: -1
+Fight_0012
+  rotate: true
+  xy: 1187, 651
+  size: 192, 246
+  orig: 256, 256
+  offset: 33, 4
+  index: -1
+Fight_0013
+  rotate: true
+  xy: 1016, 194
+  size: 190, 243
+  orig: 256, 256
+  offset: 30, 6
+  index: -1
+Fight_0014
+  rotate: false
+  xy: 1443, 858
+  size: 175, 244
+  orig: 256, 256
+  offset: 35, 5
+  index: -1
+Fight_0015
+  rotate: true
+  xy: 455, 4
+  size: 175, 249
+  orig: 256, 256
+  offset: 34, 3
+  index: -1
+Fight_0016
+  rotate: true
+  xy: 328, 181
+  size: 179, 251
+  orig: 256, 256
+  offset: 33, 2
+  index: -1
+Fight_0017
+  rotate: true
+  xy: 200, 3
+  size: 175, 253
+  orig: 256, 256
+  offset: 41, 1
+  index: -1
+Fight_0018
+  rotate: false
+  xy: 1410, 395
+  size: 169, 254
+  orig: 256, 256
+  offset: 51, 0
+  index: -1
+Fight_0019
+  rotate: true
+  xy: 1704, 219
+  size: 174, 216
+  orig: 256, 256
+  offset: 49, 21
+  index: -1
+Fight_0020
+  rotate: true
+  xy: 1380, 27
+  size: 175, 218
+  orig: 256, 256
+  offset: 49, 20
+  index: -1
+Fight_0021
+  rotate: true
+  xy: 931, 3
+  size: 178, 224
+  orig: 256, 256
+  offset: 48, 19
+  index: -1
+Fight_0022
+  rotate: true
+  xy: 706, 2
+  size: 179, 223
+  orig: 256, 256
+  offset: 48, 20
+  index: -1
+Fight_0023
+  rotate: true
+  xy: 1435, 660
+  size: 183, 220
+  orig: 256, 256
+  offset: 47, 18
+  index: -1
+Fight_0024
+  rotate: true
+  xy: 1261, 204
+  size: 186, 221
+  orig: 256, 256
+  offset: 45, 17
+  index: -1
+Thief-Hook00
+  rotate: false
+  xy: 1852, 953
+  size: 144, 149
+  orig: 146, 151
+  offset: 1, 1
+  index: -1
+Thief_Bag01
+  rotate: false
+  xy: 328, 362
+  size: 228, 269
+  orig: 228, 269
+  offset: 0, 0
+  index: -1
+Thief_Bag01_SmallBag01
+  rotate: true
+  xy: 1852, 853
+  size: 98, 139
+  orig: 98, 139
+  offset: 0, 0
+  index: -1
+Thief_Bag01_Wand01
+  rotate: false
+  xy: 1653, 526
+  size: 126, 111
+  orig: 128, 113
+  offset: 1, 1
+  index: -1
+Thief_Bassin01
+  rotate: true
+  xy: 1581, 522
+  size: 136, 70
+  orig: 136, 70
+  offset: 0, 0
+  index: -1
+Thief_Foot_Left01
+  rotate: true
+  xy: 1669, 395
+  size: 129, 76
+  orig: 131, 78
+  offset: 1, 1
+  index: -1
+Thief_Foot_Rigth01
+  rotate: false
+  xy: 1837, 131
+  size: 81, 86
+  orig: 83, 88
+  offset: 1, 1
+  index: -1
+Thief_Glove01
+  rotate: true
+  xy: 1854, 431
+  size: 99, 138
+  orig: 101, 140
+  offset: 1, 1
+  index: -1
+Thief_Glove02
+  rotate: false
+  xy: 1581, 408
+  size: 86, 112
+  orig: 86, 112
+  offset: 0, 0
+  index: -1
+Thief_Hand_Left01
+  rotate: false
+  xy: 1781, 532
+  size: 82, 105
+  orig: 82, 105
+  offset: 0, 0
+  index: -1
+Thief_Hand_Right01
+  rotate: false
+  xy: 1837, 25
+  size: 93, 104
+  orig: 93, 104
+  offset: 0, 0
+  index: -1
+Thief_Head_Back01
+  rotate: false
+  xy: 780, 645
+  size: 212, 198
+  orig: 214, 200
+  offset: 1, 1
+  index: -1
+Thief_Head_Front01
+  rotate: true
+  xy: 558, 379
+  size: 257, 211
+  orig: 259, 213
+  offset: 1, 1
+  index: -1
+Thief_Head_Front01_EyeClose
+  rotate: true
+  xy: 771, 382
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Head_Front02
+  rotate: true
+  xy: 366, 845
+  size: 257, 217
+  orig: 257, 217
+  offset: 0, 0
+  index: -1
+Thief_Head_Front02_EyeClose
+  rotate: true
+  xy: 585, 845
+  size: 257, 217
+  orig: 257, 217
+  offset: 0, 0
+  index: -1
+Thief_Head_Front03
+  rotate: true
+  xy: 804, 845
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Head_Front04
+  rotate: true
+  xy: 984, 386
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Head_Front05
+  rotate: true
+  xy: 1017, 845
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Head_Front06
+  rotate: true
+  xy: 1230, 845
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Head_Front07
+  rotate: true
+  xy: 1197, 392
+  size: 257, 211
+  orig: 257, 211
+  offset: 0, 0
+  index: -1
+Thief_Leg_Left01
+  rotate: false
+  xy: 1922, 178
+  size: 47, 93
+  orig: 47, 93
+  offset: 0, 0
+  index: -1
+Thief_Leg_Right01
+  rotate: false
+  xy: 1922, 329
+  size: 69, 100
+  orig: 69, 100
+  offset: 0, 0
+  index: -1
+Thief_Neck01
+  rotate: true
+  xy: 1834, 683
+  size: 168, 89
+  orig: 170, 91
+  offset: 1, 1
+  index: -1
+Thief_Neck02
+  rotate: true
+  xy: 1920, 138
+  size: 38, 37
+  orig: 40, 39
+  offset: 1, 1
+  index: -1
+Thief_Shadow
+  rotate: false
+  xy: 1922, 273
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Thief_SpeedLine01
+  rotate: false
+  xy: 2, 633
+  size: 362, 469
+  orig: 508, 512
+  offset: 75, 29
+  index: -1
+Thief_SpeedLine02
+  rotate: false
+  xy: 2, 180
+  size: 324, 451
+  orig: 510, 512
+  offset: 95, 39
+  index: -1
+Thief_Torse01
+  rotate: true
+  xy: 1747, 398
+  size: 126, 105
+  orig: 128, 107
+  offset: 1, 1
+  index: -1

@@ -29,10 +29,7 @@ public abstract class BaseBlock : MonoBehaviour
     /// <summary>
     /// Node define first point to draw block
     /// </summary>
-    public GridNode FirstNode
-    {
-        get => gridContains[0];
-    }
+    public GridNode FirstNode => gridContains[0];
 
     protected virtual void Awake()
     {
@@ -181,7 +178,13 @@ public abstract class BaseBlock : MonoBehaviour
         return true;
     }
 
-    
+
+    public bool IsCointainNode(GridNode node)
+    {
+        if (gridContains.Contains(node))
+            return true;
+        return false;
+    }
     
     public abstract bool CheckCanSpawnAt(GridNode node, GridNode[,] gameGrid, out List<GridNode> listNode);
     
