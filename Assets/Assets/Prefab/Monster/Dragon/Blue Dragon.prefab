@@ -82,6 +82,7 @@ MonoBehaviour:
   _anim: {fileID: 9073898824445427039}
   _textHelth: {fileID: 9073898824980215397}
   _fillHealth: {fileID: 9073898824479446643}
+  _bgHealth: {fileID: 9073898824899321180}
   anchorPosition: {fileID: 4928632639528446163}
 --- !u!1 &9073898824445427034
 GameObject:

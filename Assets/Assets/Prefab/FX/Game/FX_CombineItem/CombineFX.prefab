@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 406885226358310382}
   - component: {fileID: 406885226358310383}
   - component: {fileID: -1360477909921719453}
+  - component: {fileID: 3642476765650246220}
   m_Layer: 5
   m_Name: CombineFX
   m_TagString: Untagged
@@ -148,6 +149,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0.5
+--- !u!223 &3642476765650246220
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406885226358310381}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: -1640681139
+  m_SortingOrder: 100
+  m_TargetDisplay: 0
 --- !u!1 &406885226419928552
 GameObject:
   m_ObjectHideFlags: 0

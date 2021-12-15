@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88624819981f4d74e99bf4b402a92d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 0}
+  monster: {fileID: 701703487}
 --- !u!1 &8127030067566279221
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ MonoBehaviour:
   _anim: {fileID: 8127030067223695116}
   _textHelth: {fileID: 8127030068836385846}
   _fillHealth: {fileID: 8127030069001479200}
+  _bgHealth: {fileID: 8127030068852272911}
   anchorPosition: {fileID: 5279328634339056256}
 --- !u!1 &8127030068836385844
 GameObject:
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88624819981f4d74e99bf4b402a92d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 0}
+  monster: {fileID: 701703487}
 --- !u!1 &8127030069001479198
 GameObject:
   m_ObjectHideFlags: 0
