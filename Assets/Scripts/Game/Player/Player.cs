@@ -23,6 +23,7 @@ public class Player : MonoSingleton<Player>
     
     [Header("Reference")]
     public PlayerGear gears;
+    public PlayerBuff spellBuff;
     [SerializeField] private Transform anchor;
     [SerializeField] private PlayerUI _playerUI;
     [SerializeField] private Animator _anim;
@@ -144,6 +145,8 @@ public class Player : MonoSingleton<Player>
     {
         FXFactory.Instance.GetFXTextFactory().SpawnFX(anchor.position,damage.ToString(),FXTextFactory.damageColor);
         this._FX.FXPlayPlayerTakeDamage();
+        //TODO: DO POSION AFFECT
+        damage -= spellBuff.GetBuffAffectValue(BuffEnum.BuffShield);
         CurrentHealth -= damage;
     }
 

@@ -47,6 +47,7 @@ public class FX_RewardShower : MonoBehaviour
             {
 
                 RewardItems[i].ROOT.transform.DOScale(1, 0.3f).From(0).SetEase(Ease.OutBack);
+                RewardItems[i].ROOT.transform.GetChild(2).gameObject.SetActive(true);
                 yield return new WaitForSeconds(0.2F);
             }
         }
@@ -69,6 +70,7 @@ public class RewardItem
         this._rewardInf.amount = rewardInf.amount;
         img.sprite = LoaderUtility.Instance.GetAsset<Sprite>($"UI/Reward/{rewardInf.rwType.ToString()}");
         text.text = rewardInf.amount.ToString();
+        AddToData();
     }
 
     void AddToData()

@@ -57,5 +57,5 @@ public enum ItemType
     Weapon,
     Helmet,
     Shield,
-    Poison
+    Posion
 }

@@ -74,6 +74,7 @@ public class FX_ScreenEndGame : MonoSingleton<FX_ScreenEndGame>
 
     IEnumerator FXBGResult()
     {
+        yield return new WaitForSeconds(0.6f);
         rewardBGShower.gameObject.SetActive(true);
         rewardBGShower.SetTrigger("PlayResultBG");
         yield return new WaitForSeconds(1.2f);

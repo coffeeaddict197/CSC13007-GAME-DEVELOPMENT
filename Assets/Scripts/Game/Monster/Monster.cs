@@ -130,6 +130,7 @@ public class Monster : MonoBehaviour
         PlayerGear gear = Player.Instance.gears;
         int damage = Mathf.Abs(Ultility.RandomIn(monsterDamage,monsterDamage-5,monsterDamage+5) - gear.SheildPhysicsResistant() - gear.SheildPhysicsResistant());
         Player.onPlayerTakeDamage(damage);
+        
         gear.AffectShieldDurability((float)monsterDamage / 2);
         gear.AffectHelmetDurability((float)monsterDamage / 3);
     }
