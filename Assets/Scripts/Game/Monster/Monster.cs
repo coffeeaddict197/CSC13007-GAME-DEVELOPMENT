@@ -34,6 +34,7 @@ public class Monster : MonoBehaviour
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI _textHelth;
     [SerializeField] private Image _fillHealth;
+    [SerializeField] private Image _bgHealth;
     [SerializeField] private Transform anchorPosition;
     
     public Action onMonsterAttack;
@@ -53,8 +54,17 @@ public class Monster : MonoBehaviour
 
         }
     }
-    
-    
+
+    private void Start()
+    {
+        if (MonsterManager.Instance.IsBoss(this))
+        {
+            _fillHealth.sprite = LoaderUtility.Instance.GetAsset<Sprite>("UI/HealthBar/BossFill");
+            _bgHealth.sprite = LoaderUtility.Instance.GetAsset<Sprite>("UI/HealthBar/BossBar");
+        }
+    }
+
+
     //---------------BUILD IN METHOD-----------------
     private void OnEnable()
     {

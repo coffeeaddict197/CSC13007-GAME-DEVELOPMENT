@@ -12,22 +12,24 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
     [Header("List Monster")] 
     public List<MonsterModel> monstersModel;
-    
-    private void Start()
+
+    protected override void Awake()
     {
+        base.Awake();
         listMonster = new List<Monster>();
         CreateListMonster();
         MaxMonster = listMonster.Count;
     }
+    
 
     public void CreateListMonster()
     {
         CreateMonster(MonsterType.Slime, "Yellow Slime", 200, MonsterGen.Earth);
-        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
     }
     
     Monster CreateMonster(MonsterType type, string monsterName,int health,MonsterGen gen)
@@ -74,6 +76,16 @@ public class MonsterManager : MonoSingleton<MonsterManager>
     public bool AllMonsterDeath()
     {
         return listMonster.Count == 0;
+    }
+
+    public bool IsBoss(Monster m) //LastMonster
+    {
+        Debug.Log(listMonster.IndexOf(m));
+        if (listMonster.IndexOf(m) == listMonster.Count - 1)
+        {
+            return true;
+        }
+        return false;
     }
     
     

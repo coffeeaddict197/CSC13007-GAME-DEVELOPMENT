@@ -125,4 +125,10 @@ public class PlayerGear : MonoBehaviour
         return 0;
     }
 
+    public void UnEquipAllGear()
+    {
+        DropShield();
+        DropWeapon();
+    }
+
 }

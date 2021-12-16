@@ -1,18 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(BaseBlock))]
-public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, ICommondFX
 {
     [Header("Reference")] 
     [SerializeField] private CanvasGroup canvasGrp;
     [SerializeField] private BaseBlock block;
 
     private static Action onBlockChange;
+
+    private void Start()
+    {
+        FX_ScreenEndGame.Instance.Add(this);
+    }
 
     private void OnEnable()
     {
@@ -22,6 +28,7 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     private void OnDisable()
     {
         onBlockChange -= this.OnBlockChange;
+        FX_ScreenEndGame.Instance.Remove(this);
     }
 
 #if UNITY_EDITOR
@@ -87,7 +94,6 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
                 FXFactory.Instance.GetFXCombineFactory().SpawnFX(block.rect);
                 Destroy(dragObject.gameObject);
                 StartCoroutine(OnBlockFalling());
-
             }
         }
     }
@@ -120,8 +126,26 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
             yield return new WaitForSeconds(0.1f);
         }
     }
-    
-    
-    
 
+
+    public float timeWaitng
+    {
+        get => 0;
+    }
+    public float timeDoing
+    {
+        get => 0.1f;
+    }
+    public int priority
+    {
+        get => 1;
+    }
+    public void DoFX()
+    {
+        FXFactory.Instance.GetFXCombineFactory().SpawnFX(block.rect);
+        this.transform.DOScale(0, 0.3F).From(1).OnComplete(() =>
+        {
+            
+        });
+    }
 }

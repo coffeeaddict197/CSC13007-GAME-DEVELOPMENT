@@ -15,15 +15,12 @@ public class BlockManager : MonoSingleton<BlockManager>
 
     [Header("Reference")] 
     [SerializeField] private GameGrid game;
+    
+    
 
 
     public static Action onFullSpawnEvent; //In other word is Overloot event
-
-    private void OnEnable()
-    {
-        
-    }
-
+    
     private void Start()
     {
         blockSpawned = new List<BaseBlock>();
@@ -63,7 +60,7 @@ public class BlockManager : MonoSingleton<BlockManager>
                 newBlock.BlockFalling(true);
                 yield return new WaitForSeconds(0.1f);
                 blockSpawned.Add(newBlock);
-                
+                this.CheckEventLooter();
                 hasBeenSpawned.Clear();
             }
             else
@@ -72,11 +69,11 @@ public class BlockManager : MonoSingleton<BlockManager>
                 {
                     hasBeenSpawned.Add(rdIndexItem);
                 }
-
+                
+                //FullItem Event
                 if (hasBeenSpawned.Count == listBlock.Count)
                 {
-                    SpawnToHandleOverlootEvent(listBlock[2]);  //Dagger
-                    Debug.Log("Can't spawn - return");
+                    SpawnToHandleOverlootEvent();
                     yield break;
                 }
                 
@@ -128,28 +125,44 @@ public class BlockManager : MonoSingleton<BlockManager>
         return res;
     }
 
-    void SpawnToHandleOverlootEvent(BaseBlock model)
+    void SpawnToHandleOverlootEvent()
     {
+        OverlootEvent.Instance.isPlayingEvent = true;
+        BaseBlock model = listBlock[2];
         //Just spawn one and occur event OVERLOOT
         BaseBlock newBlock = Instantiate(model, game.transform);
         RandomLevel(newBlock);
         newBlock.rect.anchoredPosition = new Vector2(newBlock.rect.anchoredPosition.x, 2500);
         newBlock.rect.DOAnchorPosY(960, 0.5f).OnComplete(() =>
         {
+            OverlootEvent.Instance.SpawnThief();
             onFullSpawnEvent?.Invoke();
             Sequence seq = DOTween.Sequence();
             seq.Join(newBlock.transform.DOJump(new Vector3(2, -8f, 0), 7F, 1, 2.5f))
                 .Join(newBlock.transform.DORotate(new Vector3(0, 0, 360F), 0.6f, RotateMode.FastBeyond360)
                     .SetEase(Ease.Linear).SetLoops(10, LoopType.Incremental))
-                .Join(newBlock.transform.DOScale(new Vector3(1.3F, 1.3F, 1.3F), 0.5F).SetDelay(0.3F).From(Vector3.one));
-
-
+                .Join(newBlock.transform.DOScale(new Vector3(1.3F, 1.3F, 1.3F), 0.5F).SetDelay(0.3F).From(Vector3.one).OnComplete(
+                    () =>
+                    {
+                        OverlootEvent.Instance.OnNotifyOverlootEvent();
+                    }));
         });
     }
 
-    // IEnumerator IE_EventOverloot()
-    // {
-    //     yield return new WaitForSeconds()
-    // }
+
+    public bool CheckFullGrid()
+    {
+        var obj = blockSpawned.FindAll(x => x.listNodeContain.Find(n => n.isContainObject && n.row <= 1) != null);
+        if (obj.Count >= 3)
+            return true;
+        return false;
+    }
+    void CheckEventLooter()
+    {
+        if (CheckFullGrid())
+        {
+            WarningFullSlot.Instance.DOFX();
+        }
+    }
 
 }

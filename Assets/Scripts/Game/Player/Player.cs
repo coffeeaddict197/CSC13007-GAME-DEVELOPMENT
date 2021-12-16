@@ -60,8 +60,6 @@ public class Player : MonoSingleton<Player>
         yield return StartCoroutine(PlayerAttack());
         _FX.FXOnCollectionCoin(1.5f);
         yield return new WaitForSeconds(1f);
-    
-        
         MonsterManager monsterManager = MonsterManager.Instance;
         LevelProgress.onUpdateProgress?.Invoke( monsterManager.CurrentMonster ,monsterManager.MaxMonster);
         bool isNotEndGame = !monsterManager.AllMonsterDeath() && _currentHealth > 0;
@@ -69,14 +67,27 @@ public class Player : MonoSingleton<Player>
         {
             //Respawn weapon
             BlockManager.Instance.SpawnBlock();
+            yield return new WaitForSeconds(0.5f);
+            yield return new WaitUntil(() => !OverlootEvent.Instance.isPlayingEvent);
             StartCoroutine(PlayerLoopAction());
+        }
+        else
+        {
+            //Win or loose handler
+            if (_currentHealth > 0)
+            {
+                StartCoroutine(WinnerHandler());
+            }
+            else
+            {
+                //Lose
+            }
         }
 
     }
     
-    IEnumerator PlayerMovement()
+    IEnumerator PlayerMovement(float timeMovement = 3f)
     {
-        float timeMovement = 3f;
         float curTime = 0;
         _anim.SetTrigger("Run");
         
@@ -118,21 +129,9 @@ public class Player : MonoSingleton<Player>
     
     IEnumerator WinnerHandler()
     {
-        bool isClear = MonsterManager.Instance.AllMonsterDeath();
-        if (isClear)
-        {
-            float timeMovement = 5f;
-            float curTime = 0;
-            _anim.SetTrigger("Run");
-        
-            while (curTime < timeMovement)
-            {
-                curTime += Time.deltaTime;
-                BackgroundScroll.Instance.UpdateBG();
-                yield return null;
-            }
-            _anim.SetTrigger("Dance");
-        }
+        FX_ScreenEndGame.Instance.Excute();
+        yield return StartCoroutine(PlayerMovement());
+        _anim.SetTrigger("Dance");
     }
 
     public void InitPlayerStat(int maxHeal)
@@ -158,6 +157,12 @@ public class Player : MonoSingleton<Player>
     public void OnPlayerHealth(int health)
     {
         _FX.FXPlayPlayerHealth(health);
+    }
+
+    public void DisableAllStuffAndUI()
+    {
+        gears.UnEquipAllGear();
+        _playerUI.gameObject.SetActive(false);
     }
 
 }

@@ -8,19 +8,9 @@ public class ThiefOverloot : MonoBehaviour
     [Header("Carousel")] 
     [SerializeField] private ThiefCarousel _carousel;
 
-    private void Start()
-    {
-        _carousel.Scroll(StartLoot);
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            StartLoot();
-        }
-    }
-    
+    public void ActiveCarousel() => _carousel.gameObject.SetActive(true);
+
     public void StartLoot()
     {
         int rowStartLoot = _carousel.GetCurrentRow();
@@ -31,4 +21,12 @@ public class ThiefOverloot : MonoBehaviour
             Destroy(block.gameObject);
         }
     }
+
+    public IEnumerator IELootAction(Action callback)
+    {
+        callback += StartLoot;
+        yield return StartCoroutine(_carousel.Scroll(callback));
+        yield return null;
+    }
+
 }

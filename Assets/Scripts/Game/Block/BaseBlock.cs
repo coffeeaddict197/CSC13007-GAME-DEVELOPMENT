@@ -30,6 +30,7 @@ public abstract class BaseBlock : MonoBehaviour
     /// Node define first point to draw block
     /// </summary>
     public GridNode FirstNode => gridContains[0];
+    public List<GridNode> listNodeContain => gridContains;
 
     protected virtual void Awake()
     {
@@ -78,6 +79,11 @@ public abstract class BaseBlock : MonoBehaviour
                 if(isFirstSpawn)
                     blockItem.DoEffect();
             });
+
+            if (!BlockManager.Instance.CheckFullGrid())
+            {
+                WarningFullSlot.Instance.StopFX();
+            }
         }
     }
     
@@ -129,6 +135,9 @@ public abstract class BaseBlock : MonoBehaviour
     /// </summary>
     protected int GetDownStep()
     {
+        if (gridContains.Count <= 0)
+            return 0;
+        
         GridNode nodeStart = gridContains[0];
         GameGrid gameGrid = GameGrid.Instance;
         
