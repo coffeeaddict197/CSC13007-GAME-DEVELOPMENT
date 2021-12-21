@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerGear : MonoBehaviour
 {
+    public bool isEquiped;
+    
     [Header("Weapon")] 
     [SerializeField] SpriteRenderer sprWeapon;
     private WeaponHandler _weapon;
@@ -26,6 +28,7 @@ public class PlayerGear : MonoBehaviour
         sprWeapon.sprite = weaponSpr;
         sprWeapon.transform.localPosition = weapon.initPosition;
 
+        isEquiped = true;
     }
     public bool IsEquipWeapon => _weapon != null;
 
@@ -60,6 +63,8 @@ public class PlayerGear : MonoBehaviour
         _helmet = HelmetHandler.CreateInstance(helmet);
         _helmet.Init();
         sprHelmet.sprite = helmetSpr;
+
+        isEquiped = true;
     }
 
     public int HelmetPhysicsResistant()
@@ -96,6 +101,8 @@ public class PlayerGear : MonoBehaviour
         _shield = ShieldHandler.CreateInstance(shield);
         _shield.Init();
         sprShield.sprite = shieldSpr;
+        
+        isEquiped = true;
 
     }
     public bool IsEquipShield => _shield != null;

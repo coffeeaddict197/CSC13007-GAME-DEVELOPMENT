@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: ShieldPosion
   m_EditorClassIdentifier: 
   durability: 0
+  buffType: 0
   timeCountDown: 5
-  affectValue: 10
+  affectValue: 20
+  isActived: 0
+  representSpr: {fileID: 21300000, guid: 1917315a1b8c52c4f9f996b611c26160, type: 3}
+  initTime: 5

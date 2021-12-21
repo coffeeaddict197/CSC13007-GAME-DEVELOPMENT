@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baac343a89c0ecb4987488c16648a4ab, type: 3}
+  m_Name: AttackPosion_ItemAssets
+  m_EditorClassIdentifier: 
+  typeContain: 0
+  itemType: 3
+  itemName: AttackPosion
+  listItem:
+  - level: 1
+    spr: {fileID: 21300000, guid: 3f8f500ac1384bb409d067d2f327d49f, type: 3}
+  - level: 2
+    spr: {fileID: 21300000, guid: 0c169abded0f4654f93b63cea16fa200, type: 3}
+  - level: 3
+    spr: {fileID: 21300000, guid: 414cc617440b10e4cb05c3f0638371a1, type: 3}
+  - level: 4
+    spr: {fileID: 21300000, guid: 012c2deaf07fb004c9822553245bf8d3, type: 3}
+  handler: {fileID: 11400000, guid: 14c4d6c547a2c6446b9b12c55c6d6add, type: 2}

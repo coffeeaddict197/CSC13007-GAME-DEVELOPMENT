@@ -10,7 +10,16 @@ public class PosionShieldHandler : PosionHandler
         //DOFX
         //Active Posion
         Player player = Player.Instance;
-        player.spellBuff.OnBuff(BuffEnum.BuffShield,this);
+        player.spellBuff.OnBuff(this);
+        PlayerFX.Instance.FXPlayShieldPoison();
         return true;
+    }
+    
+    
+    public override bool OnDeBuff()
+    {
+        PlayerFX.Instance.FXStopShieldPoison();
+        return true;
+        
     }
 }

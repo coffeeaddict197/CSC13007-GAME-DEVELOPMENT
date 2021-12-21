@@ -25,6 +25,5 @@ public abstract class ItemHandler : ScriptableObject
     }
 
     public abstract bool OnEquipItem(BaseBlock block);
-    
 
 }

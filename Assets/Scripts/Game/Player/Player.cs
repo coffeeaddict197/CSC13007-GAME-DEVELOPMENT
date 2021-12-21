@@ -57,6 +57,10 @@ public class Player : MonoSingleton<Player>
 
     IEnumerator PlayerLoopAction()
     {
+        if (!gears.isEquiped)
+        {
+            yield return StartCoroutine(WaitPlayerEquip());
+        }
         yield return StartCoroutine(PlayerMovement());
         yield return StartCoroutine(PlayerAttack());
         _FX.FXOnCollectionCoin(1.5f);
@@ -85,6 +89,14 @@ public class Player : MonoSingleton<Player>
             }
         }
 
+    }
+
+    IEnumerator WaitPlayerEquip()
+    {
+        yield return new WaitUntil(() => gears.isEquiped == true);
+        Animator camAnim = Camera.main.GetComponent<Animator>();
+        camAnim.Play("FirstCamAnim");
+        yield return new WaitForSeconds(1f);
     }
     
     IEnumerator PlayerMovement(float timeMovement = 3f)
@@ -143,11 +155,10 @@ public class Player : MonoSingleton<Player>
 
     void OnPlayerTakeDamage(int damage)
     {
-        FXFactory.Instance.GetFXTextFactory().SpawnFX(anchor.position,damage.ToString(),FXTextFactory.damageColor);
         this._FX.FXPlayPlayerTakeDamage();
-        //TODO: DO POSION AFFECT
         damage -= spellBuff.GetBuffAffectValue(BuffEnum.BuffShield);
         CurrentHealth -= damage;
+        FXFactory.Instance.GetFXTextFactory().SpawnFX(anchor.position,damage.ToString(),FXTextFactory.damageColor);
     }
 
     void OnPlayerDamage(int damage)

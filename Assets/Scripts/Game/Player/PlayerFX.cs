@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFX : MonoBehaviour
+public class PlayerFX : MonoSingleton<PlayerFX>
 {
     [Header("Beam FX")] 
     [SerializeField] private ParticleSystem fx_playerTakeDamage;
-    [Header("Health FX")]
+    [Header("Skill FX")]
     [SerializeField] private ParticleSystem fx_playerHealth;
+    [SerializeField] private ParticleSystem fx_shieldPosion;
+    [SerializeField] private ParticleSystem fx_attackPosion;
+    
 
     [Header("Coin FX")] 
     [SerializeField] private ParticleSystemForceField fx_ForceField;
@@ -42,4 +45,11 @@ public class PlayerFX : MonoBehaviour
         
         fx_ForceField.gameObject.SetActive(false);
     }
+
+    public void FXPlayShieldPoison() => fx_shieldPosion.Play();
+    public void FXStopShieldPoison() => fx_shieldPosion.Stop();
+    
+    public void FXPlayAttackPoison() => fx_attackPosion.gameObject.SetActive(true);
+    public void FXStopAttackPoison() => fx_attackPosion.gameObject.SetActive(false);
+    
 }

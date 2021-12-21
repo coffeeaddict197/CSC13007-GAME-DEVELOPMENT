@@ -80,7 +80,6 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
     public bool IsBoss(Monster m) //LastMonster
     {
-        Debug.Log(listMonster.IndexOf(m));
         if (listMonster.IndexOf(m) == listMonster.Count - 1)
         {
             return true;
