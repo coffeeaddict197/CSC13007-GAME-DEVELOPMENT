@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c140c9906f28c48955f5b4d5601c71, type: 3}
+  m_Name: MonsterAssetConfig
+  m_EditorClassIdentifier: 
+  monsterAssetsConfig:
+  - name: Green Dino
+    sprRepresent: {fileID: 21300000, guid: 069573d1cdd688249b8e17460225022a, type: 3}
+  - name: Purple Dino
+    sprRepresent: {fileID: 21300000, guid: a94b3ef9f0ae44447876c1e76907942a, type: 3}
+  - name: Blue Dragon
+    sprRepresent: {fileID: 21300000, guid: c2d41319d57efb147874a840a838a2e1, type: 3}
+  - name: Blue Slime
+    sprRepresent: {fileID: 21300000, guid: edd217e966f7a914b8338ca6bbc8e373, type: 3}
+  - name: Green Slime
+    sprRepresent: {fileID: 21300000, guid: c7bd3f4745238a747bbaedca1b3bb172, type: 3}
+  - name: Purple Slime
+    sprRepresent: {fileID: 21300000, guid: 3d3a443025d55584fa8bc1358de230e7, type: 3}
+  - name: Yellow Slime
+    sprRepresent: {fileID: 21300000, guid: 407acadf67a30f249a0f119b2c368e19, type: 3}
+  monsterGenAssets:
+  - gen: 0
+    sprRepresent: {fileID: 21300000, guid: b5f30cd68e398264997d4a85dd36d7da, type: 3}
+  - gen: 1
+    sprRepresent: {fileID: 21300000, guid: 09a77e2bb5c3bed4eb79138ca9225fb6, type: 3}
+  - gen: 2
+    sprRepresent: {fileID: 21300000, guid: b3d42319d5fdaf342ba04eb5901baa39, type: 3}
+  - gen: 3
+    sprRepresent: {fileID: 21300000, guid: 24cbf9c6af858724892284e1d46e09a0, type: 3}

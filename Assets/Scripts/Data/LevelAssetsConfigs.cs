@@ -32,6 +32,11 @@ public class LevelAssetsConfigs : ScriptableObject
     {
         return LoaderUtility.Instance.GetAsset<LevelAssetsConfigs>("Configs/LevelAssets/LevelConfigs");
     }
+
+    public LevelsConfig GetLevel(int level)
+    {
+        return levelAssetsConfig.Find(x => x.level == level);
+    }
 }
 
 [System.Serializable]
@@ -48,5 +53,5 @@ public class MonsterLevelConfigs
     public int monsterType;
     public string name;
     public int health;
-    public int gen;
+    public MonsterGen gen;
 }
