@@ -40,6 +40,9 @@ public class ButtonLevel : MonoBehaviour
     public void OnLevelClick()
     {
         buttonLevelClicked = this;
+
+        DialogManager.Instance.OnShowDialog<BaseDialog>("Dialog/Home/LevelInfo",
+            DialogType.DialogWithoutNavigate);
     }
 
     public void OnButtonSetup()

@@ -9,6 +9,10 @@ public class BaseDialog : MonoBehaviour
     public void OnShow()
     {
         this.transform.localPosition = Vector3.zero;
-        
+    }
+
+    public void OnHide()
+    {
+        this.gameObject.SetActive(false);
     }
 }

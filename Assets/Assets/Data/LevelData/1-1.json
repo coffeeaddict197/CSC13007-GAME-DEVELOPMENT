@@ -6,7 +6,7 @@
       "monsterType": 1,
       "name" : "Yellow Slime",
       "health": 200,
-      "gen" : 1
+      "gen" : 3
     },
     {
       "monsterType": 1,
@@ -24,7 +24,13 @@
       "monsterType": 1,
       "name" : "Yellow Slime",
       "health": 200,
-      "gen" : 1
+      "gen" : 2
+    },
+    {
+      "monsterType": 1,
+      "name" : "Purple Dino",
+      "health": 200,
+      "gen" : 0
     }
   ]
   
