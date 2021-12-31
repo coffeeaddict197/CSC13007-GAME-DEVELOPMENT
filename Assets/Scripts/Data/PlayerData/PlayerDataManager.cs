@@ -13,6 +13,9 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     }
 
     private static string KEY_DATA = "PLAYER_DATA";
+    
+    
+    //Unit of work
     public void Save()
     {
         string objToJson = JsonConvert.SerializeObject(data);
@@ -41,5 +44,6 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
 [System.Serializable]
 public class PlayerData
 {
-    public PlayerLevelData LevelData;
+    public PlayerLevelData LevelDatas;
+    public GearDatas GearDatas;
 }

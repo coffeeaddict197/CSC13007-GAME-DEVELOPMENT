@@ -47,11 +47,11 @@ public class ButtonLevel : MonoBehaviour
 
     public void OnButtonSetup()
     {
-        if (level < PlayerDataManager.Instance.data.LevelData.archiveLevel)
+        if (level < PlayerDataManager.Instance.data.LevelDatas.archiveLevel)
         {
             UnlockLevel();
         }
-        else if(level > PlayerDataManager.Instance.data.LevelData.archiveLevel)
+        else if(level > PlayerDataManager.Instance.data.LevelDatas.archiveLevel)
         {
             LockLevel();
         }

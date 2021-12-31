@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3904f44d98f421441a06662746e96112, type: 3}
+  m_Name: GearAssetConfigs
+  m_EditorClassIdentifier: 
+  gearConfigs:
+  - type: 2
+    imgRrepresent: {fileID: 21300000, guid: 475475f86b94acd4a8278dad2296b339, type: 3}
+    stats:
+    - statsEnum: 1
+      defaultValue: 5
+    valueAfterLevelup: 3
+  - type: 0
+    imgRrepresent: {fileID: 21300000, guid: 0e8c988d252037a43bb7791f55b417e1, type: 3}
+    stats:
+    - statsEnum: 0
+      defaultValue: 20
+    - statsEnum: 1
+      defaultValue: 4
+    valueAfterLevelup: 2
+  - type: 1
+    imgRrepresent: {fileID: 21300000, guid: 20d9fe719af125741b2efa326d19e740, type: 3}
+    stats:
+    - statsEnum: 1
+      defaultValue: 5
+    - statsEnum: 2
+      defaultValue: 3
+    valueAfterLevelup: 3
+  - type: 3
+    imgRrepresent: {fileID: 21300000, guid: b458ca3e9a846b84cb648825d3ba83e4, type: 3}
+    stats:
+    - statsEnum: 2
+      defaultValue: 6
+    valueAfterLevelup: 2

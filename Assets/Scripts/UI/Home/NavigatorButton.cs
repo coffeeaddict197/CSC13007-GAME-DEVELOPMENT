@@ -34,6 +34,10 @@ public class NavigatorButton : MonoBehaviour
                     NavigatorEnum.Village,
                     ShowVillage
                 },
+                {
+                    NavigatorEnum.Gears,
+                    ShowGear
+                }
             };
 
             oneTimesSetup = true;
@@ -59,7 +63,7 @@ public class NavigatorButton : MonoBehaviour
 
     void ShowGear()
     {
-        
+        DialogManager.Instance.OnShowDialogWithTransition<BaseDialog>("Dialog/Home/Gears", DialogType.DialogScaleWithHeigh);
     }
 
     void ShowSetting()

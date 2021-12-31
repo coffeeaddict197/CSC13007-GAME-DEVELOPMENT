@@ -16,15 +16,6 @@ public class DialogManager : MonoSingleton<DialogManager>
         _dicDialog = new Dictionary<string, BaseDialog>();
     }
 
-    //TEST
-    // private void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.A))
-    //     {
-    //         OnShowDialogWithTransition<BaseDialog>("Dialog/Home/Maps", "MainDialog");
-    //     }
-    // }
-    
     public T OnShowDialogWithTransition<T>(string path, DialogType type, Action callback = null)
         where T : BaseDialog
     {
@@ -32,6 +23,7 @@ public class DialogManager : MonoSingleton<DialogManager>
         if (dialog != null && !dialog.gameObject.activeSelf)
         {
             _transition.Play("Transition"); ;
+            DisableAllDialog();
             return dialog.GetComponent<T>();
         }
 
@@ -81,12 +73,25 @@ public class DialogManager : MonoSingleton<DialogManager>
 
     public async void DisableAllDialog()
     {
-        _transition.Play("Transition"); ;
+        if (!IsDisableAll())
+            _transition.Play("Transition");
+        
         await UniTask.Delay(TimeSpan.FromSeconds(0.5F),cancellationToken: this.GetCancellationTokenOnDestroy());
         foreach (var dialog in _dicDialog)
         {
             dialog.Value.gameObject.SetActive(false);
         }
+    }
+
+    bool IsDisableAll()
+    {
+        foreach (var val in _dicDialog.Values)
+        {
+            if (val.transform.gameObject.activeSelf)
+                return false;
+        }
+
+        return true;
     }
 
 
@@ -126,5 +131,6 @@ public class Dialog
 public enum DialogType
 {
     DialogWithNavigate,
-    DialogWithoutNavigate
+    DialogWithoutNavigate,
+    DialogScaleWithHeigh
 }
