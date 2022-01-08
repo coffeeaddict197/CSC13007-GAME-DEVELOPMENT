@@ -24,12 +24,17 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
     public void CreateListMonster()
     {
-        CreateMonster(MonsterType.Slime, "Yellow Slime", 200, MonsterGen.Earth);
-        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
-        // CreateMonster(MonsterType.Dragon,"Blue Dragon", 200, MonsterGen.Earth);
+        var levelConfig = LevelAssetsConfigs.LevelConfigs().GetLevel(ButtonLevel.buttonLevelClicked.level);
+        for (int i = 0; i < levelConfig.listMonster.Count; i++)
+        {
+            var monster = levelConfig.listMonster[i];
+            var monsterType = monster.monsterType;
+            var monsterName = monster.name;
+            var monsterHealth = monster.health;
+            var monsterGen = monster.gen;
+            CreateMonster((MonsterType)monsterType, monsterName, monsterHealth, monsterGen);
+        }
+
     }
     
     Monster CreateMonster(MonsterType type, string monsterName,int health,MonsterGen gen)
@@ -42,6 +47,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
             listMonster.Add(newMons);
             return newMons;
         }
+
         return null;
     }
 
@@ -93,9 +99,9 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
 public enum MonsterType
 {
-    Slime,
-    Dino,
-    Dragon
+    Slime = 1,
+    Dino = 2,
+    Dragon = 3
 }
 
 [Serializable]

@@ -118675,17 +118675,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listMonster: []
   monstersModel:
-  - monsterType: 0
+  - monsterType: 1
     monstersModel:
     - {fileID: 701703487, guid: f0d35b844a823044ea6e4d973b27082f, type: 3}
     - {fileID: 8125799022998552496, guid: c313c7793562aa542a43c479d04c7363, type: 3}
     - {fileID: 9207056176618918072, guid: 9ff41c527fe25b54692ebd25c57072fc, type: 3}
     - {fileID: 3864325349239784389, guid: c650458b930ec164385ca8daae6fb982, type: 3}
-  - monsterType: 1
+  - monsterType: 2
     monstersModel:
     - {fileID: 4018534955732827016, guid: d130eebadc8e67b4baf4463419e8ce58, type: 3}
     - {fileID: 4370042803447349856, guid: 1f22900d28af1df4fa0a8a27d66ad77b, type: 3}
-  - monsterType: 2
+  - monsterType: 3
     monstersModel:
     - {fileID: 9073898823744096359, guid: 58553e6b80331f94cb873c01c8a4f2c7, type: 3}
 --- !u!1 &1884728440

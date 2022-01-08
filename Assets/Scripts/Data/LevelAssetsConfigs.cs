@@ -45,6 +45,7 @@ public class LevelsConfig
     public int map;
     public int level;
     public List<MonsterLevelConfigs> listMonster;
+    public RewardData rewardData;
 }
 
 [System.Serializable]
@@ -55,3 +56,14 @@ public class MonsterLevelConfigs
     public int health;
     public MonsterGen gen;
 }
+
+[System.Serializable]
+public class RewardData
+{
+    public int wood;
+    public int silver;
+    public int coin;
+    public int mana;
+}
+
+

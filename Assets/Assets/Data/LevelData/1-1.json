@@ -27,11 +27,17 @@
       "gen" : 2
     },
     {
-      "monsterType": 1,
+      "monsterType": 2,
       "name" : "Purple Dino",
       "health": 200,
       "gen" : 0
     }
-  ]
+  ],
+  "rewardData" :  {
+    "wood": 60,
+    "silver": 20,
+    "coin": 131,
+    "mana": 35
+  }
   
 }

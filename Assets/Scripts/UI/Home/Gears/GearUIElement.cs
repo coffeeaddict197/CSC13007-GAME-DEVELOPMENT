@@ -13,21 +13,40 @@ public class GearUIElement : MonoBehaviour
     [Header("UI Config")] 
     [SerializeField] private TextMeshProUGUI txtLevel;
     [SerializeField] private Image gearImage;
-    
-    #if UNITY_EDITOR
 
+    public static Action OnUpdateLevel;
+#if UNITY_EDITOR
     private void OnValidate()
     {
         txtLevel = GetComponentInChildren<TextMeshProUGUI>();
     }
-
 #endif
+
+    private void Start()
+    {
+        var btn = GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.AddListener(() =>
+            {
+                GearUpgradeDialog.OnGearClick?.Invoke(type);
+            });
+        }
+    }
     
+
     private void OnEnable()
     {
         SetupGear();
+
+        OnUpdateLevel += SetupGear;
     }
 
+
+    private void OnDisable()
+    {
+        OnUpdateLevel -= SetupGear;
+    }
 
     public void SetupGear()
     {
@@ -42,6 +61,11 @@ public class GearUIElement : MonoBehaviour
                 txtLevel.text = data.level.ToString();
             }
         }
+    }
+
+    void OnButtonClick()
+    {
+        
     }
     
     

@@ -22,7 +22,7 @@ public class DialogManager : MonoSingleton<DialogManager>
         var dialog = OnShowDialog<BaseDialog>(path, type,0.5f);
         if (dialog != null && !dialog.gameObject.activeSelf)
         {
-            _transition.Play("Transition"); ;
+            Transition.Instance.PlayTransition("Transition"); ;
             DisableAllDialog();
             return dialog.GetComponent<T>();
         }
@@ -74,7 +74,7 @@ public class DialogManager : MonoSingleton<DialogManager>
     public async void DisableAllDialog()
     {
         if (!IsDisableAll())
-            _transition.Play("Transition");
+            Transition.Instance.PlayTransition("Transition");
         
         await UniTask.Delay(TimeSpan.FromSeconds(0.5F),cancellationToken: this.GetCancellationTokenOnDestroy());
         foreach (var dialog in _dicDialog)
@@ -97,9 +97,6 @@ public class DialogManager : MonoSingleton<DialogManager>
 
     //PRIVATE
     private Dictionary<string, BaseDialog> _dicDialog;
-    [Tooltip("Can custome this if using in another project")] 
-    [Header("FX")]
-    [SerializeField] private Animator _transition;
     
 }
 

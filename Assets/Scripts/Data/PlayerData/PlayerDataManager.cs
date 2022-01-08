@@ -46,4 +46,5 @@ public class PlayerData
 {
     public PlayerLevelData LevelDatas;
     public GearDatas GearDatas;
+    public PlayerCurrencyData currencyData;
 }

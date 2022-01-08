@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using Random = System.Random;
@@ -23,9 +24,15 @@ public class BlockManager : MonoSingleton<BlockManager>
     
     private void Start()
     {
+        InitGame();
+
+    }
+
+    public async void InitGame()
+    {
+        await UniTask.WaitUntil(() => StartBattle.battleReady);
         blockSpawned = new List<BaseBlock>();
         StartCoroutine(StartSpawn());
-
     }
 
     private void Update()

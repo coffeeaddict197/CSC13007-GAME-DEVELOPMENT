@@ -19,7 +19,7 @@ MonoBehaviour:
     - monsterType: 1
       name: Yellow Slime
       health: 200
-      gen: 1
+      gen: 3
     - monsterType: 1
       name: Blue Slime
       health: 200
@@ -31,14 +31,23 @@ MonoBehaviour:
     - monsterType: 1
       name: Yellow Slime
       health: 200
-      gen: 1
+      gen: 2
+    - monsterType: 1
+      name: Purple Dino
+      health: 200
+      gen: 0
+    rewardData:
+      wood: 5
+      silver: 3
+      coin: 2
+      mana: 1
   - map: 1
     level: 2
     listMonster:
     - monsterType: 1
-      name: Yellow Slime
+      name: Green Slime
       health: 200
-      gen: 1
+      gen: 3
     - monsterType: 1
       name: Blue Slime
       health: 200
@@ -48,6 +57,15 @@ MonoBehaviour:
       health: 200
       gen: 1
     - monsterType: 1
-      name: Yellow Slime
+      name: Blue Dragon
       health: 200
       gen: 1
+    - monsterType: 1
+      name: Green Dino
+      health: 200
+      gen: 0
+    rewardData:
+      wood: 0
+      silver: 0
+      coin: 0
+      mana: 0

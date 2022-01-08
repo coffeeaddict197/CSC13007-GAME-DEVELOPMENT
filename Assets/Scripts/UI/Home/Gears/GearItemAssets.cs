@@ -21,10 +21,12 @@ public class GearItemAssets : ScriptableObject
 [System.Serializable]
 public class GearConfig
 {
+    public string name;
     public GearType type;
     public Sprite imgRrepresent;
-    public List<GearStats> stats;
+    public GearStats stats;
     public int valueAfterLevelup;
+    
 }
 
 [System.Serializable]
@@ -32,11 +34,14 @@ public class GearStats
 {
     public GearStatEnum statsEnum;
     public int defaultValue;
+    public Sprite statsImg;
+
 }
 
 public enum GearStatEnum
 {
     Health,
     Attack,
-    Defense
+    Defense,
+    Luck
 }

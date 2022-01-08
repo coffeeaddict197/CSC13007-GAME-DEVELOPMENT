@@ -15,23 +15,29 @@
       "gen" : 1
     },
     {
-      "monsterType": 2,
+      "monsterType": 1,
       "name" : "Purple Slime",
       "health": 200,
       "gen" : 1
     },
     {
-      "monsterType": 1,
+      "monsterType": 3,
       "name" : "Blue Dragon",
       "health": 200,
       "gen" : 1
     },
     {
-      "monsterType": 1,
+      "monsterType": 2,
       "name" : "Green Dino",
       "health": 200,
       "gen" : 0
     }
-  ]
+  ],
+  "rewardData" :  {
+    "wood": 100,
+    "silver": 40,
+    "coin": 300,
+    "mana": 50
+  }
   
 }
