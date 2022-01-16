@@ -16,6 +16,11 @@ public class GearItemAssets : ScriptableObject
     {
         return gearConfigs.Find(x => x.type == type);
     }
+    
+    public GearConfig GetAsset(GearStatEnum type)
+    {
+        return gearConfigs.Find(x => x.stats.statsEnum == type);
+    }
 }
 
 [System.Serializable]

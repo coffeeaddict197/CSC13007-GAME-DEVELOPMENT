@@ -18,6 +18,14 @@ public class GearDatas
     {
         return gearDatas.Find(x => x.type == type);
     }
+
+    public void SetupData()
+    {
+        gearDatas.Add(new GearData{type = GearType.Ring,level = 1});
+        gearDatas.Add(new GearData{type = GearType.Amulet,level = 1});
+        gearDatas.Add(new GearData{type = GearType.Bracer,level = 1});
+        gearDatas.Add(new GearData{type = GearType.Trinker,level = 1});
+    }
 }
 
 [System.Serializable]

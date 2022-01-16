@@ -31,6 +31,13 @@ public class ShieldHandler : ItemHandler
         }
         return false;
     }
+
+    public static int DefaultPhysicsRetristant()
+    {
+        var assets = GearItemAssets.Instance.GetAsset(GearType.Amulet);
+        var data = PlayerDataManager.Instance.data.GearDatas.GetDataByType(GearType.Amulet);
+        return assets.valueAfterLevelup * data.level;
+    }
     
     
     public ShieldHandler Clone()

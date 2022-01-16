@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     {
         Load();
     }
-
+    
     private static string KEY_DATA = "PLAYER_DATA";
     
     
@@ -21,12 +22,13 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
         string objToJson = JsonConvert.SerializeObject(data);
         PlayerPrefs.SetString(KEY_DATA,objToJson);
     }
-
+    
     public void Load()
     {
         string jsonData = PlayerPrefs.GetString(KEY_DATA, "NONE");
         if (jsonData.Equals("NONE"))
         {
+            data.OnSetup();
             Save();  
         }
         else
@@ -34,7 +36,7 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
             data = JsonConvert.DeserializeObject<PlayerData>(jsonData);
         }
     }
-
+    
     void OnApplicationQuit()
     {
         Save();
@@ -47,4 +49,10 @@ public class PlayerData
     public PlayerLevelData LevelDatas;
     public GearDatas GearDatas;
     public PlayerCurrencyData currencyData;
+
+    public void OnSetup()
+    {
+        GearDatas.SetupData();
+        currencyData.OnSetupData();
+    }
 }

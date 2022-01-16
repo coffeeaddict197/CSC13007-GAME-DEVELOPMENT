@@ -47,12 +47,11 @@ public class PlayerGear : MonoBehaviour
             if(_weapon.CurrentDurability <= 0)
             {
                 DropWeapon();
-                return 5;
             }
             return Ultility.RandomIn(_weapon.damage,_weapon.damage-10,_weapon.damage+10);
         }
 
-        return 5;
+        return WeaponHandler.GetDefaulDamage();
     }
     
     

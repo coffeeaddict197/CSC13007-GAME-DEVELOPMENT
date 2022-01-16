@@ -157,6 +157,8 @@ public class Player : MonoSingleton<Player>
     {
         this._FX.FXPlayPlayerTakeDamage();
         damage -= spellBuff.GetBuffAffectValue(BuffEnum.BuffShield);
+        damage =  damage - gears.SheildPhysicsResistant() - gears.SheildPhysicsResistant() - ShieldHandler.DefaultPhysicsRetristant();
+        damage = Mathf.Clamp(damage, 1, Int32.MaxValue);
         CurrentHealth -= damage;
         FXFactory.Instance.GetFXTextFactory().SpawnFX(anchor.position,damage.ToString(),FXTextFactory.damageColor);
     }

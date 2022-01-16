@@ -17,13 +17,24 @@ public class WeaponHandler : ItemHandler
         
         if (!gear.IsEquipWeapon)
         {
+            int defaultDamage = GetDefaulDamage();
             damage = damageByLevel[block.blockData.BlockLevel - 1];
+            damage += defaultDamage;
             Sprite spr = block.blockItem.GetItemSprite();
             gear.EquipWeapon(this,spr);
             ItemEquipSlot.Equip(block.blockItem.config.itemType,block.blockItem.GetItemSprite());
+
+            
             return true;
         }
         return false;
+    }
+
+    public static int GetDefaulDamage()
+    {
+        var assets = GearItemAssets.Instance.GetAsset(GearType.Ring);
+        var data = PlayerDataManager.Instance.data.GearDatas.GetDataByType(GearType.Ring);
+        return assets.valueAfterLevelup * data.level;
     }
 
     public WeaponHandler Clone()

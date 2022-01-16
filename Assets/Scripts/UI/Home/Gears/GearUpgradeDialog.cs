@@ -37,13 +37,13 @@ public class GearUpgradeDialog : BaseDialog
     {
         var assets = GearItemAssets.Instance.GetAsset(typeOfGear);
         var data = PlayerDataManager.Instance.data.GearDatas.GetDataByType(typeOfGear);
+        int gearLevel = data !=null ? data.level : 1;
         name.text = assets.name;
-        int currentStat = assets.valueAfterLevelup * data.level;
+        int currentStat = assets.valueAfterLevelup * gearLevel;
         currentStats.text = currentStat.ToString();
         NextStats.text = (currentStat + assets.valueAfterLevelup).ToString();
         stats.text = assets.stats.statsEnum.ToString();
         imgStats.sprite = assets.stats.statsImg;
-
         _currentGear = data;
     }
 
