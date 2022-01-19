@@ -21,16 +21,26 @@ public class GearUpgradeDialog : BaseDialog
     public static Action<GearType> OnGearClick;
 
     private GearData _currentGear;
+    private GearUIElement _currentUIElement;
     private void Start()
     {
-        OnGearClick += OnGearClicked;
-        
         onUpgrade.onClick.AddListener(OnUpgrade);
         
         onQuit.onClick.AddListener(() =>
         {
             this.gameObject.SetActive(false);
         });
+    }
+
+    private void OnEnable()
+    {
+        OnGearClick += OnGearClicked;
+
+    }
+
+    private void OnDisable()
+    {
+        OnGearClick -= OnGearClicked;
     }
 
     void OnGearClicked(GearType typeOfGear)
@@ -51,6 +61,6 @@ public class GearUpgradeDialog : BaseDialog
     {
         _currentGear.level++;
         OnGearClick(_currentGear.type);
-        GearUIElement.OnUpdateLevel?.Invoke();
+        GearUIElement.OnUpdateLevel?.Invoke(_currentGear.type);
     }
 }

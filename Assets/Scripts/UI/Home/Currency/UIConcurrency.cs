@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class UIConcurrency : MonoBehaviour
 {
-    public CurrenyEnum currenyEnum;
+    public RewardType currenyEnum;
 
     [Header("UI")] 
-    [SerializeField] private TextMeshProUGUI _textValue;
+    [SerializeField] protected TextMeshProUGUI _textValue;
     #if UNITY_EDITOR
 
     private void OnValidate()
@@ -18,12 +18,12 @@ public class UIConcurrency : MonoBehaviour
     }
 
 #endif
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetupCurrency();
     }
 
-    void SetupCurrency()
+    protected virtual void SetupCurrency()
     {
         var data = PlayerDataManager.Instance.data.currencyData.GetData(currenyEnum);
         if (data!=null)

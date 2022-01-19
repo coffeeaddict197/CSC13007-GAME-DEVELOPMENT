@@ -9,44 +9,48 @@ public class PlayerCurrencyData
 {
     public List<CurrencyData> currencyDatas;
 
-    public void AddData(CurrenyEnum typeCurrency, int value)
+    public void AddData(RewardType typeCurrency, int value)
     {
-        if (currencyDatas.All(x => x.currenyEnum != typeCurrency))
+        if (currencyDatas.Any(x => x.type == typeCurrency))
         {
-            currencyDatas.Add(new CurrencyData(typeCurrency,value));
+            GetData(typeCurrency).value += value;
         }
     }
 
-    public CurrencyData GetData(CurrenyEnum type)
+    public CurrencyData GetData(RewardType type)
     {
-        return currencyDatas.Find(x => x.currenyEnum == type);
+        return currencyDatas.Find(x => x.type == type);
     }
 
     public void OnSetupData()
     {
-        currencyDatas.Add(new CurrencyData(CurrenyEnum.Coin,0));
-        currencyDatas.Add(new CurrencyData(CurrenyEnum.Gem,0));
-        currencyDatas.Add(new CurrencyData(CurrenyEnum.Mana,0));
-        currencyDatas.Add(new CurrencyData(CurrenyEnum.Wood,0));
+        currencyDatas.Add(new CurrencyData(RewardType.Coin,0));
+        currencyDatas.Add(new CurrencyData(RewardType.Iron,0));
+        currencyDatas.Add(new CurrencyData(RewardType.Mana,0));
+        currencyDatas.Add(new CurrencyData(RewardType.Wood,0));
     }
 }
 
 [Serializable]
 public class CurrencyData
 {
-    public CurrencyData(CurrenyEnum type, int value)
+    public CurrencyData(RewardType type, int value)
     {
-        this.currenyEnum = type;
-        this.value = value;
+        this.type = type;
+        this._value = value;
     }
-    public CurrenyEnum currenyEnum;
-    public int value;
+
+    public RewardType type;
+
+   [SerializeField]  private int _value;
+    public int value
+    {
+        get => _value;
+        set
+        {
+            _value = value;
+            IBooster.OnBoosterChange?.Invoke(type);
+        }
+    }
 }
 
-public enum CurrenyEnum
-{
-    Coin = 1,
-    Mana = 2,
-    Gem = 3,
-    Wood = 4
-}

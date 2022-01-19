@@ -143,6 +143,7 @@ public class Monster : MonoBehaviour
         Health -= damage;
         MonsterFX.Instance.FXPlayMonsterTakeDamage();
         FXFactory.Instance.GetFXTextFactory().SpawnFX(GetAnchorPosition(),damage.ToString(),FXTextFactory.damageColor);
+        Debug.LogError("Spawn");
         if (Health <= 0)
         {
             isDeath = true;

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum NavigatorEnum
 {
-    Shop,
+    BlackSmith,
     Gears,
     Village,
     Map,
@@ -37,6 +38,10 @@ public class NavigatorButton : MonoBehaviour
                 {
                     NavigatorEnum.Gears,
                     ShowGear
+                },
+                {
+                    NavigatorEnum.BlackSmith,
+                    ShowBlackSmith
                 }
             };
 
@@ -56,9 +61,14 @@ public class NavigatorButton : MonoBehaviour
         DialogManager.Instance.OnShowDialogWithTransition<BaseDialog>("Dialog/Home/Maps", DialogType.DialogWithNavigate);
     }
 
-    void ShowVillage()
+    async void ShowVillage()
     {
-        DialogManager.Instance.DisableAllDialog();
+        if (!DialogManager.Instance.IsDisableAll())
+        {
+            DialogManager.Instance.DisableAllDialog();
+            await UniTask.Delay(TimeSpan.FromSeconds(0.8f), cancellationToken: this.GetCancellationTokenOnDestroy());
+            HomeScene.Instance.OpenVillageAnim();
+        }
     }
 
     void ShowGear()
@@ -71,8 +81,8 @@ public class NavigatorButton : MonoBehaviour
         
     }
 
-    void ShowShop()
+    void ShowBlackSmith()
     {
-        
+        DialogManager.Instance.OnShowDialogWithTransition<BaseDialog>("Dialog/Home/BlackSmithDialog", DialogType.DialogWithoutNavigate);
     }
 }

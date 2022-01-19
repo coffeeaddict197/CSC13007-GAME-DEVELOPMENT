@@ -39,6 +39,7 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     
     void OnApplicationQuit()
     {
+        Debug.LogError("Onquit");
         Save();
     }
 }
@@ -49,9 +50,11 @@ public class PlayerData
     public PlayerLevelData LevelDatas;
     public GearDatas GearDatas;
     public PlayerCurrencyData currencyData;
+    public int ItemBlackSmithLevel;
 
     public void OnSetup()
     {
+        ItemBlackSmithLevel = 1;
         GearDatas.SetupData();
         currencyData.OnSetupData();
     }

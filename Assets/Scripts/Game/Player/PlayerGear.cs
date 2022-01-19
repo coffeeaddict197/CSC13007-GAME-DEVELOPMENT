@@ -48,7 +48,8 @@ public class PlayerGear : MonoBehaviour
             {
                 DropWeapon();
             }
-            return Ultility.RandomIn(_weapon.damage,_weapon.damage-10,_weapon.damage+10);
+            else
+                return Ultility.RandomIn(_weapon.damage,_weapon.damage-10,_weapon.damage+10);
         }
 
         return WeaponHandler.GetDefaulDamage();

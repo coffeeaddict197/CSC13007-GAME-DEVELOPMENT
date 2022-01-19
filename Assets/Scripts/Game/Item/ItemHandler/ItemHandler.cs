@@ -7,7 +7,8 @@ using UnityEngine;
 public abstract class ItemHandler : ScriptableObject
 {
     public float durability;
-
+    public List<int> valueByLevel;
+    public int valueIncrease;
     protected float _currentDurability;
     public virtual float CurrentDurability
     {
@@ -22,6 +23,11 @@ public abstract class ItemHandler : ScriptableObject
     public void Init()
     {
         CurrentDurability = durability;
+    }
+
+    public int GetValueByLevel(int level)
+    {
+        return valueByLevel[level];
     }
 
     public abstract bool OnEquipItem(BaseBlock block);

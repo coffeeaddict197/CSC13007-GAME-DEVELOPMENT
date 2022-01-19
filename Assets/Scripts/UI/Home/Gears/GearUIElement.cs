@@ -15,7 +15,9 @@ public class GearUIElement : MonoBehaviour
     [SerializeField] private Image backgroundImage;
     [SerializeField] private Image statsImage;
 
-    public static Action OnUpdateLevel;
+    public static Action<GearType> OnUpdateLevel;
+
+    [SerializeField] private ParticleSystem _particleSystem;
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -37,7 +39,7 @@ public class GearUIElement : MonoBehaviour
 
     private void OnEnable()
     {
-        SetupGear();
+        SetupGear(type);
 
         OnUpdateLevel += SetupGear;
     }
@@ -48,8 +50,11 @@ public class GearUIElement : MonoBehaviour
         OnUpdateLevel -= SetupGear;
     }
 
-    public void SetupGear()
+    public void SetupGear(GearType gearType)
     {
+        if (type != gearType)
+            return;
+        
         var gearData = PlayerDataManager.Instance.data.GearDatas;
         var data = gearData.GetDataByType(type);
         int gearLevel = data !=null ? data.level : 1;
@@ -63,10 +68,14 @@ public class GearUIElement : MonoBehaviour
             txtLevel.text = gearLevel.ToString();
             backgroundImage.sprite = spriteAsset.spr;
             statsImage.sprite = assets.stats.statsImg;
+            this.PlayFX();
         }
     }
 
-    void OnButtonClick()
+    public void PlayFX()
     {
+        if(_particleSystem!=null)
+            _particleSystem.Play();
     }
+
 }

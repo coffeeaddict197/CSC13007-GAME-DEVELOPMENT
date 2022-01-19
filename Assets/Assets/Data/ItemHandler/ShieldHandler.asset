@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ShieldHandler
   m_EditorClassIdentifier: 
   durability: 100
+  valueByLevel: 0a000000140000001e0000002800000032000000
+  valueIncrease: 5
   physicsResistant: 5

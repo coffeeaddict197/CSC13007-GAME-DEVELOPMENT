@@ -5,39 +5,39 @@
     {
       "monsterType": 1,
       "name" : "Green Slime",
-      "health": 200,
+      "health": 160,
       "gen" : 3
     },
     {
       "monsterType": 1,
       "name" : "Blue Slime",
-      "health": 200,
+      "health": 205,
       "gen" : 1
     },
     {
       "monsterType": 1,
       "name" : "Purple Slime",
-      "health": 200,
+      "health": 230,
       "gen" : 1
     },
     {
       "monsterType": 3,
       "name" : "Blue Dragon",
-      "health": 200,
+      "health": 300,
       "gen" : 1
     },
     {
       "monsterType": 2,
       "name" : "Green Dino",
-      "health": 200,
+      "health": 410,
       "gen" : 0
     }
   ],
   "rewardData" :  {
-    "wood": 100,
-    "silver": 40,
-    "coin": 300,
-    "mana": 50
+    "wood": 123,
+    "silver": 168,
+    "coin": 312,
+    "mana": 134
   }
   
 }

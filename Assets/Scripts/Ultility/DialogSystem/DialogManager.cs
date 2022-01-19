@@ -15,7 +15,8 @@ public class DialogManager : MonoSingleton<DialogManager>
         base.Awake();
         _dicDialog = new Dictionary<string, BaseDialog>();
     }
-
+    
+    
     public T OnShowDialogWithTransition<T>(string path, DialogType type, Action callback = null)
         where T : BaseDialog
     {
@@ -83,7 +84,7 @@ public class DialogManager : MonoSingleton<DialogManager>
         }
     }
 
-    bool IsDisableAll()
+    public bool IsDisableAll()
     {
         foreach (var val in _dicDialog.Values)
         {

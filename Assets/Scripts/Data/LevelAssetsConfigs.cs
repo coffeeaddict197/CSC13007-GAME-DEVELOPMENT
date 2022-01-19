@@ -28,9 +28,9 @@ public class LevelAssetsConfigs : ScriptableObject
 #endif
     public List<LevelsConfig> levelAssetsConfig;
 
-    public static LevelAssetsConfigs LevelConfigs()
+    public static LevelAssetsConfigs Instance
     {
-        return LoaderUtility.Instance.GetAsset<LevelAssetsConfigs>("Configs/LevelAssets/LevelConfigs");
+        get => LoaderUtility.Instance.GetAsset<LevelAssetsConfigs>("Configs/LevelAssets/LevelConfigs");
     }
 
     public LevelsConfig GetLevel(int level)

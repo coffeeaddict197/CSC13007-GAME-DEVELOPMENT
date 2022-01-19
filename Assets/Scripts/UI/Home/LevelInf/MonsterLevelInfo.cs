@@ -17,7 +17,7 @@ public class MonsterLevelInfo : MonoBehaviour
     void Setup()
     {
         ButtonLevel currentLevelClicked = ButtonLevel.buttonLevelClicked;
-        var levelConfig = LevelAssetsConfigs.LevelConfigs().GetLevel(currentLevelClicked.level);
+        var levelConfig = LevelAssetsConfigs.Instance.GetLevel(currentLevelClicked.level);
         var listMonster = levelConfig?.listMonster;
         if (listMonster != null)
         {

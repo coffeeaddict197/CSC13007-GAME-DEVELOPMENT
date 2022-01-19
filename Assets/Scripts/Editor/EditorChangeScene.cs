@@ -27,4 +27,29 @@ public class EditorChangeScene
         EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
         EditorSceneManager.OpenScene("Assets/---Scenes---/Gameplay.unity");
     }
+    
+    
+    [MenuItem("Editor/Booster/Add Coin")]
+    private static void AddCoin()
+    {
+        PlayerDataManager.Instance.data.currencyData.AddData(RewardType.Coin,10000);
+    }
+    
+    [MenuItem("Editor/Booster/Add Mana")]
+    private static void AddMana()
+    {
+        PlayerDataManager.Instance.data.currencyData.AddData(RewardType.Mana,10000);
+    }
+    
+    [MenuItem("Editor/Booster/Add Iron")]
+    private static void AddIron()
+    {
+        PlayerDataManager.Instance.data.currencyData.AddData(RewardType.Iron,10000);
+    }
+    
+    [MenuItem("Editor/Booster/Add Wood")]
+    private static void AddWood()
+    {
+        PlayerDataManager.Instance.data.currencyData.AddData(RewardType.Wood,10000);
+    }
 }

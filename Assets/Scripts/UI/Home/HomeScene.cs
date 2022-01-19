@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeScene : MonoBehaviour
+public class HomeScene : MonoSingleton<HomeScene>
 {
+    [SerializeField] Animator _openMapAnim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Transition.Instance.PlayTransition("OpenAnim");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenVillageAnim()
     {
-        
+        _openMapAnim.Rebind();
+        _openMapAnim.Update(0);
     }
+    
 }

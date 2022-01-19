@@ -24,7 +24,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
     public void CreateListMonster()
     {
-        var levelConfig = LevelAssetsConfigs.LevelConfigs().GetLevel(ButtonLevel.buttonLevelClicked.level);
+        var levelConfig = LevelAssetsConfigs.Instance.GetLevel(ButtonLevel.buttonLevelClicked.level);
         for (int i = 0; i < levelConfig.listMonster.Count; i++)
         {
             var monster = levelConfig.listMonster[i];

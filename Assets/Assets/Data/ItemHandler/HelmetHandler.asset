@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: HelmetHandler
   m_EditorClassIdentifier: 
   durability: 100
+  valueByLevel: 050000000a0000000f0000001400000019000000
+  valueIncrease: 5
   physicsResistant: 5

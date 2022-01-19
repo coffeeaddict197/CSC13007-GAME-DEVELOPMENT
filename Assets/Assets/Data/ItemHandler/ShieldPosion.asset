@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ShieldPosion
   m_EditorClassIdentifier: 
   durability: 0
+  valueByLevel: 
   buffType: 0
   timeCountDown: 5
   affectValue: 20

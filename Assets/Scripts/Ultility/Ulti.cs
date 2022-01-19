@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Coffee.UIEffects;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public static class Ultility
 {
@@ -22,5 +26,15 @@ public static class Ultility
         min = value - 5;
         max = value + 5;
         return Random.Range(min, max);
+    }
+    
+    
+    public static Tween DOFade(this UIEffect fx, float target, float time, int loopTimes, LoopType type)
+    {
+        fx.colorFactor = 0;
+        return DOTween.To(() => fx.colorFactor, value => fx.colorFactor = value, target, time).SetLoops(loopTimes,type).OnUpdate(() =>
+        {
+            fx.colorFactor = 0;
+        });
     }
 }

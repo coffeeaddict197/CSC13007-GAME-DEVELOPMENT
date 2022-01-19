@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DaggerHandler
   m_EditorClassIdentifier: 
   durability: 50
-  damageByLevel: 64000000fa0000009001000058020000
+  valueByLevel: 3c0000005000000082000000a0000000e6000000
+  valueIncrease: 10
+  damage: 0
   initPosition: {x: 0.395, y: 0.19, z: 0}
   initRotation: {x: 0, y: 0, z: 0}
