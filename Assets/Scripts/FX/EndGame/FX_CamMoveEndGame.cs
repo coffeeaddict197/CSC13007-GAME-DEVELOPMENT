@@ -9,6 +9,7 @@ public class FX_CamMoveEndGame : MonoBehaviour , ICommondFX
     private Camera cam;
     [SerializeField] private Animator camController;
     [SerializeField] private RectTransform gameGrid;
+    [SerializeField] private RectTransform boosters;
     //Position -1.35 , 4.8 
     //size -> 3
     
@@ -40,6 +41,7 @@ public class FX_CamMoveEndGame : MonoBehaviour , ICommondFX
     {
         camController.SetTrigger("Move");
         gameGrid.DOAnchorPosY(-4500f, 0.3f).SetEase(Ease.Linear);
+        boosters.DOAnchorPosY(-4500f, 0.3f).SetEase(Ease.Linear);
         Player.Instance.DisableAllStuffAndUI();
         FX_ScreenEndGame.Instance.DoFX();
     }

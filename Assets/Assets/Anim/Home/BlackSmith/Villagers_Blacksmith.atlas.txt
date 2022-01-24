@@ -1,0 +1,251 @@
+
+Villagers_Blacksmith.png
+size: 917,525
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BS_ApronBottom01
+  rotate: false
+  xy: 763, 243
+  size: 108, 49
+  orig: 108, 49
+  offset: 0, 0
+  index: -1
+BS_ApronTop01
+  rotate: true
+  xy: 521, 148
+  size: 131, 173
+  orig: 131, 173
+  offset: 0, 0
+  index: -1
+BS_ArmLeft01
+  rotate: false
+  xy: 620, 56
+  size: 84, 90
+  orig: 84, 90
+  offset: 0, 0
+  index: -1
+BS_ArmRight01
+  rotate: false
+  xy: 759, 168
+  size: 93, 73
+  orig: 93, 73
+  offset: 0, 0
+  index: -1
+BS_Belt Left
+  rotate: true
+  xy: 224, 21
+  size: 21, 53
+  orig: 21, 53
+  offset: 0, 0
+  index: -1
+BS_Belt Right
+  rotate: false
+  xy: 106, 2
+  size: 26, 40
+  orig: 26, 40
+  offset: 0, 0
+  index: -1
+BS_Eyes01
+  rotate: false
+  xy: 329, 17
+  size: 43, 25
+  orig: 43, 25
+  offset: 0, 0
+  index: -1
+BS_Eyes02
+  rotate: false
+  xy: 839, 75
+  size: 43, 26
+  orig: 43, 26
+  offset: 0, 0
+  index: -1
+BS_Eyes03
+  rotate: true
+  xy: 374, 2
+  size: 40, 19
+  orig: 40, 19
+  offset: 0, 0
+  index: -1
+BS_Eyes04
+  rotate: true
+  xy: 883, 127
+  size: 43, 21
+  orig: 43, 21
+  offset: 0, 0
+  index: -1
+BS_FootLeft01
+  rotate: true
+  xy: 839, 103
+  size: 63, 42
+  orig: 63, 42
+  offset: 0, 0
+  index: -1
+BS_FootRight01
+  rotate: false
+  xy: 2, 2
+  size: 102, 40
+  orig: 102, 40
+  offset: 0, 0
+  index: -1
+BS_ForearmLeft01
+  rotate: false
+  xy: 769, 69
+  size: 68, 97
+  orig: 68, 97
+  offset: 0, 0
+  index: -1
+BS_ForearmRight01
+  rotate: true
+  xy: 696, 156
+  size: 123, 61
+  orig: 123, 61
+  offset: 0, 0
+  index: -1
+BS_HairBack01
+  rotate: true
+  xy: 706, 43
+  size: 111, 61
+  orig: 111, 61
+  offset: 0, 0
+  index: -1
+BS_HairFront01
+  rotate: false
+  xy: 763, 294
+  size: 141, 65
+  orig: 141, 65
+  offset: 0, 0
+  index: -1
+BS_HandLeft01
+  rotate: false
+  xy: 769, 2
+  size: 76, 65
+  orig: 76, 65
+  offset: 0, 0
+  index: -1
+BS_HandLeft02
+  rotate: true
+  xy: 438, 8
+  size: 93, 63
+  orig: 93, 63
+  offset: 0, 0
+  index: -1
+BS_HandLeft03
+  rotate: false
+  xy: 503, 7
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+BS_HandLeft04
+  rotate: false
+  xy: 263, 96
+  size: 118, 83
+  orig: 118, 83
+  offset: 0, 0
+  index: -1
+BS_HandRight01
+  rotate: false
+  xy: 854, 172
+  size: 57, 69
+  orig: 57, 69
+  offset: 0, 0
+  index: -1
+BS_Head01
+  rotate: true
+  xy: 383, 103
+  size: 76, 119
+  orig: 76, 119
+  offset: 0, 0
+  index: -1
+BS_LegLeft01
+  rotate: false
+  xy: 847, 12
+  size: 54, 61
+  orig: 54, 61
+  offset: 0, 0
+  index: -1
+BS_LegRight01
+  rotate: true
+  xy: 617, 13
+  size: 41, 67
+  orig: 41, 67
+  offset: 0, 0
+  index: -1
+BS_Neck01
+  rotate: false
+  xy: 504, 89
+  size: 114, 57
+  orig: 114, 57
+  offset: 0, 0
+  index: -1
+BS_Rope
+  rotate: false
+  xy: 521, 281
+  size: 240, 242
+  orig: 240, 242
+  offset: 0, 0
+  index: -1
+BS_Shadow
+  rotate: false
+  xy: 2, 44
+  size: 434, 50
+  orig: 445, 54
+  offset: 6, 2
+  index: -1
+BS_Stach Mouth01
+  rotate: true
+  xy: 134, 2
+  size: 40, 25
+  orig: 40, 25
+  offset: 0, 0
+  index: -1
+BS_Stach Mouth02
+  rotate: false
+  xy: 279, 21
+  size: 48, 21
+  orig: 48, 21
+  offset: 0, 0
+  index: -1
+BS_Stach Mouth03
+  rotate: true
+  xy: 873, 248
+  size: 44, 36
+  orig: 44, 36
+  offset: 0, 0
+  index: -1
+BS_Stach Mouth04
+  rotate: true
+  xy: 585, 26
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+BS_Stach Mouth05
+  rotate: false
+  xy: 161, 12
+  size: 61, 30
+  orig: 61, 30
+  offset: 0, 0
+  index: -1
+BS_Torso01
+  rotate: true
+  xy: 763, 361
+  size: 162, 152
+  orig: 162, 152
+  offset: 0, 0
+  index: -1
+BS_Warhammer01
+  rotate: false
+  xy: 2, 96
+  size: 259, 427
+  orig: 259, 427
+  offset: 0, 0
+  index: -1
+Bs_PhoneFlash
+  rotate: false
+  xy: 263, 181
+  size: 256, 342
+  orig: 262, 349
+  offset: 5, 3
+  index: -1

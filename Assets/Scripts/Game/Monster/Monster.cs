@@ -47,7 +47,11 @@ public class Monster : MonoBehaviour
             _health = value;
 
             if (_health < 0)
+            {
+                isDeath = true;
+                _anim.SetTrigger("Die");
                 _health = 0;
+            }
             
             _textHelth.text = _health.ToString();
             _fillHealth.fillAmount = (float) _health / _maxHealth;
@@ -96,13 +100,13 @@ public class Monster : MonoBehaviour
         yield return StartCoroutine(MonsterDie());
     }
 
-    IEnumerator MonsterStartMove()
+    public  virtual IEnumerator MonsterStartMove()
     {
         Move(new Vector3(1.41f,Player.Instance.transform.position.y,0f));
         yield return new WaitForSeconds(1f);
     }
     
-    IEnumerator MonsterAttack()
+    public  virtual IEnumerator MonsterAttack()
     {
         _anim.SetTrigger("Attack");
         while (Health > 0)
@@ -144,11 +148,6 @@ public class Monster : MonoBehaviour
         MonsterFX.Instance.FXPlayMonsterTakeDamage();
         FXFactory.Instance.GetFXTextFactory().SpawnFX(GetAnchorPosition(),damage.ToString(),FXTextFactory.damageColor);
         Debug.LogError("Spawn");
-        if (Health <= 0)
-        {
-            isDeath = true;
-            _anim.SetTrigger("Die");
-        }
     }
 
     public void Move(Vector3 position) => transform.DOMove(position, 0.5f);

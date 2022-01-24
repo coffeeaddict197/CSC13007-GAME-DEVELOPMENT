@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: monsterName
       value: Green Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 701703487, guid: f0d35b844a823044ea6e4d973b27082f, type: 3}
+      propertyPath: monsterDamage
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8127030067223695115, guid: f0d35b844a823044ea6e4d973b27082f,
         type: 3}
       propertyPath: skeletonDataAsset

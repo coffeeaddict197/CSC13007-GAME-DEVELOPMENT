@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: monsterName
       value: Purple Dino
       objectReference: {fileID: 0}
+    - target: {fileID: 4018534955732827016, guid: d130eebadc8e67b4baf4463419e8ce58,
+        type: 3}
+      propertyPath: monsterDamage
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4018534956137221817, guid: d130eebadc8e67b4baf4463419e8ce58,
         type: 3}
       propertyPath: initialSkinName

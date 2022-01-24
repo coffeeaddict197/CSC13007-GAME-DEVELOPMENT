@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Green Dino
-  monsterDamage: 30
+  monsterDamage: 25
   isDeath: 0
   _anim: {fileID: 4018534956137221822}
   _textHelth: {fileID: 4018534954528687492}

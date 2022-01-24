@@ -9,10 +9,11 @@ public class ISmithLevelBooster : MonoBehaviour
     public static Action OnLevelUp;
 
     [SerializeField] private TextMeshProUGUI text;
+    public string stringAppend = "";
+
     
     #if UNITY_EDITOR
 
-    public string stringAppend = "";
     private void OnValidate()
     {
         text = GetComponent<TextMeshProUGUI>();

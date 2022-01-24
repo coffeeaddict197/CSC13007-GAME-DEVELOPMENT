@@ -17,6 +17,9 @@ public class PlayerFX : MonoSingleton<PlayerFX>
     [SerializeField] private ParticleSystemForceField fx_ForceField;
     [SerializeField] private ParticleSystem fx_collect;
     [SerializeField] private ParticleSystem fx_coinDrop;
+
+    [Header("Skill FX")] [SerializeField] private ParticleSystem fx_FireSkill;
+    
     
     public void FXPlayPlayerTakeDamage() => fx_playerTakeDamage.Play();
 
@@ -51,5 +54,7 @@ public class PlayerFX : MonoSingleton<PlayerFX>
     
     public void FXPlayAttackPoison() => fx_attackPosion.gameObject.SetActive(true);
     public void FXStopAttackPoison() => fx_attackPosion.gameObject.SetActive(false);
-    
+
+    public void FXPlayFireSkill() => fx_FireSkill.Play();
+
 }

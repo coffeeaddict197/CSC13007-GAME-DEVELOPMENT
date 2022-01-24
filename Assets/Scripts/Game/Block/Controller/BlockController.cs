@@ -28,7 +28,14 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
     private void OnDisable()
     {
         onBlockChange -= this.OnBlockChange;
-        FX_ScreenEndGame.Instance.Remove(this);
+        try
+        {
+            FX_ScreenEndGame.Instance.Remove(this);
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 
 #if UNITY_EDITOR

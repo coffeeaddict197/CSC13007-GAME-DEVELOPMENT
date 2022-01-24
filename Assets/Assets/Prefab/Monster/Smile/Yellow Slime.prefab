@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterName: Yellow Slime
-  monsterDamage: 30
+  monsterDamage: 15
   isDeath: 0
   _anim: {fileID: 8127030067223695116}
   _textHelth: {fileID: 8127030068836385846}
