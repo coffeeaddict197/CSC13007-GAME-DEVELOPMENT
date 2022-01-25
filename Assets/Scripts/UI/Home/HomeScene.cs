@@ -9,6 +9,7 @@ public class HomeScene : MonoSingleton<HomeScene>
     void Start()
     {
         Transition.Instance.PlayTransition("OpenAnim");
+        SoundManager.Instance.Play("Home_BG",AudioType.Soundtrack,1f);
     }
 
     public void OpenVillageAnim()

@@ -6,9 +6,9 @@ using UnityEngine;
 public class BaseDialog : MonoBehaviour
 {
 
-    public void OnShow()
+    public virtual void OnShow()
     {
-        this.transform.localPosition = Vector3.zero;
+        
     }
 
     public void OnHide()

@@ -42,6 +42,10 @@ public class NavigatorButton : MonoBehaviour
                 {
                     NavigatorEnum.BlackSmith,
                     ShowBlackSmith
+                },
+                {
+                    NavigatorEnum.Setting,
+                    ShowSetting
                 }
             };
 
@@ -53,6 +57,7 @@ public class NavigatorButton : MonoBehaviour
 
     public void OnNavigate()
     {
+        SoundManager.Instance.Play("Clicked", AudioType.FX,0.5f);
         navigatorPrototype[typeNavigator]?.Invoke();
     }
 
@@ -78,7 +83,7 @@ public class NavigatorButton : MonoBehaviour
 
     void ShowSetting()
     {
-        
+        DialogManager.Instance.OnShowDialogWithTransition<BaseDialog>("Dialog/Home/Setting", DialogType.DialogWithNavigate);
     }
 
     void ShowBlackSmith()

@@ -9,9 +9,10 @@ public class HealthHandler : ItemHandler
     
     public override bool OnEquipItem(BaseBlock block)
     {
+        int level = block != null ? block.blockData.BlockLevel : 1;
         Player player = Player.Instance;
         player.OnPlayerHealth(buffHealth);
-        player.CurrentHealth += buffHealth * block.blockData.BlockLevel;
+        player.CurrentHealth += buffHealth * level;
         return true;
     }
 }

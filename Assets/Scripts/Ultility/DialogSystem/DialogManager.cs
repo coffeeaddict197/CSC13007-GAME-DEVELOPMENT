@@ -44,6 +44,7 @@ public class DialogManager : MonoSingleton<DialogManager>
                 StartCoroutine(DelayAction(delayActive, () =>
                 {
                     newDialog.gameObject.SetActive(true);
+                    newDialog.OnShow();
                 }));
                 _dicDialog.Add(path,newDialog);
                 return newDialog;

@@ -124,11 +124,15 @@ public class PlayerGear : MonoBehaviour
             DropShield();
         }
     }
-    
+
+
+    public static bool EquipedShieldBooster = false;
     public int SheildPhysicsResistant()
     {
         if (_shield != null)
             return _shield.physicsResistant;
+        if (EquipedShieldBooster)
+            return 999;
         return 0;
     }
 

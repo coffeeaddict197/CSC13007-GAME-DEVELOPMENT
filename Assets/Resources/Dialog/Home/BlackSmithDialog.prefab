@@ -10595,7 +10595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929844918000575857}
-  - component: {fileID: 929844918000575856}
+  - component: {fileID: 8424159215675158415}
   m_Layer: 5
   m_Name: BlackSmithDialog
   m_TagString: Untagged
@@ -10624,7 +10624,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &929844918000575856
+--- !u!114 &8424159215675158415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10633,7 +10633,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 929844918000575858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfdab656502abb44884263a1cf74cc1, type: 3}
+  m_Script: {fileID: 11500000, guid: a406b3b0336b56241b4afdce5ea338de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &929844918063877855

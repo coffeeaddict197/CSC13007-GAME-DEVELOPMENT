@@ -49,7 +49,6 @@ public class ItemEquipSlot : MonoBehaviour
 
     void UnEquip()
     {
-        Debug.Log("Un equip");
         fx_SmokeBreak.Play();
         imageEmpty.gameObject.SetActive(true);
         image.gameObject.SetActive(false);
