@@ -27,6 +27,16 @@ MonoBehaviour:
     sprRepresent: {fileID: 21300000, guid: 3d3a443025d55584fa8bc1358de230e7, type: 3}
   - name: Yellow Slime
     sprRepresent: {fileID: 21300000, guid: 407acadf67a30f249a0f119b2c368e19, type: 3}
+  - name: Forge
+    sprRepresent: {fileID: 21300000, guid: 3ad7a9865a0f0fc4dbafe83ca77b7053, type: 3}
+  - name: King Friend
+    sprRepresent: {fileID: 21300000, guid: 1d55861e0bdb09b40b233ae6a8e212d8, type: 3}
+  - name: Red Buzzer
+    sprRepresent: {fileID: 21300000, guid: 8de1f7639c239c849b00ba3df455f305, type: 3}
+  - name: Black Buzzer
+    sprRepresent: {fileID: 21300000, guid: bfd82534f1defa44da9dd230428840ad, type: 3}
+  - name: MTrex
+    sprRepresent: {fileID: 21300000, guid: 584745f34e10e5541b58bad9a77a78ca, type: 3}
   monsterGenAssets:
   - gen: 0
     sprRepresent: {fileID: 21300000, guid: b5f30cd68e398264997d4a85dd36d7da, type: 3}

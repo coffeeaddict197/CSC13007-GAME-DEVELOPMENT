@@ -1293,6 +1293,9 @@ MonoBehaviour:
     - type: 0
       name: Home_BG
       clip: {fileID: 8300000, guid: e18e0f53eaaafb64aa5f2a7199d9305c, type: 3}
+    - type: 0
+      name: EndGame_BG
+      clip: {fileID: 8300000, guid: 2e72862db8340514c8ec5b570a4acafa, type: 3}
   - source: {fileID: 2006836806}
     audioObject:
     - type: 1
@@ -1301,6 +1304,57 @@ MonoBehaviour:
     - type: 1
       name: Clicked
       clip: {fileID: 8300000, guid: c10f8e4d4978020498840b68ebd970b8, type: 3}
+    - type: 1
+      name: Combine1
+      clip: {fileID: 8300000, guid: 9e359a6e239e76f478f371b893a56123, type: 3}
+    - type: 1
+      name: Combine2
+      clip: {fileID: 8300000, guid: 1683dd00419c04d48a9d017e601d047f, type: 3}
+    - type: 1
+      name: Combine3
+      clip: {fileID: 8300000, guid: 935a3af54d613bf46afc3bf6fc0d2950, type: 3}
+    - type: 1
+      name: Combine4
+      clip: {fileID: 8300000, guid: b40b574c239db184d89e70daab2b9ad5, type: 3}
+    - type: 1
+      name: Healing
+      clip: {fileID: 8300000, guid: 302a16baa18737b4ca108d7f182e5965, type: 3}
+    - type: 1
+      name: Poision_Shield
+      clip: {fileID: 8300000, guid: 7021b76c3fb413f4ba3d1849d2de4f48, type: 3}
+    - type: 1
+      name: Poision_Attack
+      clip: {fileID: 8300000, guid: a1632df2a3f31934bb75f20ed41ad3ad, type: 3}
+    - type: 1
+      name: Player_Attack
+      clip: {fileID: 8300000, guid: 12899ba3180ff4d4b8398c67415cf48d, type: 3}
+    - type: 1
+      name: Equip
+      clip: {fileID: 8300000, guid: 9b23de09d57f2f8468dfe5c909475585, type: 3}
+    - type: 1
+      name: Monster_Attack
+      clip: {fileID: 8300000, guid: f9b4f0b7f613d6245a6593e2601bac0f, type: 3}
+    - type: 1
+      name: Monster_Hit
+      clip: {fileID: 8300000, guid: 73ab6bf9341bc1e4e815575c41ff3bda, type: 3}
+    - type: 1
+      name: Monster_Death
+      clip: {fileID: 8300000, guid: d27e6617ebd8c6a448017b7196b505d4, type: 3}
+    - type: 1
+      name: CoinPickup
+      clip: {fileID: 8300000, guid: e6718753858eeef41adc3e99eaa331e8, type: 3}
+    - type: 1
+      name: DestroyEquip
+      clip: {fileID: 8300000, guid: 5a4abcd6b81283346a094460543345af, type: 3}
+    - type: 1
+      name: FireBooster
+      clip: {fileID: 8300000, guid: 9581af5eb10150242990a47009ab7447, type: 3}
+    - type: 1
+      name: Upgrade_BlackSmith
+      clip: {fileID: 8300000, guid: ea1fce0f6ecedb040bde3c5d7c637474, type: 3}
+    - type: 1
+      name: ShieldBooster
+      clip: {fileID: 8300000, guid: fe7f842b5685cd0429de1dc963847b14, type: 3}
 --- !u!82 &2006836805
 AudioSource:
   m_ObjectHideFlags: 0

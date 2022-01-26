@@ -12,6 +12,7 @@ public class InGameBooster : MonoBehaviour
     [SerializeField] private ParticleSystem fx;
     [SerializeField] private Image fill;
 
+    public int Price;
     private bool canInteract = true;
     private void Start()
     {
@@ -23,6 +24,10 @@ public class InGameBooster : MonoBehaviour
         if (!canInteract)
             return;
         
+        var currentDataCoin = PlayerDataManager.Instance.data.currencyData.GetData(RewardType.Coin);
+        if (currentDataCoin.value < Price)
+            return;
+        currentDataCoin.value -= Price;
         fx.Play();
         _handler.OnEquipItem(null);
         CountDown();

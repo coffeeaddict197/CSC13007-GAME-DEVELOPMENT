@@ -111,14 +111,19 @@ public class Monster : MonoBehaviour
         _anim.SetTrigger("Attack");
         while (Health > 0)
         {
-            // if(Player.Instance.CurrentHealth > 0)
-            //     _anim.SetTrigger("Reset");
+            if(Player.Instance.IsDeath)
+            {
+                _anim.Play("Idle");
+                yield return new WaitUntil(() => !Player.Instance.IsDeath);
+                _anim.SetTrigger("Attack");
+            }
             yield return null;
         }
     }
     
     IEnumerator MonsterDie()
     {
+        SoundManager.Instance.Play("Monster_Death",AudioType.FX,0.6F);
         _anim.SetTrigger("Die");
         yield return new WaitForSeconds(0.5f);
         MonsterFX.Instance.FXPlayMonsterDeath();
@@ -130,11 +135,11 @@ public class Monster : MonoBehaviour
 
     protected virtual void OnMonsterAttack()
     {
+        SoundManager.Instance.Play("Monster_Attack",AudioType.FX,0.6F);
         MonsterFX.Instance.FXPlayMonsterAttack();
         PlayerGear gear = Player.Instance.gears;
         int damage = Mathf.Abs(Ultility.RandomIn(monsterDamage,monsterDamage-5,monsterDamage+5));
         Player.onPlayerTakeDamage(damage);
-        
         gear.AffectShieldDurability((float)monsterDamage / 2);
         gear.AffectHelmetDurability((float)monsterDamage / 3);
     }
@@ -143,7 +148,7 @@ public class Monster : MonoBehaviour
     {
         if (this != MonsterManager.Instance.GetCurrentMonster())
             return;
-        
+        SoundManager.Instance.Play("Monster_Hit",AudioType.FX,0.6F);
         Health -= damage;
         MonsterFX.Instance.FXPlayMonsterTakeDamage();
         FXFactory.Instance.GetFXTextFactory().SpawnFX(GetAnchorPosition(),damage.ToString(),FXTextFactory.damageColor);

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingPanelInGame : MonoSingleton<SettingPanelInGame>
 {
 
     public Sprite bgToggleOff;
     public Sprite bgToggleOn;
+    
     
     private void OnEnable()
     {
@@ -24,4 +27,22 @@ public class SettingPanelInGame : MonoSingleton<SettingPanelInGame>
             this.gameObject.SetActive(false);
         });
     }
+    
+    
+    public void OnWatchAds()
+    {
+        Player.Instance.IsDeath = false;
+        this.gameObject.SetActive(false);
+    }
+
+    public async void OnBackHome()
+    {
+        Time.timeScale = 1;
+        Transition.Instance.PlayTransition("CloseAnim");
+        await UniTask.DelayFrame(35);
+        SceneManager.LoadSceneAsync(1);
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
+        Transition.Instance.PlayTransition("OpenAnim");
+    }
+
 }

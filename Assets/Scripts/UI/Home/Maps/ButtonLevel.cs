@@ -13,7 +13,7 @@ public class ButtonLevel : MonoBehaviour
     [SerializeField] private Image buttonImg; 
 
 
-    public static ButtonLevel buttonLevelClicked;
+    public static int levelClicked;
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -39,8 +39,12 @@ public class ButtonLevel : MonoBehaviour
 
     public void OnLevelClick()
     {
-        buttonLevelClicked = this;
-
+        var levelArchive = PlayerDataManager.Instance.data.LevelDatas.archiveLevel;
+        
+        // if (level != levelArchive)
+        //     return;
+        
+        levelClicked = level;
         DialogManager.Instance.OnShowDialog<BaseDialog>("Dialog/Home/LevelInfo",
             DialogType.DialogWithoutNavigate);
     }
@@ -48,17 +52,9 @@ public class ButtonLevel : MonoBehaviour
     public void OnButtonSetup()
     {
         if (level < PlayerDataManager.Instance.data.LevelDatas.archiveLevel)
-        {
             UnlockLevel();
-        }
         else if(level > PlayerDataManager.Instance.data.LevelDatas.archiveLevel)
-        {
             LockLevel();
-        }
-        else
-        {
-            
-        }
     }
 
     void UnlockLevel()

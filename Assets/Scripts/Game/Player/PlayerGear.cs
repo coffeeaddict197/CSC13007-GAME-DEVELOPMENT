@@ -37,6 +37,7 @@ public class PlayerGear : MonoBehaviour
         _weapon = null;
         sprWeapon.sprite = null;
         ItemEquipSlot.UnEquip(ItemType.Weapon);
+        SoundManager.Instance.Play("DestroyEquip",AudioType.FX,0.6f);
     }
 
     public int TakeDamage()
@@ -92,6 +93,7 @@ public class PlayerGear : MonoBehaviour
         _helmet = null;
         sprHelmet.sprite = null;
         ItemEquipSlot.UnEquip(ItemType.Helmet);
+        SoundManager.Instance.Play("DestroyEquip",AudioType.FX,0.6f);
     }
     
     
@@ -112,6 +114,7 @@ public class PlayerGear : MonoBehaviour
         _shield = null;
         sprShield.sprite = null;
         ItemEquipSlot.UnEquip(ItemType.Shield);
+        SoundManager.Instance.Play("DestroyEquip",AudioType.FX,0.6f);
     }
 
     public void AffectShieldDurability(float durability)

@@ -39,6 +39,7 @@ public class FX_CamMoveEndGame : MonoBehaviour , ICommondFX
     }
     public void DoFX()
     {
+        SoundManager.Instance.Play("EndGame_BG",AudioType.Soundtrack,1f);
         camController.SetTrigger("Move");
         gameGrid.DOAnchorPosY(-4500f, 0.3f).SetEase(Ease.Linear);
         boosters.DOAnchorPosY(-4500f, 0.3f).SetEase(Ease.Linear);

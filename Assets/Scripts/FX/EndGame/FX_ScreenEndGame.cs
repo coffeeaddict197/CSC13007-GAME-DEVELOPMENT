@@ -46,6 +46,7 @@ public class FX_ScreenEndGame : MonoSingleton<FX_ScreenEndGame>
             ICommondFX fx = commndFX[i];
             yield return new WaitForSeconds(fx.timeWaitng);
             fx.DoFX();
+            SoundManager.Instance.Play("CoinPickup",AudioType.FX,0.6f);
             yield return new WaitForSeconds(fx.timeDoing);
         }
     }
@@ -87,14 +88,14 @@ public class FX_ScreenEndGame : MonoSingleton<FX_ScreenEndGame>
         
         rewardShower.ActiveReward(listReward);
         AddReward(listReward);
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(2f);
         BackHome();
     }
 
     List<RewardInf> SetupReward()
     {
         List<RewardInf> rewards = new List<RewardInf>();
-        int curLevel = ButtonLevel.buttonLevelClicked.level;
+        int curLevel = ButtonLevel.levelClicked;
         var rwData = LevelAssetsConfigs.Instance.GetLevel(curLevel).rewardData;
         rewards.Add( new RewardInf()
         {

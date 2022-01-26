@@ -24,7 +24,7 @@ public class MonsterManager : MonoSingleton<MonsterManager>
 
     public void CreateListMonster()
     {
-        var levelConfig = LevelAssetsConfigs.Instance.GetLevel(ButtonLevel.buttonLevelClicked.level);
+        var levelConfig = LevelAssetsConfigs.Instance.GetLevel(ButtonLevel.levelClicked);
         for (int i = 0; i < levelConfig.listMonster.Count; i++)
         {
             var monster = levelConfig.listMonster[i];
@@ -101,7 +101,11 @@ public enum MonsterType
 {
     Slime = 1,
     Dino = 2,
-    Dragon = 3
+    Dragon = 3,
+    Forge = 4,
+    KingFriend = 5,
+    Buzzers = 6,
+    MTrex = 7
 }
 
 [Serializable]

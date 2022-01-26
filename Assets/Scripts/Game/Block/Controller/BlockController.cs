@@ -97,6 +97,8 @@ public class BlockController : MonoBehaviour , IDropHandler,IPointerClickHandler
                 //LOGIC
                 BlockManager.Instance.Remove(dragObject);
                 block.blockData.BlockLevel++;
+                SoundManager.Instance.Play($"Combine{block.blockData.BlockLevel}",AudioType.FX,0.6f);
+
                 //FX
                 FXFactory.Instance.GetFXCombineFactory().SpawnFX(block.rect);
                 Destroy(dragObject.gameObject);

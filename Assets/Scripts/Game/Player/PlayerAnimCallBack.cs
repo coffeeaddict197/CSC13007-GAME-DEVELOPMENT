@@ -11,6 +11,7 @@ public class PlayerAnimCallBack : MonoBehaviour
     public void OnAttack()
     {
         int damage = gears.TakeDamage();
+        SoundManager.Instance.Play(  "Player_Attack",AudioType.FX,1f);
         Player.onPlayerDamage?.Invoke(damage);
     }
 }

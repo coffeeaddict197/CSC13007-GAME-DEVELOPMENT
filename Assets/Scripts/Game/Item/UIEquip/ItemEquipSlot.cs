@@ -115,6 +115,7 @@ public class ItemEquipSlot : MonoBehaviour
         var slotEquip = slotsEquip.FirstOrDefault(x => x.Key == Itemtype);
         if (!slotEquip.Equals(default))
         {
+            SoundManager.Instance.Play("Equip", AudioType.FX);
             slotEquip.Value.Equip(itemSpr);
         }
     }

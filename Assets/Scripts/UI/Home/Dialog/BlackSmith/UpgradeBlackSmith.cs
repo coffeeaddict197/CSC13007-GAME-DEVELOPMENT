@@ -19,9 +19,11 @@ public class UpgradeBlackSmith : MonoBehaviour
         var playerData = PlayerDataManager.Instance.data;
         if (CanUpgrade())
         {
+            SoundManager.Instance.Play("Upgrade_BlackSmith",AudioType.FX,0.6f);
             playerData.ItemBlackSmithLevel++;
             ISmithLevelBooster.OnLevelUp?.Invoke();
             FXUpgradeClicked.Instance.StartFX();
+            
         }
     }
 

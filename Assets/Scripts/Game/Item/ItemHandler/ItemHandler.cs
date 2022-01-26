@@ -27,7 +27,7 @@ public abstract class ItemHandler : ScriptableObject
 
     public int GetValueByLevel(int level)
     {
-        return valueByLevel[level];
+        return valueByLevel[level] + valueIncrease * PlayerDataManager.Instance.data.ItemBlackSmithLevel;
     }
 
     public abstract bool OnEquipItem(BaseBlock block);

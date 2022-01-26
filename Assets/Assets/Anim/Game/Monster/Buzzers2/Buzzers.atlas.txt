@@ -1,0 +1,202 @@
+
+Buzzers.png
+size: 2009,456
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Buzzer_Red_Ass01
+  rotate: false
+  xy: 272, 8
+  size: 150, 161
+  orig: 152, 163
+  offset: 1, 1
+  index: -1
+Buzzer_Red_ClawLeft01
+  rotate: true
+  xy: 93, 45
+  size: 86, 63
+  orig: 88, 65
+  offset: 1, 1
+  index: -1
+Buzzer_Red_ClawRight01
+  rotate: true
+  xy: 2, 34
+  size: 97, 89
+  orig: 99, 91
+  offset: 1, 1
+  index: -1
+Buzzer_Red_Head01
+  rotate: true
+  xy: 1384, 232
+  size: 222, 219
+  orig: 224, 221
+  offset: 1, 1
+  index: -1
+Buzzer_Red_Head02
+  rotate: true
+  xy: 1511, 8
+  size: 222, 219
+  orig: 224, 221
+  offset: 1, 1
+  index: -1
+Buzzer_Red_Head03
+  rotate: true
+  xy: 1605, 232
+  size: 222, 219
+  orig: 224, 221
+  offset: 1, 1
+  index: -1
+Buzzer_Red_Head04
+  rotate: true
+  xy: 1732, 8
+  size: 222, 219
+  orig: 224, 221
+  offset: 1, 1
+  index: -1
+Buzzer_Red_Head05
+  rotate: false
+  xy: 932, 219
+  size: 222, 235
+  orig: 224, 237
+  offset: 1, 1
+  index: -1
+Buzzer_Red_LeftArm01
+  rotate: false
+  xy: 204, 70
+  size: 43, 61
+  orig: 43, 61
+  offset: 0, 0
+  index: -1
+Buzzer_Red_LegLeft01
+  rotate: true
+  xy: 2, 8
+  size: 24, 46
+  orig: 24, 46
+  offset: 0, 0
+  index: -1
+Buzzer_Red_LegLeft02
+  rotate: false
+  xy: 150, 11
+  size: 17, 32
+  orig: 17, 32
+  offset: 0, 0
+  index: -1
+Buzzer_Red_LegRight02
+  rotate: false
+  xy: 150, 11
+  size: 17, 32
+  orig: 17, 32
+  offset: 0, 0
+  index: -1
+Buzzer_Red_LegRight01
+  rotate: true
+  xy: 50, 8
+  size: 24, 46
+  orig: 24, 46
+  offset: 0, 0
+  index: -1
+Buzzer_Red_RightArm01
+  rotate: false
+  xy: 158, 59
+  size: 44, 72
+  orig: 44, 72
+  offset: 0, 0
+  index: -1
+Buzzer_Red_ThumbLeft01
+  rotate: false
+  xy: 98, 8
+  size: 50, 35
+  orig: 52, 37
+  offset: 1, 1
+  index: -1
+Buzzer_Red_ThumbRight01
+  rotate: false
+  xy: 169, 2
+  size: 45, 55
+  orig: 47, 57
+  offset: 1, 0
+  index: -1
+Buzzer_Red_Torso01
+  rotate: true
+  xy: 1826, 276
+  size: 178, 181
+  orig: 180, 183
+  offset: 1, 1
+  index: -1
+Buzzer_Shadow
+  rotate: false
+  xy: 216, 14
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Buzzer_Wing_Front01
+  rotate: false
+  xy: 2, 133
+  size: 227, 321
+  orig: 229, 327
+  offset: 1, 5
+  index: -1
+Buzzer_Wing_Front02
+  rotate: false
+  xy: 231, 171
+  size: 231, 283
+  orig: 233, 292
+  offset: 1, 6
+  index: -1
+Buzzer_Wing_Front03
+  rotate: false
+  xy: 464, 194
+  size: 228, 260
+  orig: 231, 266
+  offset: 1, 3
+  index: -1
+Buzzer_Wing_Front04
+  rotate: false
+  xy: 1156, 222
+  size: 226, 232
+  orig: 228, 242
+  offset: 1, 5
+  index: -1
+Buzzer_Wing_Front05
+  rotate: false
+  xy: 694, 207
+  size: 236, 247
+  orig: 240, 256
+  offset: 1, 8
+  index: -1
+Buzzer_Wing_Rear01
+  rotate: true
+  xy: 464, 3
+  size: 189, 254
+  orig: 192, 261
+  offset: 2, 5
+  index: -1
+Buzzer_Wing_Rear02
+  rotate: true
+  xy: 916, 17
+  size: 188, 225
+  orig: 190, 234
+  offset: 1, 6
+  index: -1
+Buzzer_Wing_Rear03
+  rotate: false
+  xy: 1143, 4
+  size: 184, 213
+  orig: 187, 218
+  offset: 2, 2
+  index: -1
+Buzzer_Wing_Rear04
+  rotate: true
+  xy: 1329, 37
+  size: 183, 180
+  orig: 185, 193
+  offset: 1, 7
+  index: -1
+Buzzer_Wing_Rear05
+  rotate: false
+  xy: 720, 5
+  size: 194, 200
+  orig: 198, 205
+  offset: 3, 4
+  index: -1

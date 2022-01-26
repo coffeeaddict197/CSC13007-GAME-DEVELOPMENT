@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :5,
+  "listMonster" : [
+    {
+      "monsterType": 6,
+      "name" : "Red Buzzer",
+      "health": 450,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Purple Dino",
+      "health": 430,
+      "gen" : 1
+    },
+    {
+      "monsterType": 3,
+      "name" : "Green Dino",
+      "health": 440,
+      "gen" : 3
+    },
+    {
+      "monsterType": 1,
+      "name" : "Green Slime",
+      "health": 450,
+      "gen" : 1
+    },
+    {
+      "monsterType": 6,
+      "name" : "Black Buzzer",
+      "health": 410,
+      "gen" : 1
+    }
+  ],
+  "rewardData" :  {
+    "wood": 453,
+    "silver": 425,
+    "coin": 351,
+    "mana": 250
+  }
+
+}

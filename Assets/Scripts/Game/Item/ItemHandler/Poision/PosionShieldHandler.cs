@@ -12,6 +12,7 @@ public class PosionShieldHandler : PosionHandler
         Player player = Player.Instance;
         player.spellBuff.OnBuff(this);
         PlayerFX.Instance.FXPlayShieldPoison();
+        SoundManager.Instance.Play("Poision_Shield",AudioType.FX,0.6f);
         return true;
     }
     

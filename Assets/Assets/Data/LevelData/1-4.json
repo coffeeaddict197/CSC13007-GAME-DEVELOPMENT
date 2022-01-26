@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :4,
+  "listMonster" : [
+    {
+      "monsterType": 1,
+      "name" : "Yellow Slime",
+      "health": 350,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Blue Slime",
+      "health": 400,
+      "gen" : 1
+    },
+    {
+      "monsterType": 3,
+      "name" : "Blue Dragon",
+      "health": 410,
+      "gen" : 3
+    },
+    {
+      "monsterType": 1,
+      "name" : "Green Slime",
+      "health": 420,
+      "gen" : 1
+    },
+    {
+      "monsterType": 6,
+      "name" : "Red Buzzer",
+      "health": 410,
+      "gen" : 1
+    }
+  ],
+  "rewardData" :  {
+    "wood": 423,
+    "silver": 341,
+    "coin": 450,
+    "mana": 300
+  }
+
+}

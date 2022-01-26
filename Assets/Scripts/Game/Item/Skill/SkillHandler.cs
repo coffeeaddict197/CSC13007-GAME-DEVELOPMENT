@@ -14,6 +14,7 @@ public class SkillHandler : ItemHandler
             if (monster != null)
             {
                 monster.Health -= damage;
+                SoundManager.Instance.Play("FireBooster",AudioType.FX,0.6f);
                 MonsterFX.Instance.FXPlayMonsterTakeDamage();
                 FXFactory.Instance.GetFXTextFactory()
                     .SpawnFX(monster.GetAnchorPosition(), damage.ToString(), FXTextFactory.damageColor);
