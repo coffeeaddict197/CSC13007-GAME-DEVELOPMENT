@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :13,
+  "listMonster" : [
+    {
+      "monsterType": 1,
+      "name" : "Yellow Slime",
+      "health": 600,
+      "gen" : 3
+    },
+    {
+      "monsterType": 1,
+      "name" : "Blue Slime",
+      "health": 623,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Purple Slime",
+      "health": 690,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "Yellow Slime",
+      "health": 730,
+      "gen" : 2
+    },
+    {
+      "monsterType": 5,
+      "name" : "King Friend",
+      "health": 1250,
+      "gen" : 0
+    }
+  ],
+  "rewardData" :  {
+    "wood": 1250,
+    "silver": 1234,
+    "coin": 1560,
+    "mana": 1222
+  }
+
+}

@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :17,
+  "listMonster" : [
+    {
+      "monsterType": 3,
+      "name" : "Blue Dragon",
+      "health": 750,
+      "gen" : 3
+    },
+    {
+      "monsterType": 7,
+      "name" : "MTrex",
+      "health": 800,
+      "gen" : 1
+    },
+    {
+      "monsterType": 6,
+      "name" : "Black Buzzer",
+      "health": 820,
+      "gen" : 1
+    },
+    {
+      "monsterType": 6,
+      "name" : "Red Buzzer",
+      "health": 915,
+      "gen" : 2
+    },
+    {
+      "monsterType": 4,
+      "name" : "Forge",
+      "health": 1615,
+      "gen" : 0
+    }
+  ],
+  "rewardData" :  {
+    "wood": 1854,
+    "silver": 1960,
+    "coin": 1700,
+    "mana": 1706
+  }
+
+}

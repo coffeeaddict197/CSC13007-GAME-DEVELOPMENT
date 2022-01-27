@@ -194,7 +194,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6957338276786177563}
-        m_MethodName: OnClickToggle
+        m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a823264d42b5a44da7152ef61e60c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggleType: 0
+  toggleType: 1
   bgSpr: {fileID: 6957338278385813641}
   icnRect: {fileID: 6957338277021103027}
   maxWidth: 389
@@ -2138,7 +2138,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6957338277528656839}
-        m_MethodName: OnClickToggle
+        m_MethodName: ToggleSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

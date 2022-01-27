@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :19,
+  "listMonster" : [
+    {
+      "monsterType": 1,
+      "name" : "Forge",
+      "health": 800,
+      "gen" : 3
+    },
+    {
+      "monsterType": 1,
+      "name" : "Green Slime",
+      "health": 800,
+      "gen" : 1
+    },
+    {
+      "monsterType": 2,
+      "name" : "Purple Slime",
+      "health": 820,
+      "gen" : 1
+    },
+    {
+      "monsterType": 1,
+      "name" : "King Friend",
+      "health": 915,
+      "gen" : 2
+    },
+    {
+      "monsterType": 2,
+      "name" : "Red Buzzer",
+      "health": 1615,
+      "gen" : 0
+    }
+  ],
+  "rewardData" :  {
+    "wood": 1854,
+    "silver": 1960,
+    "coin": 1700,
+    "mana": 1706
+  }
+
+}

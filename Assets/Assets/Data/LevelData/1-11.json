@@ -1,0 +1,43 @@
+{
+  "map" : 1,
+  "level" :11,
+  "listMonster" : [
+    {
+      "monsterType": 7,
+      "name" : "MTrex",
+      "health": 561,
+      "gen" : 2
+    },
+    {
+      "monsterType": 6,
+      "name" : "Black Buzzer",
+      "health": 570,
+      "gen" : 3
+    },
+    {
+      "monsterType": 5,
+      "name" : "King Friend",
+      "health": 580,
+      "gen" : 2
+    },
+    {
+      "monsterType": 6,
+      "name" : "Red Buzzer",
+      "health": 610,
+      "gen" : 3
+    },
+    {
+      "monsterType": 4,
+      "name" : "Forge",
+      "health": 1100,
+      "gen" : 0
+    }
+  ],
+  "rewardData" :  {
+    "wood": 1200,
+    "silver": 1301,
+    "coin": 1353,
+    "mana": 1042
+  }
+
+}

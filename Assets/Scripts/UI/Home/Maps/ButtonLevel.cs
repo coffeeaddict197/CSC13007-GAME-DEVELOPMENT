@@ -41,8 +41,8 @@ public class ButtonLevel : MonoBehaviour
     {
         var levelArchive = PlayerDataManager.Instance.data.LevelDatas.archiveLevel;
         
-        // if (level != levelArchive)
-        //     return;
+        if (level != levelArchive)
+            return;
         
         levelClicked = level;
         DialogManager.Instance.OnShowDialog<BaseDialog>("Dialog/Home/LevelInfo",

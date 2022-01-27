@@ -21,7 +21,15 @@ public class AudioToggle : MonoBehaviour
 
     private void OnEnable()
     {
-        isOn = true;
+        if (toggleType == ToggleType.Music)
+        {
+            isOn = SoundManager.Instance.AudioData.IsOnFx;
+        }
+        else
+        {
+            isOn = SoundManager.Instance.AudioData.IsOnSoundTrack;
+            Debug.LogError("Is Sound track : " + isOn);
+        }
         OnButtonChange();
     }
 
@@ -32,14 +40,23 @@ public class AudioToggle : MonoBehaviour
         OnButtonChange();
     }
 
-    void ToggleMusic()
+    public void ToggleMusic()
     {
-        
+        OnClickToggle();
+        SoundManager.Instance.AudioData.IsOnFx = isOn;
+
+
+
     }
 
-    void ToggleSound()
+    public void ToggleSound()
     {
-        
+        OnClickToggle();
+        SoundManager.Instance.AudioData.IsOnSoundTrack = isOn;
+        if (!isOn)
+            SoundManager.Instance.TurnOffAllSoundTrack();
+        else
+            SoundManager.Instance.TurnOnAllSoundTrack();
     }
 
     void OnButtonChange()

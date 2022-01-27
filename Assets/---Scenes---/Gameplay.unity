@@ -88501,7 +88501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0ec169a3de7874595e3cf59a0b6819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 400
   gears: {fileID: 1076127431}
   spellBuff: {fileID: 1076127433}
   anchor: {fileID: 1884728441}
